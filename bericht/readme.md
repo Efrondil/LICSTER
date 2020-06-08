@@ -1,1 +1,1 @@
-posted hier euren bericht (nicht die doku) als .rst datei rein, damit man es später zusammen kompilieren kann
+posted hier euren bericht (nicht die doku) als .rst (oder .md) datei rein, damit man es später zusammen kompilieren kann
