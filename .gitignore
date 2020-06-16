@@ -67,6 +67,7 @@ paper/paper_blinded.pdf
 .Trashes
 ehthumbs.db
 thumbs.db
+.vscode/
 
 # Python language    #
 ######################
@@ -79,4 +80,3 @@ thumbs.db
 *.bin
 *.hex
 *.elf
-
