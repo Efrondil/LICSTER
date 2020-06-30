@@ -16,7 +16,7 @@ Als nächstes haben wir pcaps von Angriffen, die wir Durchgeführt haben, aufgez
 Durchgeführte Angriffe
 ----------------------
 
-Die Skripte für die Angriffe sind im Offiziellen Github Repository zu finden (https://github.com/Efrondil/LICSTER/tree/master/attacks).
+Die Skripte für die Angriffe sind im Offiziellen Github Repository zu finden (https://github.com/hsainnos/LICSTER/tree/master/attacks).
 
 Flooding
 ........
@@ -44,7 +44,14 @@ Angriff auf die manuelle Kontrolle
 ..................................
 
 Hier wird, mit einem Python-Skript, die manuelle Kontrolle vom LICSTER Testbed übernommen.
+Ausgeführt wird er mit:
 
+.. code-block::
+
+      $ python3 -i client.py
+      >>>
+
+Anschließend kann man dann Befehle senden um das Testbed zu steuern.
 
 Snort Regel
 -----------
