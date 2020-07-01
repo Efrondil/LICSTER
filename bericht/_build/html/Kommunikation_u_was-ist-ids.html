@@ -1,0 +1,242 @@
+
+<!DOCTYPE html>
+
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <title>1. Workflow &#8212; LICSTER 2020 Dokumentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/translations.js"></script>
+    <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
+    <link rel="search" title="Suche" href="search.html" />
+    <link rel="next" title="3. Wireshark" href="Wireshark_u_Regeln.html" />
+    <link rel="prev" title="LICSTER" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="workflow">
+<h1><span class="section-number">1. </span>Workflow<a class="headerlink" href="#workflow" title="Link zu dieser Überschrift">¶</a></h1>
+<p>Jedes Projekt sollte damit es erfolgreich wird einen einheitlichen Workflow besitzen.
+Dieser dient zur Planung, Nutzung der Ressourcen und damit das Ziel vom Projekt nicht
+verfehlt wird. Zur Kommunikation im Team nützten wir verschiedene Technologien und
+Vorgehensweisen, um eine möglichst gute kooperative Arbeitsweise zu ermöglichen.
+Diese Strategien werden im Folgenden genauer erklärt.</p>
+<div class="section" id="jitsi">
+<h2><span class="section-number">1.1. </span>Jitsi<a class="headerlink" href="#jitsi" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Um die Kommunikation mit dem Professor herzustellen wurde das Tool jitsi benützt.
+Der Vorteil dabei liegt darin das man sich keinen Account erstellen muss.
+Somit wurde es ermöglicht das jeder leicht an den Meetings teilnehmen konnte.
+Das Meeting mit dem Professor war standartmäßig immer am Donnerstag um 17:30.</p>
+</div>
+<div class="section" id="discord">
+<h2><span class="section-number">1.2. </span>Discord<a class="headerlink" href="#discord" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Zur Besprechung und falls es Themen gibt, die mit dem Team besprochen werden mussten
+wurde Discord benützt. Dabei wurden mehrere Text Kanäle und sprach Kanäle erstellt,
+die man benutzten, kann. Bei den Text Kanälen wurde drauf geachtet das jeder punkt
+einen eigenen Kanal hat. Dies haben wir getan damit eine gute Übersicht gewährleistet
+wird und man somit auch bei einem späteren Zeitpunkt die Informationen leicht nachschauen
+kann die man braucht.</p>
+<img alt="_images/Discord.png" src="_images/Discord.png" />
+</div>
+<div class="section" id="jira">
+<h2><span class="section-number">1.3. </span>Jira<a class="headerlink" href="#jira" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Für die zentrale Verwaltung der aufgaben wurde das Tool jira benützt. Dabei wurde mit
+dem Scrum Prinzip gearbeitet. In Scrum arbeitet man mit sogenannten Sprints. Diese
+bestimmen einen Zeitraum, bei uns 1-2 Wochen, in der bestimmte Aufgaben erledigt
+werden müssen. Die Arbeitsweise funktionierte so dass man sich am Anfang einer jeden
+Woche drauf geeinigt hat welche aufgaben erledigt werden müssen diese wurden dann den
+jeweiligen Personen zugewiesen. Ideen oder aufgaben die für diese Woche noch nicht zu
+bearbeiten sind oder noch nicht möglich sind zu bearbeiten wurden ins Backlog gesetzt.
+Die aufgaben könne dabei drei zustände einnehmen: Aufgabe, wird ausgeführt und fertig.</p>
+<img alt="_images/Jira.png" src="_images/Jira.png" />
+</div>
+</div>
+<div class="section" id="ids">
+<h1><span class="section-number">2. </span>IDS<a class="headerlink" href="#ids" title="Link zu dieser Überschrift">¶</a></h1>
+<p>In unserer heutigen Zeit nehmen Angriffe auf industriele Systeme stetig weiter zu.
+Immer wieder werden neue arten gefunden wie ein System angegriffen werden kann.
+Dementsprechend gibt es auch schon sehr viele verschieden Tools die dafür da sind um
+zu erkennenden wenn ein Angriff oder ein exploit auf einem System ausgeführt wird und
+diesen dann auch dementsprechend zu stoppen:  Software wie Firewalls verhindern dass
+nicht autorisierter Datenverkehr in das Netzwerk gelangt, Spam-Filter um unerwünschte
+E-Mail-Nachrichten zu verhindern und Antiware-Tools zum Schutz von Endpunkten vor Malware.
+All diese Tools werden in so gut wie jedem Unternehmen eingesetzt egal welche Branche
+oder wie groß es ist. Ein weiteres wertvolles Sicherheitstool was ebenfalls eingesetzt
+wird ist ein Netzwerk-IDS (Intrusion Detection-System). Um dieses geht es auch in unserem
+Teil Projekt, bei dem wir ein solches System in dem Testbed Licster implementiert haben.</p>
+<div class="section" id="was-ist-ein-ids">
+<h2><span class="section-number">2.1. </span>Was ist ein ids<a class="headerlink" href="#was-ist-ein-ids" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Doch was genau ist nun ein Intrusion Detection system. Eine gute Definition für ein ids
+lauten folgend. „Ein IDS (Intrusion Detection System) ist ein Gerät oder eine Anwendung,
+mit der der gesamte Netzwerkverkehr überprüft und der Benutzer oder Administrator
+benachrichtigt wird, wenn nicht autorisierte Versuche oder Zugriffe stattgefunden haben.“
+Im Gegensatz zu einer Firewall welche meist eher als Gatekeeper fungiert also nur den
+Netzwerkverkehr überwacht und bestimmt ob er ins Netzwerk darf. Konzentriert sich Ids
+System auf den traffic, der im internen Netzwerk abläuft. Dabei wird anhand von
+verschieden rule sets geschaut ob ein traffic verdächtig ist bzw. er sich ungewöhnlich
+verhält bspw. Modbus mehr traffic in der Sekunde als eigentlich der Standard für das
+System ist. Durch diese Weise kann ein ids Angriffe erkennen welche an der Firewall
+vorbei kommen oder aus dem eigenem Netzwerk stammen.</p>
+</div>
+<div class="section" id="wiso-man-es-braucht">
+<h2><span class="section-number">2.2. </span>Wiso man es braucht<a class="headerlink" href="#wiso-man-es-braucht" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Keine Firewall ist Fehler frei und kein Netzwerk ist undurchdringlich. Angreifer
+entwickeln ständig neue Exploits und Angriffstechniken, um auf ein System zu kommen.
+Was von fielen Angreifern zusätzlich gerne genutzt wird ist Social Engineering oder
+andere arten von Malware. Über diese Methoden gelangen sie meist an Benutzeranmeldeinformationen
+und dadurch haben sie nun einen berechtigten zugriff auf das Netzwerk ohne das die
+Firewall dies als böswilligen angriff sieht. Ein Network Intrusion Detection System kann
+dagegen immer noch sehe was die Person auf dem System macht und falls dabei nun versucht
+wird das irgendwelche angriffe ausgeführt werden diese auch erkennen und den System
+Administrator zu benachrichtigen das dort was im System nicht stimmt.</p>
+<p>Der Haupt Zweck eines ids systems besteht somit darin das It-Personal zu benachrichtigen
+falls es einen Angriff oder andere Arten von Bad traffic gefunden hat. Die Kunst für das
+Personal besteht nun darin zu schauen welche nachrichtig stimmen und welche ein false
+positiv sind.</p>
+</div>
+<div class="section" id="arten-von-ids">
+<h2><span class="section-number">2.3. </span>Arten von IDS<a class="headerlink" href="#arten-von-ids" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Im Grundlegen werden zwischen zwei Arten von ids Systemen unterschieden nämlich der signature-based detection
+und der anomaly-based detection.</p>
+<div class="section" id="signature-based-detection">
+<h3><span class="section-number">2.3.1. </span>Signature-based detection<a class="headerlink" href="#signature-based-detection" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Bei dieser Methode werden feste Muster verwendet, um den traffic zu kontrollieren.
+Diese Muster beschreiben verdächtige Sammlung von Abfolgen von Aktivitäten oder
+Operationen, die möglicherweise schädlich sein können. Diese werden dann meist in einer
+Datenbank gespeichert. Es werden somit genau definierte Angriffsmuster verwendet,
+die die Schwachstelen im System ausnutzten. Die Zeit, die somit gebraucht wird, um den
+traffic zu vergleichen ist minimal. Der Hauptvorteil besteht somit darin das Muster oder
+Signaturen das Netzwerkverhalten leicht verstehen zu können. Es ist somit effizienter
+Angriffe zu verarbeiten die schon bekannt sind.</p>
+<p>Die Hauptbeschränkung dieses Systems ist dadurch das Reagieren und Erkennen von Angriffen,
+die nicht in der Datenbank gespeichert sind. Somit kann dieses System leicht getäuscht
+werden das es nur mit einem bestimmten Satz von ausdrücken oder mit Zeichenfolgenübereinstimmung
+arbeiten. Desweitern tuen sich solches System sehr schwer mit Angriffen bei denen
+Menschen aktiv etwas tun.</p>
+</div>
+<div class="section" id="anomaly-based-detection">
+<h3><span class="section-number">2.3.2. </span>Anomaly-based detection<a class="headerlink" href="#anomaly-based-detection" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Bei diesem System ist das Netzwerkverhalten der Haupt Parameter. Deshalb wird vorerst ein
+Model erstellt, welches zeigt wie der normale traffic im Netzwerk aussehen soll.
+Dieser kann entweder vorbestimmt werden oder durch vom Netzwerkadministrator festgelegte
+Spezifikationen oder Bedingungen mit machine learning gelernt werden. Wenn das
+Netzwerkverhalten innerhalb des Models liegt passt alles falls nicht wir eine Wahrung
+vom Anomaly detection system ausgelöst.</p>
+<p>Das Definieren der Regelsätze ist einer der Hauptnachteile des Anomaly detection systems.
+Die Effizienz des Systems hängt von der effektiven Implementierung und dem Testen von
+Regelsätzen für alle Protokolle ab. Darüber hinaus wirken sich verschiedene Protokolle
+verschieden stark auf das System aus. Des Weiteren hat das System Probleme dabei wen das
+böswillige Verhalten unter das akzeptierende Verhalten fällt.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">LICSTER</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Workflow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#jitsi">1.1. Jitsi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#discord">1.2. Discord</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#jira">1.3. Jira</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#ids">2. IDS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#was-ist-ein-ids">2.1. Was ist ein ids</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#wiso-man-es-braucht">2.2. Wiso man es braucht</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#arten-von-ids">2.3. Arten von IDS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Wireshark_u_Regeln.html">3. Wireshark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Wireshark_u_Regeln.html#durchgefuhrte-angriffe">4. Durchgeführte Angriffe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Wireshark_u_Regeln.html#snort-regel">5. Snort Regel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Wireshark_u_Regeln.html#regel-schreiben">6. Regel schreiben</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seccom.html">7. Einleitung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seccom.html#id2">8. Secure Layer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seccom.html#id7">9. Remote-IO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seccom.html#id13">10. Zertifikate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seccom.html#id14">11. Fazit und Ausblick</a></li>
+<li class="toctree-l1"><a class="reference internal" href="webapp.html">12. Webapplikation Backend</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="vorheriges Kapitel">LICSTER</a></li>
+      <li>Next: <a href="Wireshark_u_Regeln.html" title="nächstes Kapitel"><span class="section-number">3. </span>Wireshark</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Schnellsuche</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Los" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Fabian Klemm, Eric Hoffmann, Raphael Hausmanninger, Michael Janzer, Muhammet Bilbey, Athanasios Luludis, Janis Schickram.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.0.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/Kommunikation_u_was-ist-ids.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

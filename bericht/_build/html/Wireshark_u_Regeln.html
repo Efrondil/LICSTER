@@ -1,0 +1,332 @@
+
+<!DOCTYPE html>
+
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <title>3. Wireshark &#8212; LICSTER 2020 Dokumentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/translations.js"></script>
+    <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
+    <link rel="search" title="Suche" href="search.html" />
+    <link rel="next" title="7. Einleitung" href="seccom.html" />
+    <link rel="prev" title="1. Workflow" href="Kommunikation_u_was-ist-ids.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="wireshark">
+<h1><span class="section-number">3. </span>Wireshark<a class="headerlink" href="#wireshark" title="Link zu dieser Überschrift">¶</a></h1>
+<p>Um einen Überblick über die Pakete, die im LICSTER Netzwerk unterwegs sind, zu
+bekommen, haben wir, mit Wireshark, den Netzwerkverkehr aufgezeichnet.</p>
+<p>Als erstes haben wir pcaps während dem Einschalten, Betrieb und Abschalten von dem Testbed, mithilfe des Mirror Ports erstellt,
+um zu sehen was während einem Regulären betrieb auf dem Netzwerk passiert.</p>
+<img alt="_images/wireshark_normal.png" src="_images/wireshark_normal.png" />
+<p>Als nächstes haben wir pcaps von Angriffen, die wir Durchgeführt haben, aufgezeichnet, um Regeln für unser Intrusion-Detection-System entwickeln zu können.</p>
+<img alt="_images/wireshark_flood.png" src="_images/wireshark_flood.png" />
+</div>
+<div class="section" id="durchgefuhrte-angriffe">
+<h1><span class="section-number">4. </span>Durchgeführte Angriffe<a class="headerlink" href="#durchgefuhrte-angriffe" title="Link zu dieser Überschrift">¶</a></h1>
+<p>Die Skripte für die Angriffe sind im Offiziellen Github Repository zu finden (<a class="reference external" href="https://github.com/hsainnos/LICSTER/tree/master/attacks">https://github.com/hsainnos/LICSTER/tree/master/attacks</a>).</p>
+<div class="section" id="flooding">
+<h2><span class="section-number">4.1. </span>Flooding<a class="headerlink" href="#flooding" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Flooding ist eine einfache und beliebte Art eines Denial-of-Service Angriffs.
+Für den Angriff haben wir hping3 benutzt. Ein Einfaches CLI-tool um Pakete zu versenden.</p>
+<p>Hier wird eins der beiden RemoteIO’s vom LICSTER Testbed geflutet.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo hping3 --flood 192.168.0.51
+</pre></div>
+</div>
+</div>
+<div class="section" id="angriff-auf-das-flieszband">
+<h2><span class="section-number">4.2. </span>Angriff auf das Fließband<a class="headerlink" href="#angriff-auf-das-flieszband" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Hier haben wir mit einem kleinen Python-Skript das Fließband vom LICSTER Testbed angegriffen und zum stoppen gebracht.
+Ausgeführt wird er mit:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo ./conveyer_belt.py
+</pre></div>
+</div>
+</div>
+<div class="section" id="angriff-auf-die-manuelle-kontrolle">
+<h2><span class="section-number">4.3. </span>Angriff auf die manuelle Kontrolle<a class="headerlink" href="#angriff-auf-die-manuelle-kontrolle" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Hier wird, mit einem Python-Skript, die manuelle Kontrolle vom LICSTER Testbed übernommen.
+Ausgeführt wird er mit:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python3 -i client.py
+&gt;&gt;&gt;
+</pre></div>
+</div>
+<p>Anschließend kann man dann Befehle senden um das Testbed zu steuern.</p>
+</div>
+</div>
+<div class="section" id="snort-regel">
+<h1><span class="section-number">5. </span>Snort Regel<a class="headerlink" href="#snort-regel" title="Link zu dieser Überschrift">¶</a></h1>
+<p>Damit Snort Angriffe/Abnormalitäten erkennen kann, müssen Regeln vorhanden sein, wonach Snort sich richten kann. Darauf Achten sollte man, dass man nicht zu viele Regeln implementiert, denn so kann es passieren, das Snort zu viele Alarme wirft, von denen viele  falsch sind und der echte Alarm untergeht (Man sieht den Angriff vor lauter „Angriffe“ nicht mehr). Hat man aber zu wenige Regel implementiert, kann es passieren, dass mögliche Angriffe nicht erkannt werden. Es müssen also so wenig Regeln wie möglich, aber so viele wie nötig implementiert werden um Fehlalarme zu vermeiden und dennoch echte Angriffe erkennen zu können.</p>
+</div>
+<div class="section" id="regel-schreiben">
+<h1><span class="section-number">6. </span>Regel schreiben<a class="headerlink" href="#regel-schreiben" title="Link zu dieser Überschrift">¶</a></h1>
+<p>Damit man Regeln schreiben kann muss man erst verstehen wie eine Regel
+aufgebaut ist. Hier Hilft die offizielle Anleitung
+(<a class="reference external" href="http://manual-snort-org.s3-website-us-east-1.amazonaws.com/node27.html">http://manual-snort-org.s3-website-us-east-1.amazonaws.com/node27.html</a>).</p>
+<p>Hier in Kurzfassung:</p>
+<p>Eine Regel besteht aus drei Teilen:</p>
+<ul class="simple">
+<li><p>Aktion</p></li>
+<li><p>Kopf</p></li>
+<li><p>Regeloptionen</p></li>
+</ul>
+<div class="section" id="aktion">
+<h2><span class="section-number">6.1. </span>Aktion<a class="headerlink" href="#aktion" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Hier wird angegeben was Snort tun soll, wenn es ein Paket findet, das den
+Regel Kriterien entspricht. Es gibt 3 verfügbare Standardaktionen in Snort,
+alert, log und pass. Wenn Snort im inline-modus ausgeführt wird, stehen drop,
+reject und sdrop zur verfügung.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">'alert'</span></code> erzeugt einen Alarm mit der gewählten Alarm Methode und protokolliert dann das Paket</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'log'</span></code> das Paket protokollieren</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'pass'</span></code> das Paket ignorieren</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'drop'</span></code> das Paket blockieren und protokollieren</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'reject'</span></code> das Paket blockieren, protokollieren und senden eines TCP-Reset, wenn das Protokoll TCP ist, oder eine ICMP-Port-Unerreichbarkeit Meldung, wenn das Protokoll UDP ist.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'sdrop'</span></code> das Paket blockieren, aber nicht protokollieren</p></li>
+</ul>
+</div>
+<div class="section" id="kopf">
+<h2><span class="section-number">6.2. </span>Kopf<a class="headerlink" href="#kopf" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Dieses Feld steht für das Protokoll, die IP Adresse, die Ports und die
+Richtungsanweisung.</p>
+<p><strong>Protokolle</strong></p>
+<p>Es gibt vier Protokolle, die Snort auf verdächtiges Verhalten analysiert: TCP,
+UDP, ICMP und IP.</p>
+<p><strong>IP Adressen und Ports</strong></p>
+<p>Der nächste Teil des Regelkopfes befasst sich mit der IP-Adresse und den Port
+für eine bestimmte Regel. Man kann das Heimnetzwerk in der Konfigurationsdatei
+von Snort festlegen. Das Schlüsselwort any kann zur Definition einer beliebigen
+Adresse verwendet werden.</p>
+</div>
+<div class="section" id="regeloptionen">
+<h2><span class="section-number">6.3. </span>Regeloptionen<a class="headerlink" href="#regeloptionen" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Alle Regeloptionen werden durch das Semikolon (;) voneinander getrennt.
+Es gibt vier Kategorien von Regeloptionen:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>general</dt><dd><p>enthält extra Informationen über die Regel, haben aber keine auswirkung während der Erkennung</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>payload</dt><dd><p>diese Optionen schauen in den Packet-Payload rein</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>non-payload</dt><dd><p>diese Optionen schauen für nicht payload Daten</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>post-detection</dt><dd><p>diese Optionen sind Regelspezifische trigger, die ausgeführt werden, nachdem eine Regel ausgelöst wird</p>
+</dd>
+</dl>
+</li>
+</ul>
+<img alt="_images/rules.png" src="_images/rules.png" />
+<p>Für genauere Regeloptionen schaut man hier am besten nach:
+<a class="reference external" href="http://manual-snort-org.s3-website-us-east-1.amazonaws.com/node32.html">http://manual-snort-org.s3-website-us-east-1.amazonaws.com/node32.html</a></p>
+<div class="section" id="unsere-snort-regel">
+<h3><span class="section-number">6.3.1. </span>Unsere Snort Regel<a class="headerlink" href="#unsere-snort-regel" title="Link zu dieser Überschrift">¶</a></h3>
+</div>
+</div>
+<div class="section" id="http-regel">
+<h2><span class="section-number">6.4. </span>HTTP Regel<a class="headerlink" href="#http-regel" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>alert tcp !$HOME_NET any -&gt; 192.168.0.10 $HTTP_PORTS (msg:&quot;HTTP Get from EXTERNAL to 192.168.0.10&quot;; \
+classtype: bad-unknown; content: &quot;HTTP&quot;; sid 1002000; rev: 1;)
+</pre></div>
+</div>
+<p>Diese Regel ist dafür da, falls von einem Außenstehenden Netzwerk ein HTTP GET request empfangen worden ist.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>alert tcp !192.168.20 any -&gt; 192.168.30 $HTTP_PORTS (msg:&quot;HTTP Get not from 192.168.0.20 to 192.168.0.30&quot;; \
+classtype: bad-unknown; content: &quot;HTTP&quot;; sid 1002005; rev: 1;)
+</pre></div>
+</div>
+<p>Hier ähnlich wie bei der vorherigen Regel, nur wird hier der Alarm geworfen, falls das GET request vom Heimnetz, aber nicht vom HMI, kommt.</p>
+</div>
+<div class="section" id="icmp-regel">
+<h2><span class="section-number">6.5. </span>ICMP Regel<a class="headerlink" href="#icmp-regel" title="Link zu dieser Überschrift">¶</a></h2>
+<p><strong>Portscan</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alert</span> <span class="n">icmp</span> <span class="nb">any</span> <span class="nb">any</span> <span class="o">-&gt;</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">0.10</span> <span class="nb">any</span> <span class="p">(</span><span class="n">msg</span><span class="p">:</span><span class="s2">&quot;Ping nmap Portscan 192.168.0.10&quot;</span><span class="p">;</span> \
+<span class="n">dsize</span><span class="p">:</span><span class="mi">0</span><span class="p">;</span> <span class="n">itype</span><span class="p">:</span><span class="mi">8</span><span class="p">;</span> <span class="n">classtype</span><span class="p">:</span> <span class="n">network</span><span class="o">-</span><span class="n">scan</span><span class="p">;</span> <span class="n">sid</span><span class="p">:</span><span class="mi">1003000</span><span class="p">;</span> <span class="n">rev</span><span class="p">:</span><span class="mi">1</span><span class="p">;)</span>
+</pre></div>
+</div>
+<p>ICMP-Fehlermeldungen (Protocol/Port Unreachable) können verwendet werden, um die offenen Ports zu einer IP-Adresse herauszufinden.
+Da die Paketgröße 0 ist wird hier <code class="docutils literal notranslate"><span class="pre">'dsize'</span></code> auf 0 gesetzt und der <code class="docutils literal notranslate"><span class="pre">'itype'</span></code> auf 8, da der Typ 8 für Echo Request steht.</p>
+<p><strong>DoS</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alert</span> <span class="n">icmp</span> <span class="nb">any</span> <span class="nb">any</span> <span class="o">-&gt;</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">0.10</span> <span class="nb">any</span> <span class="p">(</span><span class="n">msg</span><span class="p">:</span><span class="s2">&quot;Ping flood detected 192.168.0.10&quot;</span><span class="p">;</span> \
+<span class="n">itype</span><span class="p">:</span><span class="mi">8</span><span class="p">;</span> <span class="n">count</span> <span class="mi">20</span><span class="p">,</span> <span class="n">seconds</span> <span class="mi">1</span><span class="p">;</span> <span class="n">classtype</span><span class="p">:</span> <span class="n">denial</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">service</span><span class="p">;</span> <span class="n">sid</span><span class="p">:</span><span class="mi">1003010</span><span class="p">;</span> <span class="n">rev</span><span class="p">:</span><span class="mi">1</span><span class="p">;)</span>
+</pre></div>
+</div>
+<p>Standard DoS Ping flood.</p>
+<p><strong>DoS Teardrop</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alert</span> <span class="n">icmp</span> <span class="nb">any</span> <span class="nb">any</span> <span class="o">-&gt;</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">0.10</span> <span class="nb">any</span> <span class="p">(</span><span class="n">msg</span><span class="p">:</span><span class="s2">&quot;ICMP Teardrop attack 192.168.0.10&quot;</span><span class="p">;</span> \
+<span class="n">fragbits</span><span class="p">:</span><span class="n">M</span><span class="p">;</span> <span class="n">classtype</span><span class="p">:</span> <span class="n">denial</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">service</span><span class="p">;</span> <span class="n">sid</span><span class="p">:</span><span class="mi">1003020</span><span class="p">;</span><span class="n">rev</span><span class="p">:</span><span class="mi">1</span><span class="p">;)</span>
+</pre></div>
+</div>
+<p>Teardrop-Angriffe senden Fragmentierte Pakete die nicht wieder zusammengesetzt werden können, das zu einem DoS führen kann. Um den Angriff zu erkennen,
+wird hier <code class="docutils literal notranslate"><span class="pre">'fragbits'</span></code> auf <code class="docutils literal notranslate"><span class="pre">'M'</span></code> für more gesetzt, was heißt dass noch mehr Pakete kommen.</p>
+<p><strong>ICMP Router Discovery</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alert</span> <span class="n">icmp</span> <span class="nb">any</span> <span class="nb">any</span> <span class="o">-&gt;</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">0.10</span> <span class="nb">any</span> <span class="p">(</span><span class="n">msg</span><span class="p">:</span><span class="s2">&quot;ICMP Router Discovery 192.168.0.10&quot;</span><span class="p">;</span> \
+<span class="n">icode</span><span class="p">:</span><span class="mi">0</span><span class="p">;</span> <span class="n">itype</span><span class="p">:</span><span class="mi">9</span><span class="p">;</span> <span class="n">classtype</span><span class="p">:</span> <span class="n">network</span><span class="o">-</span><span class="n">scan</span><span class="p">;</span> <span class="n">sid</span><span class="p">:</span><span class="mi">1003030</span><span class="p">;</span> <span class="n">rev</span><span class="p">:</span><span class="mi">1</span><span class="p">;)</span>
+</pre></div>
+</div>
+<p>Ähnlich wie beim Portscan, nur werden hier nach Benachbarten Routern gesucht. <code class="docutils literal notranslate"><span class="pre">'itype'</span></code> wird auf 9 gesetzt da es für Router Advertisement steht.</p>
+<p><strong>ICMP Too large packet</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alert</span> <span class="n">icmp</span> <span class="nb">any</span> <span class="nb">any</span> <span class="o">-&gt;</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">0.10</span> <span class="nb">any</span> <span class="p">(</span><span class="n">msg</span><span class="p">:</span><span class="s2">&quot;Large ICMP Packet 192.168.0.10&quot;</span><span class="p">;</span> \
+<span class="n">dsize</span><span class="p">:</span><span class="o">&gt;</span><span class="mi">1500</span><span class="p">;</span> <span class="n">classtype</span><span class="p">:</span> <span class="n">denial</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">service</span><span class="p">;</span> <span class="n">sid</span><span class="p">:</span><span class="mi">1003040</span><span class="p">;</span> <span class="n">rev</span><span class="p">:</span><span class="mi">1</span><span class="p">;)</span>
+</pre></div>
+</div>
+<p>Diese Regel ist dafür da, falls zu große ICMP Pakete gesendet werden. <code class="docutils literal notranslate"><span class="pre">'dsize'</span></code> ist für die Paketgröße und wurde hier auf größer 1500 gesetzt.</p>
+</div>
+<div class="section" id="modbus-regel">
+<h2><span class="section-number">6.6. </span>Modbus Regel<a class="headerlink" href="#modbus-regel" title="Link zu dieser Überschrift">¶</a></h2>
+<p><strong>DoS</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alert</span> <span class="n">tcp</span> <span class="nb">any</span> <span class="nb">any</span> <span class="o">-&gt;</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">0.51</span> <span class="mi">502</span> <span class="p">(</span><span class="n">msg</span><span class="p">:</span><span class="s2">&quot;Modbus threshold violation 51&quot;</span><span class="p">;</span> <span class="n">threshold</span><span class="p">:</span> \
+<span class="nb">type</span> <span class="n">both</span><span class="p">,</span> <span class="n">track</span> <span class="n">by_dst</span><span class="p">,</span> <span class="n">count</span> <span class="mi">60</span><span class="p">,</span> <span class="n">seconds</span> <span class="mi">1</span><span class="p">;</span> <span class="n">classtype</span><span class="p">:</span> <span class="n">successful</span><span class="o">-</span><span class="n">dos</span><span class="p">;</span> <span class="n">sid</span><span class="p">:</span><span class="mi">1001004</span><span class="p">;)</span>
+</pre></div>
+</div>
+<p>Diese Regel erkennt einen Denial-of-Service Angriff über das Modbus.</p>
+</div>
+<div class="section" id="ssh-regel">
+<h2><span class="section-number">6.7. </span>SSH Regel<a class="headerlink" href="#ssh-regel" title="Link zu dieser Überschrift">¶</a></h2>
+<p><strong>Strange Traffic</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>alert tcp !$HOME_NET any -&gt; 192.168.0.10 22 (msg:&quot;SSH Request from EXTERNAL NET to 192.168.0.10&quot;; \
+content:&quot;SSH&quot;; nocase; offset:0; depth:4; classtype: attempted-user; sid:1000101; rev:1;)
+</pre></div>
+</div>
+<p>Diese Regel erkennt einen SSH Zugriffs versuch aus einem externen Netz.</p>
+<p><strong>Brute Force</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alert</span> <span class="n">tcp</span> <span class="nb">any</span> <span class="nb">any</span> <span class="o">-&gt;</span> <span class="nb">any</span> <span class="mi">22</span> <span class="p">(</span><span class="n">msg</span><span class="p">:</span><span class="s2">&quot;SSH Brute Force Attempt&quot;</span><span class="p">;</span> <span class="n">flow</span><span class="p">:</span><span class="n">established</span><span class="p">,</span> <span class="n">to_server</span><span class="p">;</span> <span class="n">content</span><span class="p">:</span><span class="s2">&quot;SSH&quot;</span><span class="p">;</span> \
+<span class="n">nocase</span><span class="p">;</span> <span class="n">offset</span><span class="p">:</span><span class="mi">0</span><span class="p">;</span> <span class="n">depth</span><span class="p">:</span><span class="mi">4</span><span class="p">;</span> <span class="n">detection_filter</span><span class="p">:</span><span class="n">track</span> <span class="n">by_src</span><span class="p">,</span> <span class="n">count</span> <span class="mi">30</span><span class="p">,</span> <span class="n">seconds</span> <span class="mi">1</span><span class="p">;</span> <span class="n">classtype</span><span class="p">:</span> <span class="n">attempted</span><span class="o">-</span><span class="n">user</span><span class="p">;</span> <span class="n">sid</span><span class="p">:</span><span class="mi">1000201</span><span class="p">;</span> <span class="n">rev</span><span class="p">:</span><span class="mi">1</span><span class="p">;)</span>
+</pre></div>
+</div>
+<p>Diese Regel erkennt einen SSH Brute Force angriff.</p>
+<p><strong>DoS</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alert</span> <span class="n">tcp</span> <span class="nb">any</span> <span class="nb">any</span> <span class="o">-&gt;</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">0.10</span> <span class="mi">22</span> <span class="p">(</span><span class="n">msg</span><span class="p">:</span><span class="s2">&quot;SSH DOS against 192.168.0.10&quot;</span><span class="p">;</span> \
+<span class="n">detection_filter</span><span class="p">:</span><span class="n">track</span> <span class="n">by_src</span><span class="p">,</span> <span class="n">count</span> <span class="mi">50</span><span class="p">,</span> <span class="n">seconds</span> <span class="mi">1</span><span class="p">;</span> <span class="n">classtype</span><span class="p">:</span> <span class="n">denial</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">service</span><span class="p">;</span> <span class="n">sid</span><span class="p">:</span><span class="mi">1000301</span><span class="p">;</span> <span class="n">rev</span><span class="p">:</span><span class="mi">1</span><span class="p">;)</span>
+</pre></div>
+</div>
+<p>Diese Regeln erkennt einen SSH Denial-of-Service angriff.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alert</span> <span class="n">tcp</span> <span class="nb">any</span> <span class="nb">any</span> <span class="o">-&gt;</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">0.10</span> <span class="mi">22</span> <span class="p">(</span><span class="n">msg</span><span class="p">:</span><span class="s2">&quot;SSH DDOS against 192.168.0.10&quot;</span><span class="p">;</span> \
+<span class="n">detection_filter</span><span class="p">:</span><span class="n">track</span> <span class="n">by_dst</span><span class="p">,</span> <span class="n">count</span> <span class="mi">500</span><span class="p">,</span> <span class="n">seconds</span> <span class="mi">1</span><span class="p">;</span> <span class="n">classtype</span><span class="p">:</span> <span class="n">denial</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">service</span><span class="p">;</span> <span class="n">sid</span><span class="p">:</span><span class="mi">1000306</span><span class="p">;</span> <span class="n">rev</span><span class="p">:</span><span class="mi">1</span><span class="p">;)</span>
+</pre></div>
+</div>
+<p>Gleich wie oben, nur ist diese Regel für das Erkennen eines Distributed-Denial-of-Service Angriffs zuständig.</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">LICSTER</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Kommunikation_u_was-ist-ids.html">1. Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Kommunikation_u_was-ist-ids.html#ids">2. IDS</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3. Wireshark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#durchgefuhrte-angriffe">4. Durchgeführte Angriffe</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#flooding">4.1. Flooding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#angriff-auf-das-flieszband">4.2. Angriff auf das Fließband</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#angriff-auf-die-manuelle-kontrolle">4.3. Angriff auf die manuelle Kontrolle</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#snort-regel">5. Snort Regel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#regel-schreiben">6. Regel schreiben</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#aktion">6.1. Aktion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#kopf">6.2. Kopf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#regeloptionen">6.3. Regeloptionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#http-regel">6.4. HTTP Regel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#icmp-regel">6.5. ICMP Regel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modbus-regel">6.6. Modbus Regel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ssh-regel">6.7. SSH Regel</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="seccom.html">7. Einleitung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seccom.html#id2">8. Secure Layer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seccom.html#id7">9. Remote-IO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seccom.html#id13">10. Zertifikate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seccom.html#id14">11. Fazit und Ausblick</a></li>
+<li class="toctree-l1"><a class="reference internal" href="webapp.html">12. Webapplikation Backend</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="Kommunikation_u_was-ist-ids.html" title="vorheriges Kapitel"><span class="section-number">1. </span>Workflow</a></li>
+      <li>Next: <a href="seccom.html" title="nächstes Kapitel"><span class="section-number">7. </span>Einleitung</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Schnellsuche</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Los" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Fabian Klemm, Eric Hoffmann, Raphael Hausmanninger, Michael Janzer, Muhammet Bilbey, Athanasios Luludis, Janis Schickram.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.0.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/Wireshark_u_Regeln.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

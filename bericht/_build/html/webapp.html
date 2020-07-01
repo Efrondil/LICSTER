@@ -1,0 +1,345 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="de" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="de" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>6. Webapplikation Backend &mdash; LICSTER 2020 Dokumentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
+    <link rel="search" title="Suche" href="search.html" />
+    <link rel="prev" title="1. Einleitung" href="seccom.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> LICSTER
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="seccom.html">1. Einleitung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seccom.html#id2">2. Secure Layer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seccom.html#id7">3. Remote-IO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seccom.html#id13">4. Zertifikate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seccom.html#id14">5. Fazit und Ausblick</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">6. Webapplikation Backend</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">6.1. Einleitung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">6.2. Stand erste Gruppe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">6.3. Veränderungen</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id4">6.3.1. Modularer Aufbau</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">6.3.2. Application Factory</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">6.4. Erweiterungen</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id7">6.4.1. Datenbank</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">6.4.2. Formen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">6.4.3. Authentication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">6.4.4. Administration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">6.4.5. IDS Implementation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">6.4.6. WSGI</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id13">6.5. Aktueller Stand</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">LICSTER</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li><span class="section-number">6. </span>Webapplikation Backend</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/webapp.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="webapplikation-backend">
+<h1><span class="section-number">6. </span>Webapplikation Backend<a class="headerlink" href="#webapplikation-backend" title="Link zu dieser Überschrift">¶</a></h1>
+<p>Fabian Klemm</p>
+<ul class="simple">
+<li><p><a class="reference external" href="#Einleitung">Einleitung</a></p></li>
+<li><p><a class="reference external" href="#Stand-erste-Gruppe">Stand erste Gruppe</a></p></li>
+<li><p><a class="reference external" href="#Veränderungen">Veränderungen</a></p>
+<ul>
+<li><p><a class="reference external" href="#Modularer-Aufbau">Modularer Aufbau</a></p></li>
+<li><p><a class="reference external" href="#Application-Factory">Application Factory</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#Erweiterungen">Erweiterungen</a></p>
+<ul>
+<li><p><a class="reference external" href="#Formen">Formen</a></p></li>
+<li><p><a class="reference external" href="#Datenbank">Datenbank</a></p></li>
+<li><p><a class="reference external" href="#Authentication">Authentication</a></p></li>
+<li><p><a class="reference external" href="#Administration">Administration</a></p></li>
+<li><p><a class="reference external" href="#IDS-Implementation">IDS Implementation</a></p></li>
+<li><p><a class="reference external" href="#WSGI">WSGI</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#Aktueller-Stand">Aktueller Stand</a></p></li>
+</ul>
+<div class="section" id="id1">
+<h2><span class="section-number">6.1. </span>Einleitung<a class="headerlink" href="#id1" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Unsere Aufgabe war es die Web-Applikation des LICSTER zu verbessern.</p>
+<p>Konkret haben wir das Frontent für mehrere Geräte zugänglich gemacht und das Backend um eine Benutzerverwaltung erweitert. Des weiteren haben wir ein PIN-Feld für das HMI programmiert, die Datenbank der Benutzerverwaltung von der Kommandozeile aufsetzbar gemacht und die Logs des IDS zeigen wir nicht nur auf dem Admin Dashboard an, sondern benachrichtigen Admins auch über Breaches per Email. Ein WSGI (Web Server Gateway Interface) wurde implementiert, um die Einbindung eines Web Servers für Endbenutzer zu vereinfachen.</p>
+</div>
+<div class="section" id="id2">
+<h2><span class="section-number">6.2. </span>Stand erste Gruppe<a class="headerlink" href="#id2" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Die Flask Applikation der ersten LICSTER Gruppe war ein abgeschlossenes System, welches nur zur Benutzung auf dem HMI konzipiert war. Sie zeigt den Stand aller Servomotoren an, kann Orders anzeigen und plazieren und Motoren einzeln ansteuern.</p>
+<p>Sie in einem Unternehmensnetzwerk laufen zu lassen wäre ein Sicherheitsrisiko gewesen, da jeder die Motoren bedienen konnte. Des weiteren würde es Anzeigeprobleme geben, da die Web Applikation nur für einen Bildschirm - den des HMI - programmiert wurde.</p>
+<p>Im Folgenden präsentieren wir unsere Veränderungen und Erweiterungen.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="id3">
+<h2><span class="section-number">6.3. </span>Veränderungen<a class="headerlink" href="#id3" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="section" id="id4">
+<h3><span class="section-number">6.3.1. </span>Modularer Aufbau<a class="headerlink" href="#id4" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Die bestehende Webapp war eine Standart Flask App. Da wir sowohl eine Datenbank als auch Wege zum Administrieren und Einloggen hinzufügen wollten, haben wir uns dazu entschlossen der Flask App einen Modularen Aufbau zu geben. Dieser Aufbau wird es auch zukünftigen Gruppen erleichtern sich in die App einzuarbeiten und neue Funktionalitäten hinzuzufügen.</p>
+<p>Flask - im Gegensatz zu anderen populären Frameworks wie z.B. Django hat keinen vorgegebenen Applikationsaufbau. Daher kann man wie folgt eine funktionsfähige Flask Web Applikation schreiben, die (sobald die app mit <code class="docutils literal notranslate"><span class="pre">flask</span> <span class="pre">run</span></code> gestartet wurde) unter localhost:5000/ „Hello World!“ anzeigt</p>
+<p>app.py</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
+    <span class="k">return</span> <span class="s2">&quot;Hello World!&quot;</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Mit jeder hinzugefügten Route wird dieses File allerdings unübersichtlicher, weswegen es sich anbietet die App in verschiede Files aufzugliedern. Wir haben uns dafür entschieden die Flask Applikation wie folgt aufzugliedern:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">app</span><span class="o">/</span>                <span class="c1"># Alles was direkt mit dem Ablauf der App zu tun hat</span>
+<span class="n">app</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span>     <span class="c1"># Die Application Factory</span>
+<span class="n">app</span><span class="o">/</span><span class="n">admins</span><span class="o">.</span><span class="n">py</span>       <span class="c1"># Alle Administrationsteile der Applikation</span>
+<span class="n">app</span><span class="o">/</span><span class="n">auths</span><span class="o">.</span><span class="n">py</span>        <span class="c1"># Alle Authentifikationsteile der Applikation</span>
+<span class="n">app</span><span class="o">/</span><span class="n">db</span><span class="o">.</span><span class="n">py</span>           <span class="c1"># Das Handling der Datenbankverbindung</span>
+<span class="n">app</span><span class="o">/</span><span class="n">forms</span><span class="o">.</span><span class="n">py</span>        <span class="c1"># Das Handling aller Forms</span>
+<span class="n">app</span><span class="o">/</span><span class="n">views</span><span class="o">.</span><span class="n">py</span>        <span class="c1"># Alle Routen zur Bedienung des LICSTER</span>
+<span class="n">app</span><span class="o">/</span><span class="n">templates</span><span class="o">/</span>      <span class="c1"># Alle HTML Templates der App</span>
+<span class="n">app</span><span class="o">/</span><span class="n">static</span><span class="o">/</span>         <span class="c1"># Die CSS, JavaScript, JQuery und Bootstrap Dateien der App</span>
+<span class="n">wsgi</span><span class="o">.</span><span class="n">py</span>             <span class="c1"># Wird benötigt, um die App mit einem WSGI zu starten</span>
+</pre></div>
+</div>
+<p>admins.py, auths.py und views.py sind als Blueprints aufgebaut. Diese Blueprints werden in der main bzw create_app Funktion registriert. Danach funktionieren die Routen der einzelnen Files genauso wie die Routen eines app.py Files.</p>
+</div>
+<div class="section" id="id5">
+<h3><span class="section-number">6.3.2. </span>Application Factory<a class="headerlink" href="#id5" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Eine Application Factory ist eine Funktion, die das globale App Object generiert und zurückgibt. Dies hat verschiedene Vorteile, z.B. ermöglicht es eine einfache Implementierung eines WSGI, das Testen mit verschiedenen globalen Konfigurationen und das einfache Hinzufügen von eigenen CLI Befehlen.</p>
+<p>Zur Implementierung der Application Faktory haben wir den Startpunkt der App aus app.py in app/__init__ verlegt. Der Startpunkt ist nun die Funktion create_app(), welche als erstes eine Flask App kreiert, sie dann konfiguriert und als letztes alle Blueprints registriert, bevor sie die App zurückgibt.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="id6">
+<h2><span class="section-number">6.4. </span>Erweiterungen<a class="headerlink" href="#id6" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Als zwei Große Erweiterungen wurden das Benutzerverwaltungssytem und der Auswertung und Anzeige der IDS Logs zur Web Applikation hinzugefügt.</p>
+<p>Im Benutzerverwaltungssytem gibt es drei Rollen, Admins, Users und nicht angemeldete Personen. Nicht angemeldete Personen haben die Möglichkeit die Startseite der Webapplikation zu besuchen. Andere Webseiten können sie allerdings nicht besuchen, da dies ein Sicherheitsrisiko wäre.</p>
+<p>Angemeldete Benutzer können LICSTER wie zuvor auf dem Bildschirm des HMI nun über jedes Gerät, welches ihnen zur Verfügung steht bedienen.</p>
+<p>Die dritte Rolle des Benutzverwaltungssystems erlaubt den Zugriff auf das Administratoren Dashboard, wo Benutzer hinzugefügt und gelöscht werden. Hier werden außerdem alle Nutzer tabellarisch angezeigt. Des Weiteren werden tabellarisch IDS Logs auf dem Dashboard angezeigt, falls der Benutzer dies aktiviert hat und bei Hinzufügen einer Email-Adressse zu einem Admin Account wird der Benutzer über Breaches direkt per Email benachrichtigt.</p>
+<div class="section" id="id7">
+<h3><span class="section-number">6.4.1. </span>Datenbank<a class="headerlink" href="#id7" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Zur Speicherung der Benutzer, IP Adressen und IDS Logs haben wir eine SQLite Datenbank verwendet, da diese nicht viel Platz braucht und kein Datenbankverwaltungssystem braucht.</p>
+<p>Um die Datenbank schnell aufsetzen zu können und das Passwort fürs HMI schnell verändern zu können wurden die Shortcuts <code class="docutils literal notranslate"><span class="pre">flask</span> <span class="pre">init-db</span></code> und <code class="docutils literal notranslate"><span class="pre">flask</span> <span class="pre">change-hmi-password</span></code> implementiert. Wir haben uns gegen Standart Benutzeraccounts und Passwörter entschieden, da diese ein Sicherheitsrisiko darstellen könnten und man die Datenbank normalerweise nur ein einziges Mal aufsetzen muss.</p>
+<p>Das Passwort wird beim Erstellen eines Benutzers mit der generate_password_hash Methode von Werkzeug gehasht, der gehashte Wert wird dann gespeichert. Beim Login wird die check_password_hash Methode von Werkzeug verwendet. Wir haben uns gegen die Implementierung eines Salts entschieden, da es uns unsinnig erschien die Datenbank gegen Rainbow Table Attacks zu schützen.</p>
+</div>
+<div class="section" id="id8">
+<h3><span class="section-number">6.4.2. </span>Formen<a class="headerlink" href="#id8" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Um CSRF-Attacken, insbesondere Session-Riding Attacken zu verhinden, bei denen Daten mithilfe einer gültigen Sitzung des Opfers manipuliert werden, haben wir für alle Formen FlaskForms verwendet. Dies ist eine im Paket WTForms enthaltene Klasse, welche resistent gegen CSRF-Attacken ist. Jede Subklasse von FlaskForms integriert Tokens in die HTML Formen und überprüft die in der zurückgeschickten Form enthaltenen Tokens mithilfe der validate_on_submit Methode automatisch.</p>
+</div>
+<div class="section" id="id9">
+<h3><span class="section-number">6.4.3. </span>Authentication<a class="headerlink" href="#id9" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Für alle Routen, die zum An- und Abmelden von Benutzern gehören haben wir das auths Blueprint hinzugefügt.</p>
+<p>Die Login-Route überprüft über die validate_on_submit Methode aller FlaskForms, ob eine valide Form gepostet wurde und falls dies nicht der Fall ist wird dem Benutzer eine Form geschickt. Basierend auf die IP Adresse wird dem Benutzer entweder HTML Seite des HMI oder die normale Login Seite geschickt.</p>
+<p>Wenn die validate_on_submit Methode True zurückgibt, wird überprüft wer der Benutzer ist. Danach erfolgt ein Passwortabgleich. Falls dieser auch erfolgreich ist wird der Session eine Variable mit der Benutzerrolle
+hinzugefügt. Falls sich der Benutzer zum ersten Mal anmeldet, wird er nun weitergeleitet zum Passwort setzen. Andernfalls werden normale Benutzer (also auch HMI Benutzer) zur Startseite weitergeleitet und Administratoren zum Dashboard.</p>
+<p>Die Route zum Paswswort überprüft genauso wie die Login Route über die validate_on_submit Methode, ob eine valide Form gepostet wurde und falls dies nicht der Fall ist wird dem Benutzer eine Form geschickt. Wenn der Benutzer ein Passwort eingibt, ersetzt der Hash dieses Passworts den bisherigen Hash in der Datenbank und das Feld für first_login wird auf False bzw. 0 gesetzt.</p>
+</div>
+<div class="section" id="id10">
+<h3><span class="section-number">6.4.4. </span>Administration<a class="headerlink" href="#id10" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Für alle Routen, die zur Benutzeradministration gehören haben wir das admins Blueprint hinzugefügt.</p>
+<p>Das Admin Dashboard gibt den Administratoren einen Überblick über alle vorhandenen User und alle vorhandenen Logs. Des weiteren gibt es einen Button zum Zurücksetzen der Snort Logs.</p>
+<p>Auf dem Admin Dashboard gibt es drei Formen. Die erste Form ist zum Erstellen von Usern. Der Admin muss einen Benutzernamen, ein Passwort und eine Benutzerrolle vergeben. Falls die Benutzerrolle Admin ist, so kann er diesem Benutzer auch eine Email Adresse zuweisen. Zum Löschen eines Benutzers muss der Admin einfach den Benutzernamen in die zweite Form eingeben und auf Löschen klicken. Die letzte Form ist zum Löschen von den Snort Logs.</p>
+</div>
+<div class="section" id="id11">
+<h3><span class="section-number">6.4.5. </span>IDS Implementation<a class="headerlink" href="#id11" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Sakis Text muss vermutlich zum Teil hierhin.</p>
+</div>
+<div class="section" id="id12">
+<h3><span class="section-number">6.4.6. </span>WSGI<a class="headerlink" href="#id12" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Um die leichte Einbindung in einen Server wie nginx zu gewährtleisten, haben wir uns dazu entschlossen ein WSGI zu wählen. Wir haben Gunicorn ausgewählt und ein wsgi.py File erstellt, welches mit der create_app Funktion eine App kreiert und dann startet.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="id13">
+<h2><span class="section-number">6.5. </span>Aktueller Stand<a class="headerlink" href="#id13" title="Link zu dieser Überschrift">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="seccom.html" class="btn btn-neutral float-left" title="1. Einleitung" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Fabian Klemm, Eric Hoffmann, Raphael Hausmanninger, Michael Janzer, Muhammet Bilbey, Athanasios Luludis, Janis Schickram
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

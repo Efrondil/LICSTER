@@ -1,0 +1,44 @@
+.. LICSTER documentation master file, created by
+   sphinx-quickstart on Wed Jul  1 11:49:21 2020.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+=======
+LICSTER
+=======
+
+| Hochschule Augsburg
+| Fakultät für Informatik
+| Projektarbeit
+| Sommersemester 2020
+
+**Team**
+-----------
+
+| Fabian Klemm, <>
+| Eric Hoffmann, <Eric.Hoffmann1@hs-augsburg.de>
+| Raphael Hausmanninger, <>
+| Michael Janzer, <>
+| Muhammet Bilbey <>
+| Athanasios Luludis <>
+| Janis Schickram, <Janis.Schickram@hs-augsburg.de>
+
+
+Inhalt:
+
+.. toctree::
+   :maxdepth: 2
+   :numbered:
+
+   Kommunikation_u_was-ist-ids
+   Wireshark_u_Regeln
+   seccom
+   webapp
+
+
+Index
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
