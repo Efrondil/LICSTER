@@ -1,18 +1,22 @@
 # Webapplikation Backend
-Fabian Klemm
+Fabian Klemm, Athanasios Luludis
 - [Einleitung](#Einleitung)
 - [Stand erste Gruppe](#Stand-erste-Gruppe)
 - [Veränderungen](#Veränderungen)
    - [Modularer Aufbau](#Modularer-Aufbau)
    - [Application Factory](#Application-Factory)
+   - [Design](#Design)
 - [Erweiterungen](#Erweiterungen)
    - [Formen](#Formen)
    - [Datenbank](#Datenbank)
    - [Authentication](#Authentication)
    - [Administration](#Administration)
    - [IDS Implementation](#IDS-Implementation)
+   - [Warnungen per Mail](#Warnungen-per-Mail)
    - [WSGI](#WSGI)
-- [Aktueller Stand](#Aktueller-Stand)
+- [Fazit und Ausblick](#fazit-und-ausblick)
+  - [Fazit](#fazit)
+  - [Ausblick](#ausblick)
 
 ## Einleitung
 
@@ -36,7 +40,7 @@ Im Folgenden präsentieren wir unsere Veränderungen und Erweiterungen.
 
 Die bestehende Webapp war eine Standart Flask App. Da wir sowohl eine Datenbank als auch Wege zum Administrieren und Einloggen hinzufügen wollten, haben wir uns dazu entschlossen der Flask App einen Modularen Aufbau zu geben. Dieser Aufbau wird es auch zukünftigen Gruppen erleichtern sich in die App einzuarbeiten und neue Funktionalitäten hinzuzufügen. 
 
-Flask - im Gegensatz zu anderen populären Frameworks wie z.B. Django hat keinen vorgegebenen Applikationsaufbau. Daher kann man wie folgt eine funktionsfähige Flask Web Applikation schreiben, die (sobald die app mit ```flask run``` gestartet wurde) unter localhost:5000/ "Hello World!" anzeigt
+Flask - im Gegensatz zu anderen populären Frameworks wie z.B. Django hat keinen vorgegebenen Applikationsaufbau. Daher kann man wie folgt eine funktionsfähige Flask Web Applikation schreiben, die (sobald die app mit ```flask run``` gestartet wurde) unter localhost:5000/ "Hello World!" anzeigt.
 
 app.py
 ```
@@ -75,6 +79,15 @@ Eine Application Factory ist eine Funktion, die das globale App Object generiert
 
 Zur Implementierung der Application Faktory haben wir den Startpunkt der App aus app.py in app/\__init__ verlegt. Der Startpunkt ist nun die Funktion create_app(), welche als erstes eine Flask App kreiert, sie dann konfiguriert und als letztes alle Blueprints registriert, bevor sie die App zurückgibt.
 
+### Design
+
+Für das Design haben wir uns zusammengesetzt und beschlossen dass ein schlichteres Design ohne viele visuelle Features besser ist. Es handelt sich nämlich um ein IT-Sicherheits-Projekt bei dem natürlich die Sicherheit des Systems an erster Stelle steht und es seriös wirken soll.
+![LICSTER PIN](https://i.imgur.com/Q6q6D2v.png)
+
+Für das PIN-Feld wurde eine JavaScript Klasse erstellt, welche für die Anzeige der Tasten und das Handling von Eingaben zuständig ist. Diese Anzeige ist nicht für mehrere Geräte angelegt sondern direkt auf das HMI angepasst.
+
+![admin](https://i.imgur.com/XV7jQDH.gif)
+Die normale Anmeldeseite wurde so realisiert, dass sie auf allen Geräten gut verwendet werden kann. 
 - - - 
 
 ## Erweiterungen
@@ -87,6 +100,12 @@ Angemeldete Benutzer können LICSTER wie zuvor auf dem Bildschirm des HMI nun ü
 
 Die dritte Rolle des Benutzverwaltungssystems erlaubt den Zugriff auf das Administratoren Dashboard, wo Benutzer hinzugefügt und gelöscht werden. Hier werden außerdem alle Nutzer tabellarisch angezeigt. Des Weiteren werden tabellarisch IDS Logs auf dem Dashboard angezeigt, falls der Benutzer dies aktiviert hat und bei Hinzufügen einer Email-Adressse zu einem Admin Account wird der Benutzer über Breaches direkt per Email benachrichtigt.
 
+
+Das Styling der Admin Dashboard-Ansicht wurde mithilfe von HTML und CSS (Cascade Style Sheets) verwirklicht. Hierbei haben wir beschlossen das alle Funktionen auf einer einzigen Seite sind, damit es übersichtlich bleibt und die Bedienung schneller ist.
+
+![LICSTER WEB](https://i.imgur.com/wMhk1h6.png)
+
+Zusätzlich gibt noch eine Reset-Funktion mit der man alle snort Einträge aus der Datenbank löschen kann.
 ### Datenbank
 
 Zur Speicherung der Benutzer, IP Adressen und IDS Logs haben wir eine SQLite Datenbank verwendet, da diese nicht viel Platz braucht und kein Datenbankverwaltungssystem braucht.
@@ -120,12 +139,51 @@ Auf dem Admin Dashboard gibt es drei Formen. Die erste Form ist zum Erstellen vo
 
 ### IDS Implementation
 
-Sakis Text muss vermutlich zum Teil hierhin.
+Zusammen mit dem IDS-Team haben wir an einer Lösung gearbeitet um den Administratoren Zugang zu den Logs zu geben. Dazu haben wir einen Log-Reader geschrieben, welcher die vom IDS übermittelten Logs auf Veränderungen überprüft und neue Daten in die Datenbank einträgt. Auf dem Admin-Dashboard werden diese in einer Tabelle angezeigt. Des Weiteren werden Admins - sofern sie sich mit einer Email-Adresse registriert haben - direkt über Sicherheitsverstöße informiert. Die IDS Implementierung ist eine optionale Funktion.
+
+```
+[**] [1:1001005:0] Modbus threshold violation 52 [**]
+[Classification: Attempted Denial of Service] [Priority: 2]
+05/05-13:42:01.732170 192.168.0.30:46084 -> 192.168.0.52:502
+TCP TTL:64 TOS:0x10 ID:48012 IpLen:20 DgmLen:40 DF
+***A**** Seq: 0x14371674  Ack: 0x3ED77  Win: 0x7210  TcpLen: 20
+```
+Ein Snort Log Eintrag hat den oben abgebildeten Aufbau. Um auf den Dashboard nur relevante Daten anzuzeigen, filtern wir den Typ, die Klassifikation, die Priorität und den Zeitpunkt aus den Log Einträgen.
+
+```
+db = get_db()
+last_row = db.execute('SELECT * FROM snort WHERE   id = (SELECT MAX(id) FROM snort)').fetchone()
+
+if (last_row is None) or (last_row[1] != Type or last_row[2] != Classification or last_row[3] != Priority):
+    db.execute('INSERT INTO snort (snort_type, snort_classification, snort_priority, snort_datetime) VALUES (?,?,?,?)', (Type, Classification, Priority, Datetime))
+    db.commit()
+```
+Um Platz in der Datenbank zu sparen und die Email Accounts nicht mit gleichen Warnungen zu überfluten, haben wir uns dazu entschlossen nur neue Logs in der Datenbank zu speichern. Dazu überprüfen wir ob entweder die Datenbank Tabelle leer ist oder der Typ, die Klassifikation oder die Priorität des Logs sich verändert hat. Nur wenn einer der beiden Fälle eintritt, wird ein neuer Eintrag abgespeichert und eine Email versendet.
+
+
+### Warnungen per Mail
+
+Wenn das Intrusion Detection System Verstöße entdeckt, wird eine Email an alle Administratoren mit einer eingetragenen Email verschickt. Dies wurde mithilfe des smtplib Pakets realisiert. Als Absender haben wir eine dafür dedizierte Email-Adresse verwendet. Diese sensiblen Daten sollten logischerweise nach dem Entwicklungsstadium durch Umgebungsvariablen ausgetauscht werden, da dies ansonsten ein Sicherheitsrisiko darstellen würde.
+
+```
+ smtp.login('licster.breach@gmail.com', 'Lic#v77zX') 
+```
+
+
+
 
 ### WSGI
 
-Um die leichte Einbindung in einen Server wie nginx zu gewährtleisten, haben wir uns dazu entschlossen ein WSGI zu wählen. Wir haben Gunicorn ausgewählt und ein wsgi.py File erstellt, welches mit der create_app Funktion eine App kreiert und dann startet.
+Um die leichte Einbindung in einen Server wie nginx zu gewährtleisten, haben wir uns dazu entschlossen ein WSGI einzubinden. Wir haben Gunicorn ausgewählt und ein wsgi.py File erstellt, welches mit der create_app Funktion eine App kreiert und dann startet.
 
 - - - 
 
-## Aktueller Stand
+## Fazit und Ausblick
+
+### Fazit
+
+### Ausblick
+
+Bisher läuft die Server-Client Kommunikation über HTTP. Dies stellt ein Sicherheitsrisiko dar, da Benutzernamen und Passwörter unverschlüsselt über das Netz übertragen werden. Es ist möglich, HTTPS mithilfe von Self-Signed Certificates zu implementieren. Eine Anleitung hierzu kann unter https://gist.github.com/fntlnz/cf14feb5a46b2eda428e000157447309 gefunden werden. Google Chrome hat spezifische Anforderungen an die Zertifikate, welche Probleme verursachen können. Ein Thread zu diesem Problem kann unter https://github.com/webpack/webpack-dev-server/issues/854 gefunden werden.
+
+Aktuell werden Admins via Email unverzüglich über Sicherheitsverstöße benachrichtigt, das Selbe gilt allerdings nicht für das Admin Dashboard. Eine hilfreiche Erweiterung wäre die Implementierung einer Threadlevel Anzeige auf dem Admin Dashboard. Diese sollte automatisch das Sicherheitslevel updaten. Realisiert werden könnte dies z.B. durch eine Socket-Verbindung zwischen der Web Applikation und den Clients. Eine Anleitung zum Implementieren einer Socket-Verbindung kann unter dem folgenden Link gefunden werden: https://www.includehelp.com/python/implementation-of-websocket-using-flask-socket-io-in-python.aspx
