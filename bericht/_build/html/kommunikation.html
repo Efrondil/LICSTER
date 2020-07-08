@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Suche &mdash; LICSTER 2020 Dokumentation</title>
+  <title>2. Workflow &mdash; LICSTER 2020 Dokumentation</title>
   
 
   
@@ -26,7 +26,6 @@
         <script src="_static/doctools.js"></script>
         <script src="_static/language_data.js"></script>
         <script src="_static/translations.js"></script>
-        <script src="_static/searchtools.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -36,7 +35,9 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
-    <link rel="search" title="Suche" href="#" /> 
+    <link rel="search" title="Suche" href="search.html" />
+    <link rel="next" title="3. Intrusion Detection System" href="ids.html" />
+    <link rel="prev" title="1. Einleitung" href="einleitung.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -67,7 +68,7 @@
 
           
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="#" method="get">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -84,9 +85,14 @@
               
             
             
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="einleitung.html">1. Einleitung</a></li>
-<li class="toctree-l1"><a class="reference internal" href="kommunikation.html">2. Workflow</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. Workflow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#jitsi">2.1. Jitsi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#discord">2.2. Discord</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#jira">2.3. Jira</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="ids.html">3. Intrusion Detection System</a></li>
 <li class="toctree-l1"><a class="reference internal" href="seccom.html">4. SecCom</a></li>
 <li class="toctree-l1"><a class="reference internal" href="webapp.html">5. Webapplikation Backend</a></li>
@@ -136,12 +142,14 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Suche</li>
+      <li><span class="section-number">2. </span>Workflow</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
+            <a href="_sources/kommunikation.rst.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
     
@@ -153,24 +161,58 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <noscript>
-  <div id="fallback" class="admonition warning">
-    <p class="last">
-      Please activate JavaScript to enable the search
-      functionality.
-    </p>
-  </div>
-  </noscript>
+  <div class="section" id="workflow">
+<h1><span class="section-number">2. </span>Workflow<a class="headerlink" href="#workflow" title="Link zu dieser Überschrift">¶</a></h1>
+<p>Jedes Projekt sollte damit es erfolgreich wird einen einheitlichen Workflow besitzen.
+Dieser dient zur Planung, Nutzung der Ressourcen und damit das Ziel vom Projekt nicht
+verfehlt wird. Zur Kommunikation im Team nützten wir verschiedene Technologien und
+Vorgehensweisen, um eine möglichst gute kooperative Arbeitsweise zu ermöglichen.
+Diese Strategien werden im Folgenden genauer erklärt.</p>
+<div class="section" id="jitsi">
+<h2><span class="section-number">2.1. </span>Jitsi<a class="headerlink" href="#jitsi" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Um die Kommunikation mit dem Professor herzustellen wurde das Tool jitsi benützt.
+Der Vorteil dabei liegt darin das man sich keinen Account erstellen muss.
+Somit wurde es ermöglicht das jeder leicht an den Meetings teilnehmen konnte.
+Das Meeting mit dem Professor war standartmäßig immer am Donnerstag um 17:30.</p>
+</div>
+<div class="section" id="discord">
+<h2><span class="section-number">2.2. </span>Discord<a class="headerlink" href="#discord" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Zur Besprechung und falls es Themen gibt, die mit dem Team besprochen werden mussten
+wurde Discord benützt. Dabei wurden mehrere Text Kanäle und sprach Kanäle erstellt,
+die man benutzten, kann. Bei den Text Kanälen wurde drauf geachtet das jeder punkt
+einen eigenen Kanal hat. Dies haben wir getan damit eine gute Übersicht gewährleistet
+wird und man somit auch bei einem späteren Zeitpunkt die Informationen leicht nachschauen
+kann die man braucht.</p>
+<img alt="_images/Discord.png" src="_images/Discord.png" />
+</div>
+<div class="section" id="jira">
+<h2><span class="section-number">2.3. </span>Jira<a class="headerlink" href="#jira" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Für die zentrale Verwaltung der aufgaben wurde das Tool jira benützt. Dabei wurde mit
+dem Scrum Prinzip gearbeitet. In Scrum arbeitet man mit sogenannten Sprints. Diese
+bestimmen einen Zeitraum, bei uns 1-2 Wochen, in der bestimmte Aufgaben erledigt
+werden müssen. Die Arbeitsweise funktionierte so dass man sich am Anfang einer jeden
+Woche drauf geeinigt hat welche aufgaben erledigt werden müssen diese wurden dann den
+jeweiligen Personen zugewiesen. Ideen oder aufgaben die für diese Woche noch nicht zu
+bearbeiten sind oder noch nicht möglich sind zu bearbeiten wurden ins Backlog gesetzt.
+Die aufgaben könne dabei drei zustände einnehmen: Aufgabe, wird ausgeführt und fertig.</p>
+<img alt="_images/Jira.png" src="_images/Jira.png" />
+</div>
+</div>
 
-  
-  <div id="search-results">
-  
-  </div>
 
            </div>
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ids.html" class="btn btn-neutral float-right" title="3. Intrusion Detection System" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="einleitung.html" class="btn btn-neutral float-left" title="1. Einleitung" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
@@ -203,14 +245,7 @@
   
   
     
-  
-  <script type="text/javascript">
-    jQuery(function() { Search.loadIndex("searchindex.js"); });
-  </script>
-  
-  <script type="text/javascript" id="searchindexloader"></script>
    
-
 
 </body>
 </html>

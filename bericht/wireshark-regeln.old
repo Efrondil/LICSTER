@@ -1,5 +1,3 @@
-Wireshark
----------
 
 Um einen Überblick über die Pakete, die im LICSTER Netzwerk unterwegs sind, zu
 bekommen, haben wir, mit Wireshark, den Netzwerkverkehr aufgezeichnet.
@@ -14,12 +12,12 @@ Als nächstes haben wir pcaps von Angriffen, die wir Durchgeführt haben, aufgez
 .. image:: img/wireshark_flood.png
 
 Durchgeführte Angriffe
-----------------------
+======================
 
 Die Skripte für die Angriffe sind im Offiziellen Github Repository zu finden (https://github.com/hsainnos/LICSTER/tree/master/attacks).
 
 Flooding
-........
+--------
 
 Flooding ist eine einfache und beliebte Art eines Denial-of-Service Angriffs.
 Für den Angriff haben wir hping3 benutzt. Ein Einfaches CLI-tool um Pakete zu versenden.
@@ -31,7 +29,7 @@ Hier wird eins der beiden RemoteIO's vom LICSTER Testbed geflutet.
     $ sudo hping3 --flood 192.168.0.51
 
 Angriff auf das Fließband
-.........................
+-------------------------
 
 Hier haben wir mit einem kleinen Python-Skript das Fließband vom LICSTER Testbed angegriffen und zum stoppen gebracht.
 Ausgeführt wird er mit:
@@ -41,7 +39,7 @@ Ausgeführt wird er mit:
     $ sudo ./conveyer_belt.py 
 
 Angriff auf die manuelle Kontrolle
-..................................
+----------------------------------
 
 Hier wird, mit einem Python-Skript, die manuelle Kontrolle vom LICSTER Testbed übernommen.
 Ausgeführt wird er mit:
@@ -53,8 +51,11 @@ Ausgeführt wird er mit:
 
 Anschließend kann man dann Befehle senden um das Testbed zu steuern.
 
+Snort
+*****
+
 Snort Regel
------------
+===========
 
 Damit Snort Angriffe/Abnormalitäten erkennen kann, müssen Regeln vorhanden sein, wonach Snort sich richten kann. Darauf Achten sollte man, dass man nicht zu viele Regeln implementiert, denn so kann es passieren, das Snort zu viele Alarme wirft, von denen viele  falsch sind und der echte Alarm untergeht (Man sieht den Angriff vor lauter "Angriffe" nicht mehr). Hat man aber zu wenige Regel implementiert, kann es passieren, dass mögliche Angriffe nicht erkannt werden. Es müssen also so wenig Regeln wie möglich, aber so viele wie nötig implementiert werden um Fehlalarme zu vermeiden und dennoch echte Angriffe erkennen zu können.
 
@@ -74,7 +75,7 @@ Eine Regel besteht aus drei Teilen:
 - Regeloptionen
 
 Aktion
-......
+------
 
 Hier wird angegeben was Snort tun soll, wenn es ein Paket findet, das den
 Regel Kriterien entspricht. Es gibt 3 verfügbare Standardaktionen in Snort,
@@ -89,7 +90,7 @@ reject und sdrop zur verfügung.
 - ``'sdrop'`` das Paket blockieren, aber nicht protokollieren
 
 Kopf
-....
+----
 
 Dieses Feld steht für das Protokoll, die IP Adresse, die Ports und die
 Richtungsanweisung.
@@ -107,7 +108,7 @@ von Snort festlegen. Das Schlüsselwort any kann zur Definition einer beliebigen
 Adresse verwendet werden.
 
 Regeloptionen
-.............
+-------------
 
 Alle Regeloptionen werden durch das Semikolon (;) voneinander getrennt.
 Es gibt vier Kategorien von Regeloptionen:
@@ -126,11 +127,11 @@ Es gibt vier Kategorien von Regeloptionen:
 Für genauere Regeloptionen schaut man hier am besten nach:
 http://manual-snort-org.s3-website-us-east-1.amazonaws.com/node32.html
 
-Unsere Snort Regel
-"""""""""""""""""""
+Unsere Snort Regeln
+*******************
 
-HTTP Regel
-...........
+HTTP Regeln
+===========
 
 .. code-block::
   
@@ -147,7 +148,7 @@ Diese Regel ist dafür da, falls von einem Außenstehenden Netzwerk ein HTTP GET
 Hier ähnlich wie bei der vorherigen Regel, nur wird hier der Alarm geworfen, falls das GET request vom Heimnetz, aber nicht vom HMI, kommt.
 
 ICMP Regel
-...........
+==========
 
 **Portscan**
 
@@ -197,7 +198,7 @@ wird hier ``'fragbits'`` auf ``'M'`` für more gesetzt, was heißt dass noch meh
 Diese Regel ist dafür da, falls zu große ICMP Pakete gesendet werden. ``'dsize'`` ist für die Paketgröße und wurde hier auf größer 1500 gesetzt.
 
 Modbus Regel
-.............
+============
 
 **DoS**
 
@@ -209,7 +210,7 @@ Modbus Regel
 Diese Regel erkennt einen Denial-of-Service Angriff über das Modbus.
 
 SSH Regel
-.........
+=========
 
 **Strange Traffic**
 

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>1. Einleitung &mdash; LICSTER 2020 Dokumentation</title>
+  <title>4. SecCom &mdash; LICSTER 2020 Dokumentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
     <link rel="search" title="Suche" href="search.html" />
-    <link rel="next" title="6. Webapplikation Backend" href="webapp.html" />
-    <link rel="prev" title="LICSTER" href="index.html" /> 
+    <link rel="next" title="5. Webapplikation Backend" href="webapp.html" />
+    <link rel="prev" title="3. Intrusion Detection System" href="ids.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -86,26 +86,33 @@
             
             
               <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Einleitung</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#id2">2. Secure Layer</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id5">2.1. Bridge</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id6">2.2. Bridgemanager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="einleitung.html">1. Einleitung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kommunikation.html">2. Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ids.html">3. Intrusion Detection System</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">4. SecCom</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#einleitung">4.1. Einleitung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#secure-layer">4.2. Secure Layer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">4.2.1. Bridge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">4.2.2. Bridgemanager</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="#id7">3. Remote-IO</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id8">3.1. Mbed TLS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id9">3.2. Heap Speicher</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id10">3.3. Network Stack</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id12">3.4. Modbus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#remote-io">4.3. Remote-IO</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mbed-tls">4.3.1. Mbed TLS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#heap-speicher">4.3.2. Heap Speicher</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#network-stack">4.3.3. Network Stack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modbus">4.3.4. Modbus</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="#id13">4. Zertifikate</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#id14">5. Fazit und Ausblick</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id15">5.1. Fazit</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id16">5.2. Ausblick</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#zertifikate">4.4. Zertifikate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fazit-und-ausblick">4.5. Fazit und Ausblick</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#fazit">4.5.1. Fazit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ausblick">4.5.2. Ausblick</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="webapp.html">6. Webapplikation Backend</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="webapp.html">5. Webapplikation Backend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="probleme.html">6. Probleme</a></li>
 </ul>
 
             
@@ -151,7 +158,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li><span class="section-number">1. </span>Einleitung</li>
+      <li><span class="section-number">4. </span>SecCom</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -170,34 +177,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <p>% Secure Communication
-% Raphael Hausmanninger, Muhammet Bilbey</p>
-<ul class="simple">
-<li><p><a class="reference external" href="#einleitung">Einleitung</a></p></li>
-<li><p><a class="reference external" href="#secure-layer">Secure Layer</a></p>
-<ul>
-<li><p><a class="reference external" href="#bridge">Bridge</a></p></li>
-<li><p><a class="reference external" href="#bridgemanager">Bridgemanager</a></p></li>
-</ul>
-</li>
-<li><p><a class="reference external" href="#remote-io">Remote-IO</a></p>
-<ul>
-<li><p><a class="reference external" href="#mbed-tls">Mbed TLS</a></p></li>
-<li><p><a class="reference external" href="#heap-speicher">Heap Speicher</a></p></li>
-<li><p><a class="reference external" href="#network-stack">Network Stack</a></p></li>
-<li><p><a class="reference external" href="#modbus">Modbus</a></p></li>
-</ul>
-</li>
-<li><p><a class="reference external" href="#zertifikate">Zertifikate</a></p></li>
-<li><p><a class="reference external" href="#fazit-und-ausblick">Fazit und Ausblick</a></p>
-<ul>
-<li><p><a class="reference external" href="#fazit">Fazit</a></p></li>
-<li><p><a class="reference external" href="#ausblick">Ausblick</a></p></li>
-</ul>
-</li>
-</ul>
-<div class="section" id="id1">
-<h1><span class="section-number">1. </span>Einleitung<a class="headerlink" href="#id1" title="Link zu dieser Überschrift">¶</a></h1>
+  <div class="section" id="seccom">
+<h1><span class="section-number">4. </span>SecCom<a class="headerlink" href="#seccom" title="Link zu dieser Überschrift">¶</a></h1>
+<div class="section" id="einleitung">
+<h2><span class="section-number">4.1. </span>Einleitung<a class="headerlink" href="#einleitung" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Als die Secure Communication Gruppe haben wir uns ausschließlich mit der internen Kommunikation des LICSTERs auseinandergesetzt. Als Ziel haben wir es uns gesetzt das bereits implementierte Modbus-Protokoll, das in dieser Form sich als sehr unsicher bewiesen hat, zu verschlüsseln. Dabei haben wir uns dazu entschieden, das TLS-Protokoll einzusetzen. Dieses bietet zusätzlich zu der Verschlüsselung der Anwendungsschicht ein Handshake-Protokoll, das die Authentifizierung der Kommunikationspartner ermöglicht.</p>
 <p>Veranschaulichung der ursprünglichen Kommunikation:<span class="raw-html-m2r"><br></span></p>
 <a class="reference external image-reference" href="./assets/diagrams/No_Secure_Layer_Overview.svg"><img alt="" src="_images/No_Secure_Layer_Overview.svg" /></a>
@@ -205,8 +188,8 @@
 <p>Veranschaulichung mit Secure Layer:<span class="raw-html-m2r"><br></span></p>
 <a class="reference external image-reference" href="./assets/diagrams/Secure_Layer_Overview.svg"><img alt="" src="_images/Secure_Layer_Overview.svg" /></a>
 </div>
-<div class="section" id="id2">
-<h1><span class="section-number">2. </span>Secure Layer<a class="headerlink" href="#id2" title="Link zu dieser Überschrift">¶</a></h1>
+<div class="section" id="secure-layer">
+<h2><span class="section-number">4.2. </span>Secure Layer<a class="headerlink" href="#secure-layer" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Der Secure Layer (sichere Schicht) ist die Komponente die zwischen den Remote-IOs und OpenPLC sitz.</p>
 <p>Detaillierte Veranschaulichung:<span class="raw-html-m2r"><br></span></p>
 <a class="reference external image-reference" href="./assets/diagrams/Secure_Layer_Details.svg"><img alt="" src="_images/Secure_Layer_Details.svg" /></a>
@@ -215,25 +198,25 @@
 <li><p><a class="reference external" href="#bridge">Bridge</a></p></li>
 <li><p><a class="reference external" href="#bridgemanager">Bridgemanager</a></p></li>
 </ul>
-<div class="section" id="id5">
-<h2><span class="section-number">2.1. </span>Bridge<a class="headerlink" href="#id5" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="section" id="id1">
+<h3><span class="section-number">4.2.1. </span>Bridge<a class="headerlink" href="#id1" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Die Bridge (Brücke) besteht aus zwei TCP Verbindungen, eine TLS Verbindung zu einem Remote TCP Server, und einen lokalen TCP Server der auf eine lokale Verbindung wartet.<span class="raw-html-m2r"><br></span>
 Um dies zu ermöglichen muss die Bridge ein wenig Modbus verstehen, da das Message-Framing in diesem Fall durch Informationen im Header vom Modbus Protokoll vorhanden ist.</p>
 </div>
-<div class="section" id="id6">
-<h2><span class="section-number">2.2. </span>Bridgemanager<a class="headerlink" href="#id6" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="section" id="id2">
+<h3><span class="section-number">4.2.2. </span>Bridgemanager<a class="headerlink" href="#id2" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Der Bridgemanager (Brückenverwalter) verwaltet die einzelnen Brücken und startet diese bei Fehlern neu.
 <span class="raw-html-m2r"><!-- TODO: evtl. ausführlicher --></span></p>
 </div>
 </div>
-<div class="section" id="id7">
-<h1><span class="section-number">3. </span>Remote-IO<a class="headerlink" href="#id7" title="Link zu dieser Überschrift">¶</a></h1>
-<!-- TODO: evtl. kleine Einleitung bzw. Erläuterung --><div class="section" id="id8">
-<h2><span class="section-number">3.1. </span>Mbed TLS<a class="headerlink" href="#id8" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="section" id="remote-io">
+<h2><span class="section-number">4.3. </span>Remote-IO<a class="headerlink" href="#remote-io" title="Link zu dieser Überschrift">¶</a></h2>
+<!-- TODO: evtl. kleine Einleitung bzw. Erläuterung --><div class="section" id="mbed-tls">
+<h3><span class="section-number">4.3.1. </span>Mbed TLS<a class="headerlink" href="#mbed-tls" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Um TLS auf den Remote-IOs zu implementieren haben wir uns für die Mbed TLS Bibliothek entschieden, da diese kompakt, portabel und einfach verständlich ist. Hierbei handelt es sich um ein Open-Source Projekt, welches auf GitHub (<a class="reference external" href="https://github.com/ARMmbed/mbedtls">https://github.com/ARMmbed/mbedtls</a>) zu finden ist. Ein weiterer Grund der für Mbed TLS gesprochen hat ist die Tatsache, dass es innerhalb STM32CubeMX konfiguriert werden kann, und dadurch viel Zeit beim konfigurieren der Bibliothek gespart werden kann.</p>
 </div>
-<div class="section" id="id9">
-<h2><span class="section-number">3.2. </span>Heap Speicher<a class="headerlink" href="#id9" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="section" id="heap-speicher">
+<h3><span class="section-number">4.3.2. </span>Heap Speicher<a class="headerlink" href="#heap-speicher" title="Link zu dieser Überschrift">¶</a></h3>
 <p>FreeRTOS verwaltet den gesamten Heap Speicher, darum schlagen Aufrufe der Standardbibliotheksfunktionen für dynamische Speicherverwaltung fehl. Das heißt jeder Aufruf an <code class="docutils literal notranslate"><span class="pre">calloc</span></code> oder <code class="docutils literal notranslate"><span class="pre">malloc</span></code> geben <code class="docutils literal notranslate"><span class="pre">NULL</span></code> zurück. Jedoch benötigt Mbed TLS dynamischen Speicher. Explizit benötigt Mbed TLS <code class="docutils literal notranslate"><span class="pre">calloc</span></code> und <code class="docutils literal notranslate"><span class="pre">free</span></code>. Alternativ kann Mbed TLS auch mit einem statischen Block an Speicher arbeiten, jedoch haben wir uns für den dynamischen Ansatz entschieden.
 <span class="raw-html-m2r"><!-- TODO: WARUM DYNAMISCHER ANSATZ UND NICHT STATISCHER! --></span></p>
 <p>Diese Implementation ist in <code class="docutils literal notranslate"><span class="pre">heap_mem.h</span></code> deklariert und in <code class="docutils literal notranslate"><span class="pre">heap_mem.c</span></code> definiert.</p>
@@ -316,8 +299,8 @@ Um dies zu ermöglichen muss die Bridge ein wenig Modbus verstehen, da das Messa
 </pre></div>
 </div>
 </div>
-<div class="section" id="id10">
-<h2><span class="section-number">3.3. </span>Network Stack<a class="headerlink" href="#id10" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="section" id="network-stack">
+<h3><span class="section-number">4.3.3. </span>Network Stack<a class="headerlink" href="#network-stack" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Um Mbed TLS in den aktuellen LWIP Network Stack einzubringen mussten einige Anpassungen gemacht werden.</p>
 <p>LWIP verwendet für die Adressierung der Sockets einen Index.
 Dieser Index wird standardmäßig in Mbed TLS nicht richtig adressiert, was dazu führt das alle <code class="docutils literal notranslate"><span class="pre">mbedtls_net_context</span></code> auf den gleichen Socket in LWIP verweisen. Diese Socketverwaltung musste somit selbst implementiert werden.
@@ -367,8 +350,8 @@ Wenn ein Socketindex aktiv, bzw. reserviert ist wird dieser auf eine Wert der ni
 </div>
 <p>Sowohl beim initialisieren als auch beim freigeben wurde Nebenläufigkeit berücksichtig. Um diese problemlose Nebenläufigkeit in unserer eigenen Implementierung zu gewährleisten werden alle kritischen Vorgänge mit einem Mutex, bzw. Semaphore abgesichert. Der Code der das gewährleistet wird unter <a class="reference external" href="#heap-speicher">Heap Speicher</a> erläutert.</p>
 </div>
-<div class="section" id="id12">
-<h2><span class="section-number">3.4. </span>Modbus<a class="headerlink" href="#id12" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="section" id="modbus">
+<h3><span class="section-number">4.3.4. </span>Modbus<a class="headerlink" href="#modbus" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Um die TLS Implementierung optional zu halten wurde viel mit Präprozessoren gearbeitet. Wenn eine bestimmte Präprozessor definiert wird werden bestimmte Sektionen an Code ausgeführt, dadurch kann TLS einfach an- bzw. abgeschaltet werden. Zur Veranschaulichung wie das konkret in Code funktioniert dient folgendes Beispiel:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifdef USE_TLS</span>
 <span class="c1">// Code in diesem Bereich wird nur ausgeführt wenn USE_TLS definiert ist.</span>
@@ -381,8 +364,8 @@ Wenn ein Socketindex aktiv, bzw. reserviert ist wird dieser auf eine Wert der ni
 <p>Generell hat sich strukturell nicht viel geändert zur ursprünglichen Modbus Implementation, es wurden lediglich LWIP Funktionen mit denen von Mbed TLS ersetzt, und wenn <code class="docutils literal notranslate"><span class="pre">USE_TLS</span></code> definiert ist wird zusätzlich der TLS Handshake durchgeführt.</p>
 </div>
 </div>
-<div class="section" id="id13">
-<h1><span class="section-number">4. </span>Zertifikate<a class="headerlink" href="#id13" title="Link zu dieser Überschrift">¶</a></h1>
+<div class="section" id="zertifikate">
+<h2><span class="section-number">4.4. </span>Zertifikate<a class="headerlink" href="#zertifikate" title="Link zu dieser Überschrift">¶</a></h2>
 <p>In <code class="docutils literal notranslate"><span class="pre">./tools/</span></code> wurde ein Bash Skript mit dem Namen <code class="docutils literal notranslate"><span class="pre">create_new_certs_with_ca.sh</span></code> erstellt.
 Dieses Skript erstellt eine CA, sowie alle benötigten Zertifikate.
 Zur Erstellung dieser Daten werden von Mbed TLS bereitgestellte Programme verwendet (<code class="docutils literal notranslate"><span class="pre">gen_key</span></code> und <code class="docutils literal notranslate"><span class="pre">cert_write</span></code>). Diese sind als Sourcecode auf GitHub zu finden:
@@ -391,15 +374,16 @@ Zur Erstellung dieser Daten werden von Mbed TLS bereitgestellte Programme verwen
 Die CA (Certificate Authority) und ihre signierten Zertifikate werden in Ordnern des <a class="reference external" href="#secure-layer">Secure Layers</a> gespeichert.
 Daraufhin werden die für die Remote-IOs benötigten Schlüssel und Zertifikate in eine Makefile exportiert, wodurch beim Bauen der Remote-IO Binaries diese alle benötigten Informationen erhalten.</p>
 </div>
-<div class="section" id="id14">
-<h1><span class="section-number">5. </span>Fazit und Ausblick<a class="headerlink" href="#id14" title="Link zu dieser Überschrift">¶</a></h1>
-<!-- evtl. überarbeiten --><div class="section" id="id15">
-<h2><span class="section-number">5.1. </span>Fazit<a class="headerlink" href="#id15" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="section" id="fazit-und-ausblick">
+<h2><span class="section-number">4.5. </span>Fazit und Ausblick<a class="headerlink" href="#fazit-und-ausblick" title="Link zu dieser Überschrift">¶</a></h2>
+<!-- evtl. überarbeiten --><div class="section" id="fazit">
+<h3><span class="section-number">4.5.1. </span>Fazit<a class="headerlink" href="#fazit" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Durch die zusätzlichen Implementierungen kann nun optional zwischen der ursprünglich unverschlüsselten Modbus Verbindung und der durch das TLS-Protokoll verschlüsselten Verbindung ausgewählt werden. Zusätzlich zu der verschlüsselten Verbindung übernimmt das Protokoll auch die Überprüfung der Authentizität der Kommunikationspartner. So muss bei einem Verbindungsaufbau das Remote-IO mit einem Zertifikat belegen, dass dieser dem LICSTER-Netzwerk zugehörig ist.</p>
 </div>
-<div class="section" id="id16">
-<h2><span class="section-number">5.2. </span>Ausblick<a class="headerlink" href="#id16" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="section" id="ausblick">
+<h3><span class="section-number">4.5.2. </span>Ausblick<a class="headerlink" href="#ausblick" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Nach der durch die Verschlüsselung der Kommunikationswege zwischen dem PLC und der Remote-IOs errungenen Sicherheit kann an der Beschleunigung des TLS-Handshakes gearbeitet werden. Durch verwenden eines Secure Elements kann der momentan sehr langsame Verbindungsaufbau von etwa 10 Sekunden beschleunigt werden. Solch ein Microchip würde zusätzliche Sicherheit mit sich bringen, da die Privat Keys dieser unzugänglich sind. Nach der Verbesserung der Performance des Protokolls könnte die sichere Modbus Verbindung auch auf die weiteren Komponenten (HMI und SCADA) des Netzwerkes ausgeweitet werden. Um eine höhere Authentizität im LICSTER-Netzwerk zu erreichen könnte man die Client Authentifizierung derartig erweitern, dass zusätzlich zu den Remote-IOs auch das PLC mithilfe von Zertifikaten seine Zugehörigkeit bestätigen muss.</p>
+</div>
 </div>
 </div>
 
@@ -411,10 +395,10 @@ Daraufhin werden die für die Remote-IOs benötigten Schlüssel und Zertifikate 
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="webapp.html" class="btn btn-neutral float-right" title="6. Webapplikation Backend" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="webapp.html" class="btn btn-neutral float-right" title="5. Webapplikation Backend" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral float-left" title="LICSTER" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="ids.html" class="btn btn-neutral float-left" title="3. Intrusion Detection System" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -2,28 +2,11 @@
    :format: html
 
 
-% Secure Communication
-% Raphael Hausmanninger, Muhammet Bilbey
+.. Secure Communication
+.. Raphael Hausmanninger, Muhammet Bilbey
 
-
-* `Einleitung <#einleitung>`_
-* `Secure Layer <#secure-layer>`_
-
-  * `Bridge <#bridge>`_
-  * `Bridgemanager <#bridgemanager>`_
-
-* `Remote-IO <#remote-io>`_
-
-  * `Mbed TLS <#mbed-tls>`_
-  * `Heap Speicher <#heap-speicher>`_
-  * `Network Stack <#network-stack>`_
-  * `Modbus <#modbus>`_
-
-* `Zertifikate <#zertifikate>`_
-* `Fazit und Ausblick <#fazit-und-ausblick>`_
-
-  * `Fazit <#fazit>`_
-  * `Ausblick <#ausblick>`_
+SecCom
+======
 
 Einleitung
 ----------

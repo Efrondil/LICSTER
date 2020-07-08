@@ -1,6 +1,6 @@
 
 Workflow
---------
+########
 
 Jedes Projekt sollte damit es erfolgreich wird einen einheitlichen Workflow besitzen.
 Dieser dient zur Planung, Nutzung der Ressourcen und damit das Ziel vom Projekt nicht
@@ -9,14 +9,14 @@ Vorgehensweisen, um eine möglichst gute kooperative Arbeitsweise zu ermögliche
 Diese Strategien werden im Folgenden genauer erklärt.
 
 Jitsi
-.....
+*****
 Um die Kommunikation mit dem Professor herzustellen wurde das Tool jitsi benützt.
 Der Vorteil dabei liegt darin das man sich keinen Account erstellen muss.
 Somit wurde es ermöglicht das jeder leicht an den Meetings teilnehmen konnte.
 Das Meeting mit dem Professor war standartmäßig immer am Donnerstag um 17:30.
 
 Discord
-.......
+*******
 
 Zur Besprechung und falls es Themen gibt, die mit dem Team besprochen werden mussten
 wurde Discord benützt. Dabei wurden mehrere Text Kanäle und sprach Kanäle erstellt,
@@ -28,7 +28,7 @@ kann die man braucht.
 .. image:: img/Discord.png
 
 Jira
-....
+****
 
 Für die zentrale Verwaltung der aufgaben wurde das Tool jira benützt. Dabei wurde mit
 dem Scrum Prinzip gearbeitet. In Scrum arbeitet man mit sogenannten Sprints. Diese
@@ -41,8 +41,10 @@ Die aufgaben könne dabei drei zustände einnehmen: Aufgabe, wird ausgeführt un
 
 .. image:: img/Jira.png
 
-IDS
----
+Intrusion Detection System
+##########################
+
+.. Michael Jenzer, Eric Hoffmann, Janis Schickram
 
 In unserer heutigen Zeit nehmen Angriffe auf industriele Systeme stetig weiter zu.
 Immer wieder werden neue arten gefunden wie ein System angegriffen werden kann.
@@ -56,8 +58,8 @@ oder wie groß es ist. Ein weiteres wertvolles Sicherheitstool was ebenfalls ein
 wird ist ein Netzwerk-IDS (Intrusion Detection-System). Um dieses geht es auch in unserem
 Teil Projekt, bei dem wir ein solches System in dem Testbed Licster implementiert haben.
 
-Was ist ein ids
-...............
+Was ist ein IDS
+***************
 
 Doch was genau ist nun ein Intrusion Detection system. Eine gute Definition für ein ids
 lauten folgend. „Ein IDS (Intrusion Detection System) ist ein Gerät oder eine Anwendung,
@@ -71,8 +73,8 @@ verhält bspw. Modbus mehr traffic in der Sekunde als eigentlich der Standard f�
 System ist. Durch diese Weise kann ein ids Angriffe erkennen welche an der Firewall
 vorbei kommen oder aus dem eigenem Netzwerk stammen.
 
-Wiso man es braucht
-...................
+Wieso man es braucht
+********************
 
 Keine Firewall ist Fehler frei und kein Netzwerk ist undurchdringlich. Angreifer
 entwickeln ständig neue Exploits und Angriffstechniken, um auf ein System zu kommen.
@@ -90,13 +92,13 @@ Personal besteht nun darin zu schauen welche nachrichtig stimmen und welche ein 
 positiv sind.
 
 Arten von IDS
-.............
+*************
 
 Im Grundlegen werden zwischen zwei Arten von ids Systemen unterschieden nämlich der signature-based detection
 und der anomaly-based detection.
 
 Signature-based detection
-~~~~~~~~~~~~~~~~~~~~~~~~~
+=========================
 
 Bei dieser Methode werden feste Muster verwendet, um den traffic zu kontrollieren.
 Diese Muster beschreiben verdächtige Sammlung von Abfolgen von Aktivitäten oder
@@ -114,7 +116,7 @@ arbeiten. Desweitern tuen sich solches System sehr schwer mit Angriffen bei dene
 Menschen aktiv etwas tun.
 
 Anomaly-based detection
-~~~~~~~~~~~~~~~~~~~~~~~
+=======================
 
 Bei diesem System ist das Netzwerkverhalten der Haupt Parameter. Deshalb wird vorerst ein
 Model erstellt, welches zeigt wie der normale traffic im Netzwerk aussehen soll.
@@ -128,3 +130,8 @@ Die Effizienz des Systems hängt von der effektiven Implementierung und dem Test
 Regelsätzen für alle Protokolle ab. Darüber hinaus wirken sich verschiedene Protokolle
 verschieden stark auf das System aus. Des Weiteren hat das System Probleme dabei wen das
 böswillige Verhalten unter das akzeptierende Verhalten fällt.
+
+Wireshark
+*********
+
+.. include:: wireshark-regeln.rst
