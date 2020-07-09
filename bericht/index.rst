@@ -17,7 +17,7 @@ LICSTER
 
 | Fabian Klemm, <>
 | Eric Hoffmann, <Eric.Hoffmann1@hs-augsburg.de>
-| Raphael Hausmanninger, <>
+| Raphael Hausmanninger, <Raphael.Hausmanninger@hs-augsburg.de>
 | Michael Janzer, <>
 | Muhammet Bilbey <>
 | Athanasios Luludis <>

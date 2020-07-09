@@ -5,7 +5,7 @@
 .. Secure Communication
 .. Raphael Hausmanninger, Muhammet Bilbey
 
-SecCom
+Secure Communication
 ======
 
 Einleitung
@@ -72,12 +72,12 @@ Remote-IO
 Mbed TLS
 ^^^^^^^^
 
-Um TLS auf den Remote-IOs zu implementieren haben wir uns für die Mbed TLS Bibliothek entschieden, da diese kompakt, portabel und einfach verständlich ist. Hierbei handelt es sich um ein Open-Source Projekt, welches auf GitHub (\ `https://github.com/ARMmbed/mbedtls <https://github.com/ARMmbed/mbedtls>`_\ ) zu finden ist. Ein weiterer Grund der für Mbed TLS gesprochen hat ist die Tatsache, dass es innerhalb STM32CubeMX konfiguriert werden kann, und dadurch viel Zeit beim konfigurieren der Bibliothek gespart werden kann.
+Um TLS auf den Remote-IOs zu implementieren haben wurde die Mbed TLS Bibliothek gewählt, da diese kompakt, portabel und einfach verständlich ist. Hierbei handelt es sich um ein Open-Source Projekt, welches auf GitHub (\ `https://github.com/ARMmbed/mbedtls <https://github.com/ARMmbed/mbedtls>`_\ ) zu finden ist. Ein weiterer Grund der für Mbed TLS gesprochen hat ist die Tatsache, dass es innerhalb STM32CubeMX konfiguriert werden kann, und dadurch viel Zeit beim konfigurieren der Bibliothek gespart werden kann.
 
 Heap Speicher
 ^^^^^^^^^^^^^
 
-FreeRTOS verwaltet den gesamten Heap Speicher, darum schlagen Aufrufe der Standardbibliotheksfunktionen für dynamische Speicherverwaltung fehl. Das heißt jeder Aufruf an ``calloc`` oder ``malloc`` geben ``NULL`` zurück. Jedoch benötigt Mbed TLS dynamischen Speicher. Explizit benötigt Mbed TLS ``calloc`` und ``free``. Alternativ kann Mbed TLS auch mit einem statischen Block an Speicher arbeiten, jedoch haben wir uns für den dynamischen Ansatz entschieden.
+FreeRTOS verwaltet den gesamten Heap Speicher, darum schlagen Aufrufe der Standardbibliotheksfunktionen für dynamische Speicherverwaltung fehl. Das heißt jeder Aufruf an ``calloc`` oder ``malloc`` geben ``NULL`` zurück. Jedoch benötigt Mbed TLS dynamischen Speicher. Explizit benötigt Mbed TLS ``calloc`` und ``free``. Alternativ kann Mbed TLS auch mit einem statischen Block an Speicher arbeiten, jedoch wurde den dynamischen Ansatz gewählt.
 :raw-html-m2r:`<!-- TODO: WARUM DYNAMISCHER ANSATZ UND NICHT STATISCHER! -->`
 
 Diese Implementation ist in ``heap_mem.h`` deklariert und in ``heap_mem.c`` definiert.
