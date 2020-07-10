@@ -6,7 +6,7 @@
 .. Raphael Hausmanninger, Muhammet Bilbey
 
 Secure Communication
-======
+====================
 
 Einleitung
 ----------
