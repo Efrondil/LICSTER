@@ -28,7 +28,7 @@ Deswegen haben wir uns zur Aufgabe gemacht, LICSTER eine weitere Sicherheitsschi
 Einrichtung Pi
 **************
 
-Für die Realisierung des IDS wurde sich für ein Raspberry Pi 4 entschieden. Mit 4 GB RAM in der ausgewälten Konfiguration ist das Pi geeignet Snort als IDS laufen zu lassen. Als Betriebssystem wird das Raspberry Pi OS (früher Raspbian genannt) genutzt, welches von der offiziellen Seite bezogen wurde (https://www.raspberrypi.org/downloads/). Dies wurde mit einem Image-Tool auf eine SD-Karte gespielt und über SSH wurden dann die restlichen Einrichtungen vorgenommen. Nachdem alles eingerichtet war, konnte das Pi in das LICSTER Netzwerk eingesetzt werden. Das Pi wurde an den Mirrorport des Switchs angeschlossen, damit der gesamte Traffic des LICSTERs am Pi empfangen werden kann. Um durch den Dauerbetrieb entstehende Abwärme entgegenzuwirken wurde eine Hülle mit Lüftern für das Pi angeschafft. Im Home-Verzeichnis wurde das Git aus GitLab gecloned. Dieses Repository enthält die Configs und Rules für Snort, sowie weitere Skripte für das IDS.
+Für die Realisierung des IDS wurde sich für ein Raspberry Pi 4 entschieden. Mit 4 GB RAM - in der ausgewälten Konfiguration - ist das Pi geeignet Snort als IDS zu verwenden. Als Betriebssystem wird das Raspberry Pi OS (früher Raspbian genannt) genutzt, welches von der offiziellen Seite bezogen wurde (https://www.raspberrypi.org/downloads/). Dies wurde mit einem Image-Tool auf eine SD-Karte gespielt und über SSH wurden dann die restlichen Einrichtungen vorgenommen. Nachdem alles eingerichtet war, konnte das Pi in das LICSTER Netzwerk eingesetzt werden. Das Pi wurde an den Mirrorport des Switchs angeschlossen, damit der gesamte Traffic des LICSTERs am Pi empfangen werden kann. Um durch den Dauerbetrieb entstehende Abwärme entgegenzuwirken wurde eine Hülle mit Lüftern für das Pi angeschafft. Im Home-Verzeichnis wurde das Git aus GitLab gecloned. Dieses Repository enthält die Configs und Rules für Snort, sowie weitere Skripte für das IDS.
 
 .. image:: img/Rapsberry_IDS_Showcase.jpg
 
@@ -36,7 +36,7 @@ Für die Realisierung des IDS wurde sich für ein Raspberry Pi 4 entschieden. Mi
 Einrichtung VM
 **************
 
-Aus Kostengründen konnte nicht für jedes der drei Mitglieder ein Raspberry Pi gekauft werden. Dieses Problem wurde mit Virtuellen Maschinen gelöst. Virtuelle Maschinen emulieren bestimmte Hardware als Software auf einem Hostsystem. Als Virtualisierungssoftware wurde VirtualBox verwendet welches ein Image des Raspberry Pi Desktops nutzte. Somit konnte jedes Mitglied seine eigenes Raspberry Pi simulieren und jede Aufgabe konnte von Jedem erledigt werden. Bei der Einrichtung des Betriebssystems musste auf die bautechnischen Beschränkungen des Raspberry Pi 4 geachtet werden. Somit musste in der VM der Hauptspeicher auf 4 GB RAM beschränkt und der Festplattenspeicher musste auf die 64 GB der eingebauten SD-Karte begrenzt werden.
+Aus Kostengründen konnte nicht für jedes der drei Mitglieder ein Raspberry Pi gekauft werden. Dieses Problem wurde mit Virtuellen Maschinen gelöst. Virtuelle Maschinen emulieren Hardware als Software auf einem Hostsystem. Als Virtualisierungssoftware wurde VirtualBox verwendet welches ein Image des Raspberry Pi Desktops nutzte. Somit konnte jedes Mitglied seine eigenes Raspberry Pi simulieren und jede Aufgabe konnte von Jedem erledigt werden. Bei der Einrichtung des Betriebssystems musste auf die bautechnischen Beschränkungen des Raspberry Pi 4 geachtet werden. Somit musste in der VM der Hauptspeicher auf 4 GB RAM beschränkt und der Festplattenspeicher musste auf die 64 GB der eingebauten SD-Karte begrenzt werden.
 
 
 Was ist ein IDS
@@ -57,9 +57,9 @@ vorbei kommen oder aus dem eigenem Netzwerk stammen.
 Wieso man es braucht
 ********************
 
-Keine Firewall ist Fehler frei und kein Netzwerk ist undurchdringlich. Angreifer
+Keine Firewall ist fehlerfrei und kein Netzwerk ist undurchdringlich. Angreifer
 entwickeln ständig neue Exploits und Angriffstechniken, um auf ein System zu kommen.
-Was von fielen Angreifern zusätzlich gerne genutzt wird ist Social Engineering oder
+Was von vielen Angreifern zusätzlich gerne genutzt wird ist Social Engineering oder
 andere arten von Malware. Über diese Methoden gelangen sie meist an Benutzeranmeldeinformationen
 und dadurch haben sie nun einen berechtigten zugriff auf das Netzwerk ohne das die
 Firewall dies als böswilligen angriff sieht. Ein Network Intrusion Detection System kann
