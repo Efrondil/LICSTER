@@ -218,12 +218,12 @@ Die Sicherheitslage von Industriesystemen auf der ganzen Welt wird immer kritisc
 </div>
 <div class="section" id="einrichtung-pi">
 <h2><span class="section-number">3.2. </span>Einrichtung Pi<a class="headerlink" href="#einrichtung-pi" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Für die Realisierung des IDS wurde sich für ein Raspberry Pi 4 entschieden. Mit 4 GB RAM in der ausgewälten Konfiguration ist das Pi geeignet Snort als IDS laufen zu lassen. Als Betriebssystem wird das Raspberry Pi OS (früher Raspbian genannt) genutzt, welches von der offiziellen Seite bezogen wurde (<a class="reference external" href="https://www.raspberrypi.org/downloads/">https://www.raspberrypi.org/downloads/</a>). Dies wurde mit einem Image-Tool auf eine SD-Karte gespielt und über SSH wurden dann die restlichen Einrichtungen vorgenommen. Nachdem alles eingerichtet war, konnte das Pi in das LICSTER Netzwerk eingesetzt werden. Das Pi wurde an den Mirrorport des Switchs angeschlossen, damit der gesamte Traffic des LICSTERs am Pi empfangen werden kann. Um durch den Dauerbetrieb entstehende Abwärme entgegenzuwirken wurde eine Hülle mit Lüftern für das Pi angeschafft. Im Home-Verzeichnis wurde das Git aus GitLab gecloned. Dieses Repository enthält die Configs und Rules für Snort, sowie weitere Skripte für das IDS.</p>
+<p>Für die Realisierung des IDS wurde sich für ein Raspberry Pi 4 entschieden. Mit 4 GB RAM - in der ausgewälten Konfiguration - ist das Pi geeignet Snort als IDS zu verwenden. Als Betriebssystem wird das Raspberry Pi OS (früher Raspbian genannt) genutzt, welches von der offiziellen Seite bezogen wurde (<a class="reference external" href="https://www.raspberrypi.org/downloads/">https://www.raspberrypi.org/downloads/</a>). Dies wurde mit einem Image-Tool auf eine SD-Karte gespielt und über SSH wurden dann die restlichen Einrichtungen vorgenommen. Nachdem alles eingerichtet war, konnte das Pi in das LICSTER Netzwerk eingesetzt werden. Das Pi wurde an den Mirrorport des Switchs angeschlossen, damit der gesamte Traffic des LICSTERs am Pi empfangen werden kann. Um durch den Dauerbetrieb entstehende Abwärme entgegenzuwirken wurde eine Hülle mit Lüftern für das Pi angeschafft. Im Home-Verzeichnis wurde das Git aus GitLab gecloned. Dieses Repository enthält die Configs und Rules für Snort, sowie weitere Skripte für das IDS.</p>
 <img alt="_images/Rapsberry_IDS_Showcase.jpg" src="_images/Rapsberry_IDS_Showcase.jpg" />
 </div>
 <div class="section" id="einrichtung-vm">
 <h2><span class="section-number">3.3. </span>Einrichtung VM<a class="headerlink" href="#einrichtung-vm" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Aus Kostengründen konnte nicht für jedes der drei Mitglieder ein Raspberry Pi gekauft werden. Dieses Problem wurde mit Virtuellen Maschinen gelöst. Virtuelle Maschinen emulieren bestimmte Hardware als Software auf einem Hostsystem. Als Virtualisierungssoftware wurde VirtualBox verwendet welches ein Image des Raspberry Pi Desktops nutzte. Somit konnte jedes Mitglied seine eigenes Raspberry Pi simulieren und jede Aufgabe konnte von Jedem erledigt werden. Bei der Einrichtung des Betriebssystems musste auf die bautechnischen Beschränkungen des Raspberry Pi 4 geachtet werden. Somit musste in der VM der Hauptspeicher auf 4 GB RAM beschränkt und der Festplattenspeicher musste auf die 64 GB der eingebauten SD-Karte begrenzt werden.</p>
+<p>Aus Kostengründen konnte nicht für jedes der drei Mitglieder ein Raspberry Pi gekauft werden. Dieses Problem wurde mit Virtuellen Maschinen gelöst. Virtuelle Maschinen emulieren Hardware als Software auf einem Hostsystem. Als Virtualisierungssoftware wurde VirtualBox verwendet welches ein Image des Raspberry Pi Desktops nutzte. Somit konnte jedes Mitglied seine eigenes Raspberry Pi simulieren und jede Aufgabe konnte von Jedem erledigt werden. Bei der Einrichtung des Betriebssystems musste auf die bautechnischen Beschränkungen des Raspberry Pi 4 geachtet werden. Somit musste in der VM der Hauptspeicher auf 4 GB RAM beschränkt und der Festplattenspeicher musste auf die 64 GB der eingebauten SD-Karte begrenzt werden.</p>
 </div>
 <div class="section" id="was-ist-ein-ids">
 <h2><span class="section-number">3.4. </span>Was ist ein IDS<a class="headerlink" href="#was-ist-ein-ids" title="Link zu dieser Überschrift">¶</a></h2>
@@ -241,9 +241,9 @@ vorbei kommen oder aus dem eigenem Netzwerk stammen.</p>
 </div>
 <div class="section" id="wieso-man-es-braucht">
 <h2><span class="section-number">3.5. </span>Wieso man es braucht<a class="headerlink" href="#wieso-man-es-braucht" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Keine Firewall ist Fehler frei und kein Netzwerk ist undurchdringlich. Angreifer
+<p>Keine Firewall ist fehlerfrei und kein Netzwerk ist undurchdringlich. Angreifer
 entwickeln ständig neue Exploits und Angriffstechniken, um auf ein System zu kommen.
-Was von fielen Angreifern zusätzlich gerne genutzt wird ist Social Engineering oder
+Was von vielen Angreifern zusätzlich gerne genutzt wird ist Social Engineering oder
 andere arten von Malware. Über diese Methoden gelangen sie meist an Benutzeranmeldeinformationen
 und dadurch haben sie nun einen berechtigten zugriff auf das Netzwerk ohne das die
 Firewall dies als böswilligen angriff sieht. Ein Network Intrusion Detection System kann

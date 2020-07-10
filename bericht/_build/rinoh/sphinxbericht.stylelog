@@ -277,11 +277,16 @@
     (continued) DocumentTree()
       Section(id='team')   /home/def/Studium/6.Semester/LICSTER_BERICHT/LICSTER/bericht/index.rst:16 <section>
            > (0,0,0,1,2) chapter
-        Paragraph('Fabian Klemm, <>\nEric Hoffmann, ...', style='line block')   /home/def/Studium/6.Semester/LICSTER_BERICHT/LICSTER/bericht/index.rst:18 <line_block>
+        Paragraph('Fabian Klemm, <Fabian.Klemm@hs-a...', style='line block')   /home/def/Studium/6.Semester/LICSTER_BERICHT/LICSTER/bericht/index.rst:18 <line_block>
              > (0,0,1,0,2) line block
                (0,0,0,0,2) body
-          MixedStyledText('Fabian Klemm, <>')   /home/def/Studium/6.Semester/LICSTER_BERICHT/LICSTER/bericht/index.rst:18 <line>
-            SingleStyledText('Fabian Klemm, <>')
+          MixedStyledText('Fabian Klemm, <Fabian.Klemm@hs-a...')   /home/def/Studium/6.Semester/LICSTER_BERICHT/LICSTER/bericht/index.rst:18 <line>
+            SingleStyledText('Fabian Klemm, <')
+            AnnotatedText('Fabian.Klemm@hs-augsburg.de', style='external link')   None:None <reference>
+                 > (0,0,1,0,1) external hyperlink
+              MixedStyledText('Fabian.Klemm@hs-augsburg.de')
+                SingleStyledText('Fabian.Klemm@hs-augsburg.de')
+            SingleStyledText('>')
           Newline('\n')
           MixedStyledText('Eric Hoffmann, <Eric.Hoffmann1@h...')   /home/def/Studium/6.Semester/LICSTER_BERICHT/LICSTER/bericht/index.rst:19 <line>
             SingleStyledText('Eric Hoffmann, <')
@@ -299,14 +304,29 @@
                 SingleStyledText('Raphael.Hausmanninger@hs-augsbur...')
             SingleStyledText('>')
           Newline('\n')
-          MixedStyledText('Michael Janzer, <>')   /home/def/Studium/6.Semester/LICSTER_BERICHT/LICSTER/bericht/index.rst:21 <line>
-            SingleStyledText('Michael Janzer, <>')
+          MixedStyledText('Michael Janzer, <Michael.Janzer@...')   /home/def/Studium/6.Semester/LICSTER_BERICHT/LICSTER/bericht/index.rst:21 <line>
+            SingleStyledText('Michael Janzer, <')
+            AnnotatedText('Michael.Janzer@hs-augsburg.de', style='external link')   None:None <reference>
+                 > (0,0,1,0,1) external hyperlink
+              MixedStyledText('Michael.Janzer@hs-augsburg.de')
+                SingleStyledText('Michael.Janzer@hs-augsburg.de')
+            SingleStyledText('>')
           Newline('\n')
-          MixedStyledText('Muhammet Bilbey <>')   /home/def/Studium/6.Semester/LICSTER_BERICHT/LICSTER/bericht/index.rst:22 <line>
-            SingleStyledText('Muhammet Bilbey <>')
+          MixedStyledText('Muhammet Bilbey <muhammet.bilbey...')   /home/def/Studium/6.Semester/LICSTER_BERICHT/LICSTER/bericht/index.rst:22 <line>
+            SingleStyledText('Muhammet Bilbey <')
+            AnnotatedText('muhammet.bilbey@hs-augsburg.de', style='external link')   None:None <reference>
+                 > (0,0,1,0,1) external hyperlink
+              MixedStyledText('muhammet.bilbey@hs-augsburg.de')
+                SingleStyledText('muhammet.bilbey@hs-augsburg.de')
+            SingleStyledText('>')
           Newline('\n')
-          MixedStyledText('Athanasios Luludis <>')   /home/def/Studium/6.Semester/LICSTER_BERICHT/LICSTER/bericht/index.rst:23 <line>
-            SingleStyledText('Athanasios Luludis <>')
+          MixedStyledText('Athanasios Luludis <athanasios.l...')   /home/def/Studium/6.Semester/LICSTER_BERICHT/LICSTER/bericht/index.rst:23 <line>
+            SingleStyledText('Athanasios Luludis <')
+            AnnotatedText('athanasios.luludis@hs-augsburg.d...', style='external link')   None:None <reference>
+                 > (0,0,1,0,1) external hyperlink
+              MixedStyledText('athanasios.luludis@hs-augsburg.d...')
+                SingleStyledText('athanasios.luludis@hs-augsburg.d...')
+            SingleStyledText('>')
           Newline('\n')
           MixedStyledText('Janis Schickram, <Janis.Schickra...')   /home/def/Studium/6.Semester/LICSTER_BERICHT/LICSTER/bericht/index.rst:24 <line>
             SingleStyledText('Janis Schickram, <')
@@ -623,10 +643,10 @@
                       SingleStyledText('1.3.5')
                       SingleStyledText(' ')
                       SingleStyledText('Wieso man es braucht')
-                Paragraph('Keine Firewall ist Fehler frei u...')   /home/def/Studium/6.Semester/LICSTER_BERICHT/LICSTER/bericht/ids.rst:60 <paragraph>
+                Paragraph('Keine Firewall ist fehlerfrei un...')   /home/def/Studium/6.Semester/LICSTER_BERICHT/LICSTER/bericht/ids.rst:60 <paragraph>
                      > (0,0,0,0,2) body
-                  MixedStyledText('Keine Firewall ist Fehler frei u...')
-                    SingleStyledText('Keine Firewall ist Fehler frei u...')
+                  MixedStyledText('Keine Firewall ist fehlerfrei un...')
+                    SingleStyledText('Keine Firewall ist fehlerfrei un...')
 #### UpExpandingContainer('header')
   StaticGroupedFlowables()
     Header('		LICSTER Projekt SoSe 2020, Rel...')
