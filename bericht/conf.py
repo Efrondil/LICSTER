@@ -43,6 +43,7 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.mathjax',
     'sphinx_rtd_theme',
+    'rst2pdf.pdfbuilder'
 ]
 #extensions = ['sphinx.ext.mathjax',
 #              'sphinx_rtd_theme']
@@ -191,3 +192,9 @@ epub_exclude_files = ['search.html']
 
 
 # -- Extension configuration -------------------------------------------------
+
+pdf_documents = [('index', u'rst2pdf', u'Sample rst2pdf doc', u'Your Name'),]
+  # index - master document
+  # rst2pdf - name of the generated pdf
+  # Sample rst2pdf doc - title of the pdf
+  # Your Name - author name in the pdf
