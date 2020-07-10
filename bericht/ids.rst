@@ -1,7 +1,7 @@
 Intrusion Detection System
 ##########################
 
-.. Michael Jenzer, Eric Hoffmann, Janis Schickram
+.. Michael Janzer, Eric Hoffmann, Janis Schickram
 
 In unserer heutigen Zeit nehmen Angriffe auf industriele Systeme stetig weiter zu.
 Immer wieder werden neue arten gefunden wie ein System angegriffen werden kann.
@@ -374,3 +374,25 @@ Diese Regeln erkennt einen SSH Denial-of-Service angriff.
    detection_filter:track by_dst, count 500, seconds 1; classtype: denial-of-service; sid:1000306; rev:1;)
 
 Gleich wie oben, nur ist diese Regel für das Erkennen eines Distributed-Denial-of-Service Angriffs zuständig. 
+
+Fazit und Ausblick
+******************
+
+Fazit
+=====
+
+Durch die Implementierung eines Intrusion Detection Systems können wir jetzt den Netzwerkverkehr
+überwachen sowie Angriffe und unberechtigte Zugriffe erkennen. Mit dem entwickeln von eigenen SSH, HTML, MODBUS
+und ICMP Regeln, konnten wir Snort an das LICSTER-Testbed so anpassen, dass erkannt wird welches Gerät vom
+LICSTER-Testbed angegriffen wird. So kann man direkt sehen welches Gerät unter Angriff steht und man kann direkt
+dagegen vorgehen. Auch werden die Logs mittels einem Cronjob im Minutentakt mit SCP an die Webapplikation
+versendet.
+
+Ausblick
+========
+
+Nachdem jetzt das LICSTER-Testbed mit Snort überwacht wird, kann man zusätzlich noch weitere an das
+LICSTER-Testbed angepasste Regeln entwickeln, um mehr LICSTER spezifische Angriffe zu erkennen. Ergänzend
+kann man ein Intrusion Prevention System (IPS) implementieren. Ein IPS kann neben den Funktionen eines IDS,
+wie das erkennen eines Angriffs auch aktiv Angriffe verhindern, indem es die jeweiligen Pakete im Netzwerkverkehr
+dropped.
