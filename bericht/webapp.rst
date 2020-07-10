@@ -76,16 +76,14 @@ Design
 
 Für das Design haben wir uns zusammengesetzt und beschlossen dass ein schlichteres Design ohne viele visuelle Features besser ist. Es handelt sich nämlich um ein IT-Sicherheits-Projekt bei dem natürlich die Sicherheit des Systems an erster Stelle steht und es seriös wirken soll.
 
-.. image:: https://i.imgur.com/Q6q6D2v.png
-   :target: https://i.imgur.com/Q6q6D2v.png
+.. image:: img/webbapp0.png
    :alt: LICSTER PIN
 
 
 Für das PIN-Feld wurde eine JavaScript Klasse erstellt, welche für die Anzeige der Tasten und das Handling von Eingaben zuständig ist. Diese Anzeige ist nicht für mehrere Geräte angelegt sondern direkt auf das HMI angepasst.
 
 
-.. image:: https://i.imgur.com/XV7jQDH.gif
-   :target: https://i.imgur.com/XV7jQDH.gif
+.. image:: img/webbapp1.gif
    :alt: admin
 
 Die normale Anmeldeseite wurde so realisiert, dass sie auf allen Geräten gut verwendet werden kann. 
@@ -106,8 +104,7 @@ Die dritte Rolle des Benutzverwaltungssystems erlaubt den Zugriff auf das Admini
 Das Styling der Admin Dashboard-Ansicht wurde mithilfe von HTML und CSS (Cascade Style Sheets) verwirklicht. Hierbei haben wir beschlossen das alle Funktionen auf einer einzigen Seite sind, damit es übersichtlich bleibt und die Bedienung schneller ist.
 
 
-.. image:: https://i.imgur.com/wMhk1h6.png
-   :target: https://i.imgur.com/wMhk1h6.png
+.. image:: img/webbapp2.png
    :alt: LICSTER WEB
 
 
