@@ -15,8 +15,8 @@ Als die Secure Communication Gruppe haben wir uns ausschließlich mit der intern
 
 Veranschaulichung der ursprünglichen Kommunikation:\ :raw-html-m2r:`<br>`
 
-.. image:: ./assets/diagrams/No_Secure_Layer_Overview.svg
-   :target: ./assets/diagrams/No_Secure_Layer_Overview.svg
+.. image:: ./assets/diagrams/No_Secure_Layer_Overview.png
+   :target: ./assets/diagrams/No_Secure_Layer_Overview.png
    :alt: 
 
 
@@ -24,8 +24,8 @@ Dies wurde realisiert, indem wir eine zusätzliche Softwareschnittstelle (Secure
 
 Veranschaulichung mit Secure Layer:\ :raw-html-m2r:`<br>`
 
-.. image:: ./assets/diagrams/Secure_Layer_Overview.svg
-   :target: ./assets/diagrams/Secure_Layer_Overview.svg
+.. image:: ./assets/diagrams/Secure_Layer_Overview.png
+   :target: ./assets/diagrams/Secure_Layer_Overview.png
    :alt: 
 
 
@@ -36,8 +36,8 @@ Der Secure Layer (sichere Schicht) ist die Komponente die zwischen den Remote-IO
 
 Detaillierte Veranschaulichung:\ :raw-html-m2r:`<br>`
 
-.. image:: ./assets/diagrams/Secure_Layer_Details.svg
-   :target: ./assets/diagrams/Secure_Layer_Details.svg
+.. image:: ./assets/diagrams/Secure_Layer_Details.png
+   :target: ./assets/diagrams/Secure_Layer_Details.png
    :alt: 
 
 
