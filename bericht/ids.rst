@@ -124,9 +124,13 @@ um zu sehen was während einem Regulären betrieb auf dem Netzwerk passiert.
 
 .. image:: img/wireshark_normal.png
 
+Wireshark pcap vom LICSTER-Testbed während einem Leerlauf
+
 Als nächstes haben wir pcaps von Angriffen, die wir Durchgeführt haben, aufgezeichnet, um Regeln für unser Intrusion-Detection-System entwickeln zu können.
 
 .. image:: img/wireshark_flood.png
+
+Wireshark pcap vom LICSTER-Testbed während einem Denial of Service Angriffs
 
 Durchgeführte Angriffe
 ======================
@@ -242,18 +246,14 @@ Regeloptionen
 Alle Regeloptionen werden durch das Semikolon (;) voneinander getrennt.
 Es gibt vier Kategorien von Regeloptionen:
 
-- general
-    enthält extra Informationen über die Regel, haben aber keine auswirkung während der Erkennung 
-- payload
-    diese Optionen schauen in den Packet-Payload rein
-- non-payload
-    diese Optionen schauen für nicht payload Daten
-- post-detection
-    diese Optionen sind Regelspezifische trigger, die ausgeführt werden, nachdem eine Regel ausgelöst wird 
+- general - enthält extra Informationen über die Regel, haben aber keine auswirkung während der Erkennung 
+- payload - diese Optionen schauen in den Packet-Payload rein
+- non-payload - diese Optionen schauen für nicht payload Daten
+- post-detection - diese Optionen sind Regelspezifische trigger, die ausgeführt werden, nachdem eine Regel ausgelöst wird 
 
 .. image:: img/rules.png
 
-Für genauere Regeloptionen schaut man hier am besten nach:
+Eine komplette Auflistung von Regeloptionen findet man hier:
 http://manual-snort-org.s3-website-us-east-1.amazonaws.com/node32.html
 
 Unsere Snort Regeln
@@ -296,7 +296,8 @@ Da die Paketgröße 0 ist wird hier ``'dsize'`` auf 0 gesetzt und der ``'itype'`
    alert icmp any any -> 192.168.0.10 any (msg:"Ping flood detected 192.168.0.10"; \
    itype:8; count 20, seconds 1; classtype: denial-of-service; sid:1003010; rev:1;)
 
-Standard DoS Ping flood.
+Diese Regel ist für einen einfachen Ping flood Denial-of-Service Angriff. Ausgelöst wird die Regel, wenn
+in einem Intervall von einer Sekunde, 20 Ping Pakete ankommen.
 
 **DoS Teardrop**
 
