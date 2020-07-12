@@ -13,7 +13,7 @@ E-Mail-Nachrichten zu verhindern und Antiware-Tools zum Schutz von Endpunkten vo
 All diese Tools werden in so gut wie jedem Unternehmen eingesetzt egal welche Branche
 oder wie groß es ist. Ein weiteres wertvolles Sicherheitstool was ebenfalls eingesetzt
 wird ist ein Netzwerk-IDS (Intrusion Detection-System). Um dieses geht es auch in unserem
-Teil Projekt, bei dem wir ein solches System in dem Testbed Licster implementiert haben.
+Teil Projekt, bei dem wir ein solches System in dem Testbed LICSTER implementiert haben.
 
 Unser Team
 **********
@@ -42,10 +42,10 @@ Aus Kostengründen konnte nicht für jedes der drei Mitglieder ein Raspberry Pi 
 Was ist ein IDS
 ***************
 
-Doch was genau ist nun ein Intrusion Detection system. Eine gute Definition für ein ids
-lauten folgend. „Ein IDS (Intrusion Detection System) ist ein Gerät oder eine Anwendung,
+Eine Definition, um zu verstehen was genau ein IDS ist lautet Folgens.
+„Ein IDS (Intrusion Detection System) ist ein Gerät oder eine Anwendung,
 mit der der gesamte Netzwerkverkehr überprüft und der Benutzer oder Administrator
-benachrichtigt wird, wenn nicht autorisierte Versuche oder Zugriffe stattgefunden haben.“
+benachrichtigt wird, wenn nicht autorisierte Versuche oder Zugriffe stattgefunden haben.“ (Bradley, T., 2014. IDS. [online] verfügbar unter: https://techspective.net/2014/03/08/ids/ [Besucht 12 July 2020].)
 Im Gegensatz zu einer Firewall welche meist eher als Gatekeeper fungiert also nur den
 Netzwerkverkehr überwacht und bestimmt ob er ins Netzwerk darf. Konzentriert sich Ids
 System auf den traffic, der im internen Netzwerk abläuft. Dabei wird anhand von
