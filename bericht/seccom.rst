@@ -8,38 +8,29 @@
 Secure Communication
 ====================
 
-Einleitung
-----------
-
 Als die Secure Communication Gruppe haben wir uns ausschließlich mit der internen Kommunikation des LICSTERs auseinandergesetzt. Als Ziel haben wir es uns gesetzt das bereits implementierte Modbus-Protokoll, das in dieser Form sich als sehr unsicher bewiesen hat, zu verschlüsseln. Dabei haben wir uns dazu entschieden, das TLS-Protokoll einzusetzen. Dieses bietet zusätzlich zu der Verschlüsselung der Anwendungsschicht ein Handshake-Protokoll, das die Authentifizierung der Kommunikationspartner ermöglicht.
 
-Veranschaulichung der ursprünglichen Kommunikation:\ :raw-html-m2r:`<br>`
-
-.. image:: ./assets/diagrams/No_Secure_Layer_Overview.png
-   :target: ./assets/diagrams/No_Secure_Layer_Overview.png
+.. figure:: ./assets/diagrams/No_Secure_Layer_Overview.png
    :alt: 
 
+   Veranschaulichung der ursprünglichen Kommunikation
 
 Dies wurde realisiert, indem wir eine zusätzliche Softwareschnittstelle (Secure Layer) im PLC implementiert haben. Diese ermöglicht eine beidseitig verschlüsselte Kommunikation zwischen dem PLC und den Remote-IOs, indem sie eingehende Pakete von den Remote-IOs entschlüsselt und von dem PLC ausgehende Pakete verschlüsselt. Die interne Kommunikation im PLC zwischen dem Secure-Layer und dem OpenPLC findet unverschlüsselt statt.
 
-Veranschaulichung mit Secure Layer:\ :raw-html-m2r:`<br>`
-
-.. image:: ./assets/diagrams/Secure_Layer_Overview.png
-   :target: ./assets/diagrams/Secure_Layer_Overview.png
+.. figure:: ./assets/diagrams/Secure_Layer_Overview.png
    :alt: 
 
+   Veranschaulichung mit Secure Layer
 
 Secure Layer
 ------------
 
 Der Secure Layer (sichere Schicht) ist die Komponente die zwischen den Remote-IOs und OpenPLC sitz.
 
-Detaillierte Veranschaulichung:\ :raw-html-m2r:`<br>`
-
-.. image:: ./assets/diagrams/Secure_Layer_Details.png
-   :target: ./assets/diagrams/Secure_Layer_Details.png
+.. figure:: ./assets/diagrams/Secure_Layer_Details.png
    :alt: 
-
+   
+   Detaillierte Veranschaulichung des Secure Layers
 
 Der Secure Layer ist in Python3.6 geschrieben und in 2 Hauptkomponenten zu unterteilen:
 
@@ -267,13 +258,6 @@ Fazit und Ausblick
    <!-- evtl. überarbeiten -->
 
 
-
-Fazit
-^^^^^
-
 Durch die zusätzlichen Implementierungen kann nun optional zwischen der ursprünglich unverschlüsselten Modbus Verbindung und der durch das TLS-Protokoll verschlüsselten Verbindung ausgewählt werden. Zusätzlich zu der verschlüsselten Verbindung übernimmt das Protokoll auch die Überprüfung der Authentizität der Kommunikationspartner. So muss bei einem Verbindungsaufbau das Remote-IO mit einem Zertifikat belegen, dass dieser dem LICSTER-Netzwerk zugehörig ist. 
-
-Ausblick
-^^^^^^^^
 
 Nach der durch die Verschlüsselung der Kommunikationswege zwischen dem PLC und der Remote-IOs errungenen Sicherheit kann an der Beschleunigung des TLS-Handshakes gearbeitet werden. Durch verwenden eines Secure Elements kann der momentan sehr langsame Verbindungsaufbau von etwa 10 Sekunden beschleunigt werden. Solch ein Microchip würde zusätzliche Sicherheit mit sich bringen, da die Privat Keys dieser unzugänglich sind. Nach der Verbesserung der Performance des Protokolls könnte die sichere Modbus Verbindung auch auf die weiteren Komponenten (HMI und SCADA) des Netzwerkes ausgeweitet werden. Um eine höhere Authentizität im LICSTER-Netzwerk zu erreichen könnte man die Client Authentifizierung derartig erweitern, dass zusätzlich zu den Remote-IOs auch das PLC mithilfe von Zertifikaten seine Zugehörigkeit bestätigen muss.
