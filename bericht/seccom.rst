@@ -29,7 +29,7 @@ Der Secure Layer (sichere Schicht) ist die Komponente die zwischen den Remote-IO
 
 .. figure:: ./assets/diagrams/Secure_Layer_Details.png
    :alt: 
-   
+
    Detaillierte Veranschaulichung des Secure Layers
 
 Der Secure Layer ist in Python3.6 geschrieben und in 2 Hauptkomponenten zu unterteilen:
@@ -260,4 +260,4 @@ Fazit und Ausblick
 
 Durch die zusätzlichen Implementierungen kann nun optional zwischen der ursprünglich unverschlüsselten Modbus Verbindung und der durch das TLS-Protokoll verschlüsselten Verbindung ausgewählt werden. Zusätzlich zu der verschlüsselten Verbindung übernimmt das Protokoll auch die Überprüfung der Authentizität der Kommunikationspartner. So muss bei einem Verbindungsaufbau das Remote-IO mit einem Zertifikat belegen, dass dieser dem LICSTER-Netzwerk zugehörig ist. 
 
-Nach der durch die Verschlüsselung der Kommunikationswege zwischen dem PLC und der Remote-IOs errungenen Sicherheit kann an der Beschleunigung des TLS-Handshakes gearbeitet werden. Durch verwenden eines Secure Elements kann der momentan sehr langsame Verbindungsaufbau von etwa 10 Sekunden beschleunigt werden. Solch ein Microchip würde zusätzliche Sicherheit mit sich bringen, da die Privat Keys dieser unzugänglich sind. Nach der Verbesserung der Performance des Protokolls könnte die sichere Modbus Verbindung auch auf die weiteren Komponenten (HMI und SCADA) des Netzwerkes ausgeweitet werden. Um eine höhere Authentizität im LICSTER-Netzwerk zu erreichen könnte man die Client Authentifizierung derartig erweitern, dass zusätzlich zu den Remote-IOs auch das PLC mithilfe von Zertifikaten seine Zugehörigkeit bestätigen muss.
+Nach der durch die Verschlüsselung der Kommunikationswege zwischen dem PLC und der Remote-IOs erzielten Sicherheit kann an der Beschleunigung des TLS-Handshakes gearbeitet werden. Durch verwenden eines Secure Elements kann der momentan sehr langsame Verbindungsaufbau von etwa 10 Sekunden beschleunigt werden. Solch ein Microchip würde zusätzliche Sicherheit mit sich bringen, da die Privat Keys dieser unzugänglich sind. Nach der Verbesserung der Performance des Protokolls könnte die sichere Modbus Verbindung auch auf die weiteren Komponenten (HMI und SCADA) des Netzwerkes ausgeweitet werden. Um eine höhere Authentizität im LICSTER-Netzwerk zu erreichen könnte man die Client Authentifizierung derartig erweitern, dass zusätzlich zu den Remote-IOs auch das PLC mithilfe von Zertifikaten seine Zugehörigkeit bestätigen muss.
