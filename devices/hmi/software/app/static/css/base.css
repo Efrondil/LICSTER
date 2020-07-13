@@ -1,6 +1,5 @@
 html {
-    width: 800px;
-    height: 460px;
+   
 }
 
 body {
@@ -18,3 +17,7 @@ nav.navbar {
     height: 90%;
 }
 
+
+th.table-default{
+    height: 200px;
+}
