@@ -21,9 +21,10 @@ Unser Team
 Unser Team für das Teilprojekt „Intrusion Detection System“ (IDS) besteht aus den Projektmitgliedern Eric Hoffmann, Michael Janzer und Janis Schickram, die auch schon in ihrem Studium einen starken Fokus auf IT-Sicherheit gelegt haben. Wir haben zusammen mehrerer Kurse in Richtung IT-Sicherheit besucht und teilen uns die Faszination Systeme sicherer machen zu wollen. Deswegen wurde schnell klar, dass unser Team einen großen Wert auf den Sicherheitsaspekt von LICSTER legen wird.
 Die Sicherheitslage von Industriesystemen auf der ganzen Welt wird immer kritischer. Bei Angriffen auf diese Systeme können in kürzester Zeit große wirtschaftliche Schäden erzielt werden.  
 
-.. figure:: img/cyberattacken.png
+.. figure:: img/cyberattacken_excel.png
 
-    Cyberattacken auf deutsche Unternehmen im Jahre 2015, Quelle: https://de.statista.com/statistik/daten/studie/348989/umfrage/haeufigkeit-von-cyberattacken-auf-unternehmen/, Zugriff am 15.07.2020
+    Cyberattacken auf deutsche Unternehmen im Jahre 2015, 
+    Quelle: https://de.statista.com/statistik/daten/studie/348989/umfrage/haeufigkeit-von-cyberattacken-auf-unternehmen/, Zugriff am 15.07.2020
 
 Deswegen haben wir uns zur Aufgabe gemacht, LICSTER eine weitere Sicherheitsschicht hinzuzufügen. Schnell wurde klar, dass ein IDS eine schnelle und aufwandseffiziente Lösung für unsere Problemstellung ist. Ein IDS kann in ein bestehendes System eingebaut werden, ohne dass direkte Änderungen am System gemacht werden müssen. Dies war uns besonders wichtig, da LICSTER bereits vor unserem Projekt schon fertiggestellt war und wir keine konzeptuelle Änderung mehr nachträglich realisieren wollten. Ein bestehendes IDS zu Nutzen hat es uns ermöglicht den zeitlichen Rahmen des Projekts einzuhalten und nützliche Fähigkeiten für unser weiteres Studium zu erlernen.
 
