@@ -72,7 +72,7 @@ Für das Design haben wir uns zusammengesetzt und beschlossen dass ein schlichte
 .. figure:: img/webbapp0.png
    :alt: LICSTER PIN
 
-Die Abbildung zeigt das PIN-Feld. Für das PIN-Feld wurde eine HTML Seite erstellt, welche für die Anzeige der Tasten und das Handling von Eingaben zuständig ist. Diese Anzeige ist nicht für mehrere Geräte angelegt sondern direkt auf das HMI angepasst.
+   Die Abbildung zeigt das PIN-Feld. Für das PIN-Feld wurde eine HTML Seite erstellt, welche für die Anzeige der Tasten und das Handling von Eingaben zuständig ist. Diese Anzeige ist nicht für mehrere Geräte angelegt sondern direkt auf das HMI angepasst.
 
 
 .. figure:: img/remotecontrol.jpeg

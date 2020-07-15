@@ -1,15 +1,18 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="de" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="de" > <!--<![endif]-->
+<html class="writer-html5" lang="de" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>1. Einleitung &mdash; LICSTER 2020 Dokumentation</title>
+  <title>2. Einleitung &mdash; LICSTER 2020 Dokumentation</title>
   
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
 
   
   
@@ -17,7 +20,9 @@
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -30,14 +35,10 @@
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
     <link rel="search" title="Suche" href="search.html" />
-    <link rel="next" title="2. Workflow" href="kommunikation.html" />
-    <link rel="prev" title="LICSTER" href="index.html" /> 
+    <link rel="next" title="3. Workflow" href="kommunikation.html" />
+    <link rel="prev" title="1. Team" href="team.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -51,7 +52,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> LICSTER
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> LICSTER
           
 
           
@@ -69,7 +70,7 @@
           
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Dokumentation durchsuchen" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -78,6 +79,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -86,17 +88,21 @@
             
             
               <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Einleitung</a></li>
-<li class="toctree-l1"><a class="reference internal" href="kommunikation.html">2. Workflow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ids.html">3. Intrusion Detection System</a></li>
-<li class="toctree-l1"><a class="reference internal" href="seccom.html">4. Secure Communication</a></li>
-<li class="toctree-l1"><a class="reference internal" href="webapp.html">5. Webapplikation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="probleme.html">6. Probleme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="team.html">1. Team</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. Einleitung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kommunikation.html">3. Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ids.html">4. Intrusion Detection System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seccom.html">5. Secure Communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="webapp.html">6. Webapplikation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="probleme.html">7. Probleme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fazit-ausblick.html">8. Fazit und Ausblick</a></li>
+<li class="toctree-l1"><a class="reference internal" href="abkuerzungsverzeichnis.html">9. Abkürzungsverzeichnis</a></li>
 </ul>
 
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -135,15 +141,15 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li><span class="section-number">1. </span>Einleitung</li>
+      <li><span class="section-number">2. </span>Einleitung</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/einleitung.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/einleitung.rst.txt" rel="nofollow"> Quelltext anzeigen</a>
           
         
       </li>
@@ -157,7 +163,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="einleitung">
-<h1><span class="section-number">1. </span>Einleitung<a class="headerlink" href="#einleitung" title="Link zu dieser Überschrift">¶</a></h1>
+<h1><span class="section-number">2. </span>Einleitung<a class="headerlink" href="#einleitung" title="Link zu dieser Überschrift">¶</a></h1>
 <p>Industriekontrollsysteme sind heutzutage sehr weit verbreitet und elementar wichtig für die Wirtschaft sowie die Infrastruktur. Durch die Digitalisierung werden diese immer enger mit einander vernetzt um einen Fernzugriff bzw. eine Überwachung zu ermöglichen. Da es jedoch mehr Schwachstellen gibt, wächst das Risiko eines Angriffes stark. Ziel des LICSTER Projektes ist es ein günstiges Testbed zu schaffen, um die Sicherheit von Industriekontrollsystemen zu erhöhen.</p>
 <p>Am Anfang des Projektes haben wir eine klare Gruppeneinteilung zu den jeweiligen Unterprojekten (IDS, SecCom und Web-Applikation) gemacht. Das IDS-Team befasste sich mit der Bedrohungserkennung, das SecCom-Team mit der verschlüsselten Kommunikation und das Web-Applikations-Team mit der Erstellung und Erweiterung des Fernzugriffs auf das HMI. Dies hatte zur Folge dass auch unter den Gruppen viel kommuniziert werden musste.</p>
 </div>
@@ -170,10 +176,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="kommunikation.html" class="btn btn-neutral float-right" title="2. Workflow" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="kommunikation.html" class="btn btn-neutral float-right" title="3. Workflow" accesskey="n" rel="next">Weiter <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral float-left" title="LICSTER" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="team.html" class="btn btn-neutral float-left" title="1. Team" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Zurück</a>
       
     </div>
   
@@ -182,11 +188,19 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2020, Fabian Klemm, Eric Hoffmann, Raphael Hausmanninger, Michael Janzer, Muhammet Bilbey, Athanasios Luludis, Janis Schickram
+        
+        &copy; Copyright 2020, Muhammet Bilbey, Raphael Hausmanninger, Eric Hoffmann, Michael Janzer, Fabian Klemm, Athanasios Luludis, Janis Schickram
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Erstellt mit <a href="http://sphinx-doc.org/">Sphinx</a> mit einem
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    bereitgestellt von <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -197,7 +211,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {
