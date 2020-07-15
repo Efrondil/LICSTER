@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>5. Webapplikation Backend &mdash; LICSTER 2020 Dokumentation</title>
+  <title>5. Webapplikation &mdash; LICSTER 2020 Dokumentation</title>
   
 
   
@@ -90,28 +90,26 @@
 <li class="toctree-l1"><a class="reference internal" href="kommunikation.html">2. Workflow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ids.html">3. Intrusion Detection System</a></li>
 <li class="toctree-l1"><a class="reference internal" href="seccom.html">4. Secure Communication</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">5. Webapplikation Backend</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#einleitung">5.1. Einleitung</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#anfangsstand">5.2. Anfangsstand</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#veranderungen">5.3. Veränderungen</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#modularer-aufbau">5.3.1. Modularer Aufbau</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#application-factory">5.3.2. Application Factory</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#design">5.3.3. Design</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">5. Webapplikation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#veranderungen">5.1. Veränderungen</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#modularer-aufbau">5.1.1. Modularer Aufbau</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#application-factory">5.1.2. Application Factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#design">5.1.3. Design</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#erweiterungen">5.4. Erweiterungen</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#datenbank">5.4.1. Datenbank</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#formen">5.4.2. Formen</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#authentication">5.4.3. Authentication</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#administration">5.4.4. Administration</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ids-implementation">5.4.5. IDS Implementation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#warnungen-per-mail">5.4.6. Warnungen per Mail</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#wsgi">5.4.7. WSGI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#erweiterungen">5.2. Erweiterungen</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#datenbank">5.2.1. Datenbank</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#formen">5.2.2. Formen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#authentication">5.2.3. Authentication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#administration">5.2.4. Administration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ids-implementation">5.2.5. IDS Implementation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#warnungen-per-mail">5.2.6. Warnungen per Mail</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wsgi">5.2.7. WSGI</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#fazit-und-ausblick">5.5. Fazit und Ausblick</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#fazit">5.5.1. Fazit</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ausblick">5.5.2. Ausblick</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fazit-und-ausblick">5.3. Fazit und Ausblick</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#fazit">5.3.1. Fazit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ausblick">5.3.2. Ausblick</a></li>
 </ul>
 </li>
 </ul>
@@ -162,7 +160,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li><span class="section-number">5. </span>Webapplikation Backend</li>
+      <li><span class="section-number">5. </span>Webapplikation</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -181,24 +179,17 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="webapplikation-backend">
-<h1><span class="section-number">5. </span>Webapplikation Backend<a class="headerlink" href="#webapplikation-backend" title="Link zu dieser Überschrift">¶</a></h1>
-<div class="section" id="einleitung">
-<h2><span class="section-number">5.1. </span>Einleitung<a class="headerlink" href="#einleitung" title="Link zu dieser Überschrift">¶</a></h2>
+  <div class="section" id="webapplikation">
+<h1><span class="section-number">5. </span>Webapplikation<a class="headerlink" href="#webapplikation" title="Link zu dieser Überschrift">¶</a></h1>
 <p>Unsere Aufgabe war es die Web-Applikation des LICSTER zu verbessern.</p>
 <p>Konkret haben wir das Frontent für mehrere Geräte zugänglich gemacht und das Backend um eine Benutzerverwaltung erweitert. Des weiteren haben wir ein PIN-Feld für das HMI programmiert, die Datenbank der Benutzerverwaltung von der Kommandozeile aufsetzbar gemacht und die Logs des IDS zeigen wir nicht nur auf dem Admin Dashboard an, sondern benachrichtigen Admins auch über Breaches per Email. Ein WSGI (Web Server Gateway Interface) wurde implementiert, um die Einbindung eines Web Servers für Endbenutzer zu vereinfachen.</p>
-</div>
-<div class="section" id="anfangsstand">
-<h2><span class="section-number">5.2. </span>Anfangsstand<a class="headerlink" href="#anfangsstand" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Die Flask Applikation der ersten LICSTER Gruppe war ein abgeschlossenes System, welches nur zur Benutzung auf dem HMI konzipiert war. Sie zeigt den Stand aller Servomotoren an, kann Orders anzeigen und plazieren und Motoren einzeln ansteuern.</p>
 <p>Sie in einem Unternehmensnetzwerk laufen zu lassen wäre ein Sicherheitsrisiko gewesen, da jeder die Motoren bedienen konnte. Des weiteren würde es Anzeigeprobleme geben, da die Web Applikation nur für einen Bildschirm - den des HMI - programmiert wurde.</p>
 <p>Im Folgenden präsentieren wir unsere Veränderungen und Erweiterungen.</p>
-</div>
-<hr class="docutils" />
 <div class="section" id="veranderungen">
-<h2><span class="section-number">5.3. </span>Veränderungen<a class="headerlink" href="#veranderungen" title="Link zu dieser Überschrift">¶</a></h2>
+<h2><span class="section-number">5.1. </span>Veränderungen<a class="headerlink" href="#veranderungen" title="Link zu dieser Überschrift">¶</a></h2>
 <div class="section" id="modularer-aufbau">
-<h3><span class="section-number">5.3.1. </span>Modularer Aufbau<a class="headerlink" href="#modularer-aufbau" title="Link zu dieser Überschrift">¶</a></h3>
+<h3><span class="section-number">5.1.1. </span>Modularer Aufbau<a class="headerlink" href="#modularer-aufbau" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Die bestehende Webapp war eine Standart Flask App. Da wir sowohl eine Datenbank als auch Wege zum Administrieren und Einloggen hinzufügen wollten, haben wir uns dazu entschlossen der Flask App einen Modularen Aufbau zu geben. Dieser Aufbau wird es auch zukünftigen Gruppen erleichtern sich in die App einzuarbeiten und neue Funktionalitäten hinzuzufügen.</p>
 <p>Flask - im Gegensatz zu anderen populären Frameworks wie z.B. Django hat keinen vorgegebenen Applikationsaufbau. Daher kann man wie folgt eine funktionsfähige Flask Web Applikation schreiben, die (sobald die app mit <code class="docutils literal notranslate"><span class="pre">flask</span> <span class="pre">run</span></code> gestartet wurde) unter localhost:5000/ „Hello World!“ anzeigt.</p>
 <p>app.py</p>
@@ -229,41 +220,41 @@
 <p>admins.py, auths.py und views.py sind als Blueprints aufgebaut. Diese Blueprints werden in der main bzw create_app Funktion registriert. Danach funktionieren die Routen der einzelnen Files genauso wie die Routen eines app.py Files.</p>
 </div>
 <div class="section" id="application-factory">
-<h3><span class="section-number">5.3.2. </span>Application Factory<a class="headerlink" href="#application-factory" title="Link zu dieser Überschrift">¶</a></h3>
+<h3><span class="section-number">5.1.2. </span>Application Factory<a class="headerlink" href="#application-factory" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Eine Application Factory ist eine Funktion, die das globale App Object generiert und zurückgibt. Dies hat verschiedene Vorteile, z.B. ermöglicht es eine einfache Implementierung eines WSGI, das Testen mit verschiedenen globalen Konfigurationen und das einfache Hinzufügen von eigenen CLI Befehlen.</p>
 <p>Zur Implementierung der Application Faktory haben wir den Startpunkt der App aus app.py in app/__init__ verlegt. Der Startpunkt ist nun die Funktion create_app(), welche als erstes eine Flask App kreiert, sie dann konfiguriert und als letztes alle Blueprints registriert, bevor sie die App zurückgibt.</p>
 </div>
 <div class="section" id="design">
-<h3><span class="section-number">5.3.3. </span>Design<a class="headerlink" href="#design" title="Link zu dieser Überschrift">¶</a></h3>
+<h3><span class="section-number">5.1.3. </span>Design<a class="headerlink" href="#design" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Für das Design haben wir uns zusammengesetzt und beschlossen dass ein schlichteres Design ohne viele visuelle Features besser ist. Es handelt sich nämlich um ein IT-Sicherheits-Projekt bei dem natürlich die Sicherheit des Systems an erster Stelle steht und es seriös wirken soll.</p>
 <img alt="LICSTER PIN" src="_images/webbapp0.png" />
-<p>Für das PIN-Feld wurde eine JavaScript Klasse erstellt, welche für die Anzeige der Tasten und das Handling von Eingaben zuständig ist. Diese Anzeige ist nicht für mehrere Geräte angelegt sondern direkt auf das HMI angepasst.</p>
+<p>Die Abbildung zeigt das PIN-Feld. Für das PIN-Feld wurde eine JavaScript Klasse erstellt, welche für die Anzeige der Tasten und das Handling von Eingaben zuständig ist. Diese Anzeige ist nicht für mehrere Geräte angelegt sondern direkt auf das HMI angepasst.</p>
 <img alt="admin" src="_images/webbapp1.gif" />
-<p>Die normale Anmeldeseite wurde so realisiert, dass sie auf allen Geräten gut verwendet werden kann.</p>
+<p>Die  Abbildung zeigt die normale Anmeldeseite welche so realisiert wurde, dass sie auf allen Geräten gut verwendet werden kann.</p>
 </div>
 </div>
 <hr class="docutils" />
 <div class="section" id="erweiterungen">
-<h2><span class="section-number">5.4. </span>Erweiterungen<a class="headerlink" href="#erweiterungen" title="Link zu dieser Überschrift">¶</a></h2>
+<h2><span class="section-number">5.2. </span>Erweiterungen<a class="headerlink" href="#erweiterungen" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Als zwei Große Erweiterungen wurden das Benutzerverwaltungssytem und der Auswertung und Anzeige der IDS Logs zur Web Applikation hinzugefügt.</p>
 <p>Im Benutzerverwaltungssytem gibt es drei Rollen, Admins, Users und nicht angemeldete Personen. Nicht angemeldete Personen haben die Möglichkeit die Startseite der Webapplikation zu besuchen. Andere Webseiten können sie allerdings nicht besuchen, da dies ein Sicherheitsrisiko wäre.</p>
 <p>Angemeldete Benutzer können LICSTER wie zuvor auf dem Bildschirm des HMI nun über jedes Gerät, welches ihnen zur Verfügung steht bedienen.</p>
 <p>Die dritte Rolle des Benutzverwaltungssystems erlaubt den Zugriff auf das Administratoren Dashboard, wo Benutzer hinzugefügt und gelöscht werden. Hier werden außerdem alle Nutzer tabellarisch angezeigt. Des Weiteren werden tabellarisch IDS Logs auf dem Dashboard angezeigt, falls der Benutzer dies aktiviert hat und bei Hinzufügen einer Email-Adressse zu einem Admin Account wird der Benutzer über Breaches direkt per Email benachrichtigt.</p>
 <p>Das Styling der Admin Dashboard-Ansicht wurde mithilfe von HTML und CSS (Cascade Style Sheets) verwirklicht. Hierbei haben wir beschlossen das alle Funktionen auf einer einzigen Seite sind, damit es übersichtlich bleibt und die Bedienung schneller ist.</p>
 <img alt="LICSTER WEB" src="_images/webbapp2.png" />
-<p>Zusätzlich gibt noch eine Reset-Funktion mit der man alle snort Einträge aus der Datenbank löschen kann.</p>
+<p>Das Bild zeigt das Admin Dashboard. Zusätzlich gibt noch eine Reset-Funktion mit der man alle snort Einträge aus der Datenbank löschen kann.</p>
 <div class="section" id="datenbank">
-<h3><span class="section-number">5.4.1. </span>Datenbank<a class="headerlink" href="#datenbank" title="Link zu dieser Überschrift">¶</a></h3>
+<h3><span class="section-number">5.2.1. </span>Datenbank<a class="headerlink" href="#datenbank" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Zur Speicherung der Benutzer, IP Adressen und IDS Logs haben wir eine SQLite Datenbank verwendet, da diese nicht viel Platz braucht und kein Datenbankverwaltungssystem braucht.</p>
 <p>Um die Datenbank schnell aufsetzen zu können und das Passwort fürs HMI schnell verändern zu können wurden die Shortcuts <code class="docutils literal notranslate"><span class="pre">flask</span> <span class="pre">init-db</span></code> und <code class="docutils literal notranslate"><span class="pre">flask</span> <span class="pre">change-hmi-password</span></code> implementiert. Wir haben uns gegen Standart Benutzeraccounts und Passwörter entschieden, da diese ein Sicherheitsrisiko darstellen könnten und man die Datenbank normalerweise nur ein einziges Mal aufsetzen muss.</p>
 <p>Das Passwort wird beim Erstellen eines Benutzers mit der generate_password_hash Methode von Werkzeug gehasht, der gehashte Wert wird dann gespeichert. Beim Login wird die check_password_hash Methode von Werkzeug verwendet. Wir haben uns gegen die Implementierung eines Salts entschieden, da es uns unsinnig erschien die Datenbank gegen Rainbow Table Attacks zu schützen.</p>
 </div>
 <div class="section" id="formen">
-<h3><span class="section-number">5.4.2. </span>Formen<a class="headerlink" href="#formen" title="Link zu dieser Überschrift">¶</a></h3>
+<h3><span class="section-number">5.2.2. </span>Formen<a class="headerlink" href="#formen" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Um CSRF-Attacken, insbesondere Session-Riding Attacken zu verhinden, bei denen Daten mithilfe einer gültigen Sitzung des Opfers manipuliert werden, haben wir für alle Formen FlaskForms verwendet. Dies ist eine im Paket WTForms enthaltene Klasse, welche resistent gegen CSRF-Attacken ist. Jede Subklasse von FlaskForms integriert Tokens in die HTML Formen und überprüft die in der zurückgeschickten Form enthaltenen Tokens mithilfe der validate_on_submit Methode automatisch.</p>
 </div>
 <div class="section" id="authentication">
-<h3><span class="section-number">5.4.3. </span>Authentication<a class="headerlink" href="#authentication" title="Link zu dieser Überschrift">¶</a></h3>
+<h3><span class="section-number">5.2.3. </span>Authentication<a class="headerlink" href="#authentication" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Für alle Routen, die zum An- und Abmelden von Benutzern gehören haben wir das auths Blueprint hinzugefügt.</p>
 <p>Die Login-Route überprüft über die validate_on_submit Methode aller FlaskForms, ob eine valide Form gepostet wurde und falls dies nicht der Fall ist wird dem Benutzer eine Form geschickt. Basierend auf die IP Adresse wird dem Benutzer entweder HTML Seite des HMI oder die normale Login Seite geschickt.</p>
 <p>Wenn die validate_on_submit Methode True zurückgibt, wird überprüft wer der Benutzer ist. Danach erfolgt ein Passwortabgleich. Falls dieser auch erfolgreich ist wird der Session eine Variable mit der Benutzerrolle
@@ -271,13 +262,13 @@ hinzugefügt. Falls sich der Benutzer zum ersten Mal anmeldet, wird er nun weite
 <p>Die Route zum Paswswort überprüft genauso wie die Login Route über die validate_on_submit Methode, ob eine valide Form gepostet wurde und falls dies nicht der Fall ist wird dem Benutzer eine Form geschickt. Wenn der Benutzer ein Passwort eingibt, ersetzt der Hash dieses Passworts den bisherigen Hash in der Datenbank und das Feld für first_login wird auf False bzw. 0 gesetzt.</p>
 </div>
 <div class="section" id="administration">
-<h3><span class="section-number">5.4.4. </span>Administration<a class="headerlink" href="#administration" title="Link zu dieser Überschrift">¶</a></h3>
+<h3><span class="section-number">5.2.4. </span>Administration<a class="headerlink" href="#administration" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Für alle Routen, die zur Benutzeradministration gehören haben wir das admins Blueprint hinzugefügt.</p>
 <p>Das Admin Dashboard gibt den Administratoren einen Überblick über alle vorhandenen User und alle vorhandenen Logs. Des weiteren gibt es einen Button zum Zurücksetzen der Snort Logs.</p>
 <p>Auf dem Admin Dashboard gibt es drei Formen. Die erste Form ist zum Erstellen von Usern. Der Admin muss einen Benutzernamen, ein Passwort und eine Benutzerrolle vergeben. Falls die Benutzerrolle Admin ist, so kann er diesem Benutzer auch eine Email Adresse zuweisen. Zum Löschen eines Benutzers muss der Admin einfach den Benutzernamen in die zweite Form eingeben und auf Löschen klicken. Die letzte Form ist zum Löschen von den Snort Logs.</p>
 </div>
 <div class="section" id="ids-implementation">
-<h3><span class="section-number">5.4.5. </span>IDS Implementation<a class="headerlink" href="#ids-implementation" title="Link zu dieser Überschrift">¶</a></h3>
+<h3><span class="section-number">5.2.5. </span>IDS Implementation<a class="headerlink" href="#ids-implementation" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Zusammen mit dem IDS-Team haben wir an einer Lösung gearbeitet um den Administratoren Zugang zu den Logs zu geben. Dazu haben wir einen Log-Reader geschrieben, welcher die vom IDS übermittelten Logs auf Veränderungen überprüft und neue Daten in die Datenbank einträgt. Auf dem Admin-Dashboard werden diese in einer Tabelle angezeigt. Des Weiteren werden Admins - sofern sie sich mit einer Email-Adresse registriert haben - direkt über Sicherheitsverstöße informiert. Die IDS Implementierung ist eine optionale Funktion.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="o">**</span><span class="p">]</span> <span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">1001005</span><span class="p">:</span><span class="mi">0</span><span class="p">]</span> <span class="n">Modbus</span> <span class="n">threshold</span> <span class="n">violation</span> <span class="mi">52</span> <span class="p">[</span><span class="o">**</span><span class="p">]</span>
 <span class="p">[</span><span class="n">Classification</span><span class="p">:</span> <span class="n">Attempted</span> <span class="n">Denial</span> <span class="n">of</span> <span class="n">Service</span><span class="p">]</span> <span class="p">[</span><span class="n">Priority</span><span class="p">:</span> <span class="mi">2</span><span class="p">]</span>
@@ -298,26 +289,25 @@ hinzugefügt. Falls sich der Benutzer zum ersten Mal anmeldet, wird er nun weite
 <p>Um Platz in der Datenbank zu sparen und die Email Accounts nicht mit gleichen Warnungen zu überfluten, haben wir uns dazu entschlossen nur neue Logs in der Datenbank zu speichern. Dazu überprüfen wir ob entweder die Datenbank Tabelle leer ist oder der Typ, die Klassifikation oder die Priorität des Logs sich verändert hat. Nur wenn einer der beiden Fälle eintritt, wird ein neuer Eintrag abgespeichert und eine Email versendet.</p>
 </div>
 <div class="section" id="warnungen-per-mail">
-<h3><span class="section-number">5.4.6. </span>Warnungen per Mail<a class="headerlink" href="#warnungen-per-mail" title="Link zu dieser Überschrift">¶</a></h3>
+<h3><span class="section-number">5.2.6. </span>Warnungen per Mail<a class="headerlink" href="#warnungen-per-mail" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Wenn das Intrusion Detection System Verstöße entdeckt, wird eine Email an alle Administratoren mit einer eingetragenen Email verschickt. Dies wurde mithilfe des smtplib Pakets realisiert. Als Absender haben wir eine dafür dedizierte Email-Adresse verwendet. Diese sensiblen Daten sollten logischerweise nach dem Entwicklungsstadium durch Umgebungsvariablen ausgetauscht werden, da dies ansonsten ein Sicherheitsrisiko darstellen würde.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">smtp</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s1">&#39;licster.breach@gmail.com&#39;</span><span class="p">,</span> <span class="s1">&#39;Lic#v77zX&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="wsgi">
-<h3><span class="section-number">5.4.7. </span>WSGI<a class="headerlink" href="#wsgi" title="Link zu dieser Überschrift">¶</a></h3>
+<h3><span class="section-number">5.2.7. </span>WSGI<a class="headerlink" href="#wsgi" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Um die leichte Einbindung in einen Server wie nginx zu gewährtleisten, haben wir uns dazu entschlossen ein WSGI einzubinden. Wir haben Gunicorn ausgewählt und ein wsgi.py File erstellt, welches mit der create_app Funktion eine App kreiert und dann startet.</p>
 </div>
 </div>
-<hr class="docutils" />
 <div class="section" id="fazit-und-ausblick">
-<h2><span class="section-number">5.5. </span>Fazit und Ausblick<a class="headerlink" href="#fazit-und-ausblick" title="Link zu dieser Überschrift">¶</a></h2>
+<h2><span class="section-number">5.3. </span>Fazit und Ausblick<a class="headerlink" href="#fazit-und-ausblick" title="Link zu dieser Überschrift">¶</a></h2>
 <div class="section" id="fazit">
-<h3><span class="section-number">5.5.1. </span>Fazit<a class="headerlink" href="#fazit" title="Link zu dieser Überschrift">¶</a></h3>
+<h3><span class="section-number">5.3.1. </span>Fazit<a class="headerlink" href="#fazit" title="Link zu dieser Überschrift">¶</a></h3>
 <p>LICSTER zu verbessern war ein interessantes und forderndes Projekt. Wir mussten uns mit dem Framework Flask auseinandersetzen und in ein bestehendes Projekt einarbeiten. Es hat jedoch auch Spaß gemacht ein bestehendes Projekt durch eigene Funktionalitäten erweitern zu können. Wir haben die Web Applikation geräteübergreifend zugänglich gemacht und ein Benutzerverwaltungssystem hinzugefügt.</p>
 </div>
 <div class="section" id="ausblick">
-<h3><span class="section-number">5.5.2. </span>Ausblick<a class="headerlink" href="#ausblick" title="Link zu dieser Überschrift">¶</a></h3>
+<h3><span class="section-number">5.3.2. </span>Ausblick<a class="headerlink" href="#ausblick" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Bisher läuft die Server-Client Kommunikation über HTTP. Dies stellt ein Sicherheitsrisiko dar, da Benutzernamen und Passwörter unverschlüsselt über das Netz übertragen werden. Es ist möglich, HTTPS mithilfe von Self-Signed Certificates zu implementieren. Eine Anleitung hierzu kann unter <a class="reference external" href="https://gist.github.com/fntlnz/cf14feb5a46b2eda428e000157447309">https://gist.github.com/fntlnz/cf14feb5a46b2eda428e000157447309</a> gefunden werden. Google Chrome hat spezifische Anforderungen an die Zertifikate, welche Probleme verursachen können. Ein Thread zu diesem Problem kann unter <a class="reference external" href="https://github.com/webpack/webpack-dev-server/issues/854">https://github.com/webpack/webpack-dev-server/issues/854</a> gefunden werden.</p>
 <p>Aktuell werden Admins via Email unverzüglich über Sicherheitsverstöße benachrichtigt, das Selbe gilt allerdings nicht für das Admin Dashboard. Eine hilfreiche Erweiterung wäre die Implementierung einer Threadlevel Anzeige auf dem Admin Dashboard. Diese sollte automatisch das Sicherheitslevel updaten. Realisiert werden könnte dies z.B. durch eine Socket-Verbindung zwischen der Web Applikation und den Clients. Eine Anleitung zum Implementieren einer Socket-Verbindung kann unter dem folgenden Link gefunden werden: <a class="reference external" href="https://www.includehelp.com/python/implementation-of-websocket-using-flask-socket-io-in-python.aspx">https://www.includehelp.com/python/implementation-of-websocket-using-flask-socket-io-in-python.aspx</a></p>
 </div>

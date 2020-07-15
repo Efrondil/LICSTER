@@ -127,10 +127,15 @@
 <li class="toctree-l3"><a class="reference internal" href="#ssh-regel">3.9.4. SSH Regel</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#fazit-und-ausblick">3.10. Fazit und Ausblick</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#fazit">3.10.1. Fazit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ausblick">3.10.2. Ausblick</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="seccom.html">4. Secure Communication</a></li>
-<li class="toctree-l1"><a class="reference internal" href="webapp.html">5. Webapplikation Backend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="webapp.html">5. Webapplikation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="probleme.html">6. Probleme</a></li>
 </ul>
 
@@ -208,18 +213,25 @@ E-Mail-Nachrichten zu verhindern und Antiware-Tools zum Schutz von Endpunkten vo
 All diese Tools werden in so gut wie jedem Unternehmen eingesetzt egal welche Branche
 oder wie groß es ist. Ein weiteres wertvolles Sicherheitstool was ebenfalls eingesetzt
 wird ist ein Netzwerk-IDS (Intrusion Detection-System). Um dieses geht es auch in unserem
-Teil Projekt, bei dem wir ein solches System in dem Testbed Licster implementiert haben.</p>
+Teil Projekt, bei dem wir ein solches System in dem Testbed LICSTER implementiert haben.</p>
 <div class="section" id="unser-team">
 <h2><span class="section-number">3.1. </span>Unser Team<a class="headerlink" href="#unser-team" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Unser Team für das Teilprojekt „Intrusion Detection System“ (IDS) besteht aus drei Leuten, die auch schon in ihrem Studium einen starken Fokus auf IT-Sicherheit gelegt haben. Wir haben zusammen mehrerer Kurse in Richtung IT-Sicherheit besucht und teilen uns die Faszination Systeme sicherer machen zu wollen. Deswegen wurde schnell klar, dass unser Team einen großen Wert auf den Sicherheitsaspekt von LICSTER legen wird.
+<p>Unser Team für das Teilprojekt „Intrusion Detection System“ (IDS) besteht aus den Projektmitgliedern Eric Hoffmann, Michael Janzer und Janis Schickram, die auch schon in ihrem Studium einen starken Fokus auf IT-Sicherheit gelegt haben. Wir haben zusammen mehrerer Kurse in Richtung IT-Sicherheit besucht und teilen uns die Faszination Systeme sicherer machen zu wollen. Deswegen wurde schnell klar, dass unser Team einen großen Wert auf den Sicherheitsaspekt von LICSTER legen wird.
 Die Sicherheitslage von Industriesystemen auf der ganzen Welt wird immer kritischer. Bei Angriffen auf diese Systeme können in kürzester Zeit große wirtschaftliche Schäden erzielt werden.</p>
-<img alt="_images/cyberattacken.png" src="_images/cyberattacken.png" />
+<div class="figure align-default" id="id1">
+<img alt="_images/cyberattacken_excel.png" src="_images/cyberattacken_excel.png" />
+<p class="caption"><span class="caption-number">Abb. 3.1.1 </span><span class="caption-text">Cyberattacken auf deutsche Unternehmen im Jahre 2015,
+Quelle: <a class="reference external" href="https://de.statista.com/statistik/daten/studie/348989/umfrage/haeufigkeit-von-cyberattacken-auf-unternehmen/">https://de.statista.com/statistik/daten/studie/348989/umfrage/haeufigkeit-von-cyberattacken-auf-unternehmen/</a>, Zugriff am 15.07.2020</span><a class="headerlink" href="#id1" title="Link zu diesem Bild">¶</a></p>
+</div>
 <p>Deswegen haben wir uns zur Aufgabe gemacht, LICSTER eine weitere Sicherheitsschicht hinzuzufügen. Schnell wurde klar, dass ein IDS eine schnelle und aufwandseffiziente Lösung für unsere Problemstellung ist. Ein IDS kann in ein bestehendes System eingebaut werden, ohne dass direkte Änderungen am System gemacht werden müssen. Dies war uns besonders wichtig, da LICSTER bereits vor unserem Projekt schon fertiggestellt war und wir keine konzeptuelle Änderung mehr nachträglich realisieren wollten. Ein bestehendes IDS zu Nutzen hat es uns ermöglicht den zeitlichen Rahmen des Projekts einzuhalten und nützliche Fähigkeiten für unser weiteres Studium zu erlernen.</p>
 </div>
 <div class="section" id="einrichtung-pi">
 <h2><span class="section-number">3.2. </span>Einrichtung Pi<a class="headerlink" href="#einrichtung-pi" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Für die Realisierung des IDS wurde sich für ein Raspberry Pi 4 entschieden. Mit 4 GB RAM - in der ausgewälten Konfiguration - ist das Pi geeignet Snort als IDS zu verwenden. Als Betriebssystem wird das Raspberry Pi OS (früher Raspbian genannt) genutzt, welches von der offiziellen Seite bezogen wurde (<a class="reference external" href="https://www.raspberrypi.org/downloads/">https://www.raspberrypi.org/downloads/</a>). Dies wurde mit einem Image-Tool auf eine SD-Karte gespielt und über SSH wurden dann die restlichen Einrichtungen vorgenommen. Nachdem alles eingerichtet war, konnte das Pi in das LICSTER Netzwerk eingesetzt werden. Das Pi wurde an den Mirrorport des Switchs angeschlossen, damit der gesamte Traffic des LICSTERs am Pi empfangen werden kann. Um durch den Dauerbetrieb entstehende Abwärme entgegenzuwirken wurde eine Hülle mit Lüftern für das Pi angeschafft. Im Home-Verzeichnis wurde das Git aus GitLab gecloned. Dieses Repository enthält die Configs und Rules für Snort, sowie weitere Skripte für das IDS.</p>
+<div class="figure align-default" id="id2">
 <img alt="_images/Rapsberry_IDS_Showcase.jpg" src="_images/Rapsberry_IDS_Showcase.jpg" />
+<p class="caption"><span class="caption-number">Abb. 3.2.1 </span><span class="caption-text">Unser IDS-Raspberry</span><a class="headerlink" href="#id2" title="Link zu diesem Bild">¶</a></p>
+</div>
 </div>
 <div class="section" id="einrichtung-vm">
 <h2><span class="section-number">3.3. </span>Einrichtung VM<a class="headerlink" href="#einrichtung-vm" title="Link zu dieser Überschrift">¶</a></h2>
@@ -227,16 +239,15 @@ Die Sicherheitslage von Industriesystemen auf der ganzen Welt wird immer kritisc
 </div>
 <div class="section" id="was-ist-ein-ids">
 <h2><span class="section-number">3.4. </span>Was ist ein IDS<a class="headerlink" href="#was-ist-ein-ids" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Doch was genau ist nun ein Intrusion Detection system. Eine gute Definition für ein ids
-lauten folgend. „Ein IDS (Intrusion Detection System) ist ein Gerät oder eine Anwendung,
+<p>„Ein IDS (Intrusion Detection System) ist ein Gerät oder eine Anwendung,
 mit der der gesamte Netzwerkverkehr überprüft und der Benutzer oder Administrator
-benachrichtigt wird, wenn nicht autorisierte Versuche oder Zugriffe stattgefunden haben.“
-Im Gegensatz zu einer Firewall welche meist eher als Gatekeeper fungiert also nur den
-Netzwerkverkehr überwacht und bestimmt ob er ins Netzwerk darf. Konzentriert sich Ids
-System auf den traffic, der im internen Netzwerk abläuft. Dabei wird anhand von
-verschieden rule sets geschaut ob ein traffic verdächtig ist bzw. er sich ungewöhnlich
-verhält bspw. Modbus mehr traffic in der Sekunde als eigentlich der Standard für das
-System ist. Durch diese Weise kann ein ids Angriffe erkennen welche an der Firewall
+benachrichtigt wird, wenn nicht autorisierte Versuche oder Zugriffe stattgefunden haben.“ (Bradley, T., 2014. IDS. [online] verfügbar unter: <a class="reference external" href="https://techspective.net/2014/03/08/ids/">https://techspective.net/2014/03/08/ids/</a> [Besucht 12 July 2020].)
+Im Gegensatz dazu steht die Firewall, welche meist als Gatekeeper fungiert und somit nur den
+Netzwerkverkehr überwacht und regelt. Das IDS konzentriert sich
+auf den Traffic, der im internen Netzwerk abläuft. Dabei wird anhand von
+verschieden Rulesets entschieden, ob der Traffic verdächtig ist bzw. er sich ungewöhnlich
+verhält. Beispielhaft hierzu wäre es, wenn ein plötzlicher Anstieg des Traffic im Netzwerk erkannt wird.
+Durch diese Weise kann ein IDS Angriffe erkennen welche an der Firewall
 vorbei kommen oder aus dem eigenem Netzwerk stammen.</p>
 </div>
 <div class="section" id="wieso-man-es-braucht">
@@ -296,9 +307,15 @@ böswillige Verhalten unter das akzeptierende Verhalten fällt.</p>
 bekommen, haben wir, mit Wireshark, den Netzwerkverkehr aufgezeichnet.</p>
 <p>Als erstes haben wir pcaps während dem Einschalten, Betrieb und Abschalten von dem Testbed, mithilfe des Mirror Ports erstellt,
 um zu sehen was während einem Regulären betrieb auf dem Netzwerk passiert.</p>
+<div class="figure align-default" id="id3">
 <img alt="_images/wireshark_normal.png" src="_images/wireshark_normal.png" />
+<p class="caption"><span class="caption-number">Abb. 3.7.1 </span><span class="caption-text">Wireshark pcap vom LICSTER-Testbed während einem Leerlauf</span><a class="headerlink" href="#id3" title="Link zu diesem Bild">¶</a></p>
+</div>
 <p>Als nächstes haben wir pcaps von Angriffen, die wir Durchgeführt haben, aufgezeichnet, um Regeln für unser Intrusion-Detection-System entwickeln zu können.</p>
+<div class="figure align-default" id="id4">
 <img alt="_images/wireshark_flood.png" src="_images/wireshark_flood.png" />
+<p class="caption"><span class="caption-number">Abb. 3.7.2 </span><span class="caption-text">Wireshark pcap vom LICSTER-Testbed während einem Denial of Service Angriffs</span><a class="headerlink" href="#id4" title="Link zu diesem Bild">¶</a></p>
+</div>
 <div class="section" id="durchgefuhrte-angriffe">
 <h3><span class="section-number">3.7.1. </span>Durchgeführte Angriffe<a class="headerlink" href="#durchgefuhrte-angriffe" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Die Skripte für die Angriffe sind im Offiziellen Github Repository zu finden (<a class="reference external" href="https://github.com/hsainnos/LICSTER/tree/master/attacks">https://github.com/hsainnos/LICSTER/tree/master/attacks</a>).</p>
@@ -390,29 +407,16 @@ Adresse verwendet werden.</p>
 <p>Alle Regeloptionen werden durch das Semikolon (;) voneinander getrennt.
 Es gibt vier Kategorien von Regeloptionen:</p>
 <ul class="simple">
-<li><dl class="simple">
-<dt>general</dt><dd><p>enthält extra Informationen über die Regel, haben aber keine auswirkung während der Erkennung</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>payload</dt><dd><p>diese Optionen schauen in den Packet-Payload rein</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>non-payload</dt><dd><p>diese Optionen schauen für nicht payload Daten</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>post-detection</dt><dd><p>diese Optionen sind Regelspezifische trigger, die ausgeführt werden, nachdem eine Regel ausgelöst wird</p>
-</dd>
-</dl>
-</li>
+<li><p>general: enthält extra Informationen über die Regel, haben aber keine auswirkung während der Erkennung</p></li>
+<li><p>payload: diese Optionen schauen in den Packet-Payload rein</p></li>
+<li><p>non-payload: diese Optionen schauen für nicht payload Daten</p></li>
+<li><p>post-detection: diese Optionen sind Regelspezifische trigger, die ausgeführt werden, nachdem eine Regel ausgelöst wird</p></li>
 </ul>
+<div class="figure align-default" id="id5">
 <img alt="_images/rules.png" src="_images/rules.png" />
-<p>Für genauere Regeloptionen schaut man hier am besten nach:
+<p class="caption"><span class="caption-number">Abb. 3.8.1 </span><span class="caption-text">Aufbau einer Beispielregel</span><a class="headerlink" href="#id5" title="Link zu diesem Bild">¶</a></p>
+</div>
+<p>Eine komplette Auflistung von Regeloptionen:
 <a class="reference external" href="http://manual-snort-org.s3-website-us-east-1.amazonaws.com/node32.html">http://manual-snort-org.s3-website-us-east-1.amazonaws.com/node32.html</a></p>
 </div>
 </div>
@@ -446,7 +450,8 @@ Da die Paketgröße 0 ist wird hier <code class="docutils literal notranslate"><
 <span class="n">itype</span><span class="p">:</span><span class="mi">8</span><span class="p">;</span> <span class="n">count</span> <span class="mi">20</span><span class="p">,</span> <span class="n">seconds</span> <span class="mi">1</span><span class="p">;</span> <span class="n">classtype</span><span class="p">:</span> <span class="n">denial</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">service</span><span class="p">;</span> <span class="n">sid</span><span class="p">:</span><span class="mi">1003010</span><span class="p">;</span> <span class="n">rev</span><span class="p">:</span><span class="mi">1</span><span class="p">;)</span>
 </pre></div>
 </div>
-<p>Standard DoS Ping flood.</p>
+<p>Diese Regel ist für einen einfachen Ping flood Denial-of-Service Angriff. Ausgelöst wird die Regel, wenn
+in einem Intervall von einer Sekunde, 20 Ping Pakete ankommen.</p>
 <p><strong>DoS Teardrop</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alert</span> <span class="n">icmp</span> <span class="nb">any</span> <span class="nb">any</span> <span class="o">-&gt;</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">0.10</span> <span class="nb">any</span> <span class="p">(</span><span class="n">msg</span><span class="p">:</span><span class="s2">&quot;ICMP Teardrop attack 192.168.0.10&quot;</span><span class="p">;</span> \
 <span class="n">fragbits</span><span class="p">:</span><span class="n">M</span><span class="p">;</span> <span class="n">classtype</span><span class="p">:</span> <span class="n">denial</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">service</span><span class="p">;</span> <span class="n">sid</span><span class="p">:</span><span class="mi">1003020</span><span class="p">;</span><span class="n">rev</span><span class="p">:</span><span class="mi">1</span><span class="p">;)</span>
@@ -501,6 +506,26 @@ content:&quot;SSH&quot;; nocase; offset:0; depth:4; classtype: attempted-user; s
 </pre></div>
 </div>
 <p>Gleich wie oben, nur ist diese Regel für das Erkennen eines Distributed-Denial-of-Service Angriffs zuständig.</p>
+</div>
+</div>
+<div class="section" id="fazit-und-ausblick">
+<h2><span class="section-number">3.10. </span>Fazit und Ausblick<a class="headerlink" href="#fazit-und-ausblick" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="section" id="fazit">
+<h3><span class="section-number">3.10.1. </span>Fazit<a class="headerlink" href="#fazit" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Durch die Implementierung eines Intrusion Detection Systems können wir jetzt den Netzwerkverkehr
+überwachen sowie Angriffe und unberechtigte Zugriffe erkennen. Mit dem entwickeln von eigenen SSH, HTML, MODBUS
+und ICMP Regeln, konnten wir Snort an das LICSTER-Testbed so anpassen, dass erkannt wird welches Gerät vom
+LICSTER-Testbed angegriffen wird. So kann man direkt sehen welches Gerät unter Angriff steht und man kann direkt
+dagegen vorgehen. Auch werden die Logs mittels einem Cronjob im Minutentakt mit SCP an die Webapplikation
+versendet.</p>
+</div>
+<div class="section" id="ausblick">
+<h3><span class="section-number">3.10.2. </span>Ausblick<a class="headerlink" href="#ausblick" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Nachdem jetzt das LICSTER-Testbed mit Snort überwacht wird, kann man zusätzlich noch weitere an das
+LICSTER-Testbed angepasste Regeln entwickeln, um mehr LICSTER spezifische Angriffe zu erkennen. Ergänzend
+kann man ein Intrusion Prevention System (IPS) implementieren. Ein IPS kann neben den Funktionen eines IDS,
+wie das erkennen eines Angriffs auch aktiv Angriffe verhindern, indem es die jeweiligen Pakete im Netzwerkverkehr
+dropped.</p>
 </div>
 </div>
 </div>
