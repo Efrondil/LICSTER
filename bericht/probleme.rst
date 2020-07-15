@@ -7,7 +7,7 @@ Zugriff auf das LICSTER
 =======================
 
 
-.. figure:: problems_web_control.png
+.. figure:: img/problems_web_control.png
    :alt: LICSTER WEB CONTROL
 
    Screenshot von der Übergangslösung von Teamviewer und Custom Webseite

@@ -48,16 +48,9 @@ Bridgemanager
 ^^^^^^^^^^^^^
 
 Der Bridgemanager (Brückenverwalter) verwaltet die einzelnen Brücken und startet diese bei Fehlern neu.
-:raw-html-m2r:`<!-- TODO: evtl. ausführlicher -->`
 
 Remote-IO
 ---------
-
-
-.. raw:: html
-
-   <!-- TODO: evtl. kleine Einleitung bzw. Erläuterung -->
-
 
 
 Mbed TLS
