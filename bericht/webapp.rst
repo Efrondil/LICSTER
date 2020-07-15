@@ -1,19 +1,13 @@
 
-Webapplikation Backend
+Webapplikation
 ======================
 
 .. Fabian Klemm, Athanasios Luludis
 
 
-Einleitung
-----------
-
 Unsere Aufgabe war es die Web-Applikation des LICSTER zu verbessern. 
 
 Konkret haben wir das Frontent für mehrere Geräte zugänglich gemacht und das Backend um eine Benutzerverwaltung erweitert. Des weiteren haben wir ein PIN-Feld für das HMI programmiert, die Datenbank der Benutzerverwaltung von der Kommandozeile aufsetzbar gemacht und die Logs des IDS zeigen wir nicht nur auf dem Admin Dashboard an, sondern benachrichtigen Admins auch über Breaches per Email. Ein WSGI (Web Server Gateway Interface) wurde implementiert, um die Einbindung eines Web Servers für Endbenutzer zu vereinfachen.
-
-Anfangsstand
-------------
 
 Die Flask Applikation der ersten LICSTER Gruppe war ein abgeschlossenes System, welches nur zur Benutzung auf dem HMI konzipiert war. Sie zeigt den Stand aller Servomotoren an, kann Orders anzeigen und plazieren und Motoren einzeln ansteuern.
 
@@ -21,7 +15,6 @@ Sie in einem Unternehmensnetzwerk laufen zu lassen wäre ein Sicherheitsrisiko g
 
 Im Folgenden präsentieren wir unsere Veränderungen und Erweiterungen.
 
-----
 
 Veränderungen
 -------------
@@ -80,13 +73,13 @@ Für das Design haben wir uns zusammengesetzt und beschlossen dass ein schlichte
    :alt: LICSTER PIN
 
 
-Für das PIN-Feld wurde eine JavaScript Klasse erstellt, welche für die Anzeige der Tasten und das Handling von Eingaben zuständig ist. Diese Anzeige ist nicht für mehrere Geräte angelegt sondern direkt auf das HMI angepasst.
+Die Abbildung zeigt das PIN-Feld. Für das PIN-Feld wurde eine JavaScript Klasse erstellt, welche für die Anzeige der Tasten und das Handling von Eingaben zuständig ist. Diese Anzeige ist nicht für mehrere Geräte angelegt sondern direkt auf das HMI angepasst.
 
 
 .. image:: img/webbapp1.gif
    :alt: admin
 
-Die normale Anmeldeseite wurde so realisiert, dass sie auf allen Geräten gut verwendet werden kann. 
+Die  Abbildung zeigt die normale Anmeldeseite welche so realisiert wurde, dass sie auf allen Geräten gut verwendet werden kann. 
 
 ----
 
@@ -107,8 +100,7 @@ Das Styling der Admin Dashboard-Ansicht wurde mithilfe von HTML und CSS (Cascade
 .. image:: img/webbapp2.png
    :alt: LICSTER WEB
 
-
-Zusätzlich gibt noch eine Reset-Funktion mit der man alle snort Einträge aus der Datenbank löschen kann.
+Das Bild zeigt das Admin Dashboard. Zusätzlich gibt noch eine Reset-Funktion mit der man alle snort Einträge aus der Datenbank löschen kann.
 
 Datenbank
 ^^^^^^^^^
@@ -185,7 +177,6 @@ WSGI
 
 Um die leichte Einbindung in einen Server wie nginx zu gewährtleisten, haben wir uns dazu entschlossen ein WSGI einzubinden. Wir haben Gunicorn ausgewählt und ein wsgi.py File erstellt, welches mit der create_app Funktion eine App kreiert und dann startet.
 
-----
 
 Fazit und Ausblick
 ------------------

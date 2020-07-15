@@ -21,7 +21,9 @@ Unser Team
 Unser Team für das Teilprojekt „Intrusion Detection System“ (IDS) besteht aus drei Leuten, die auch schon in ihrem Studium einen starken Fokus auf IT-Sicherheit gelegt haben. Wir haben zusammen mehrerer Kurse in Richtung IT-Sicherheit besucht und teilen uns die Faszination Systeme sicherer machen zu wollen. Deswegen wurde schnell klar, dass unser Team einen großen Wert auf den Sicherheitsaspekt von LICSTER legen wird.
 Die Sicherheitslage von Industriesystemen auf der ganzen Welt wird immer kritischer. Bei Angriffen auf diese Systeme können in kürzester Zeit große wirtschaftliche Schäden erzielt werden.  
 
-.. image:: img/cyberattacken.png
+.. figure:: img/cyberattacken.png
+
+    Cyberattacken auf deutsche Unternehmen im Jahre 2015
 
 Deswegen haben wir uns zur Aufgabe gemacht, LICSTER eine weitere Sicherheitsschicht hinzuzufügen. Schnell wurde klar, dass ein IDS eine schnelle und aufwandseffiziente Lösung für unsere Problemstellung ist. Ein IDS kann in ein bestehendes System eingebaut werden, ohne dass direkte Änderungen am System gemacht werden müssen. Dies war uns besonders wichtig, da LICSTER bereits vor unserem Projekt schon fertiggestellt war und wir keine konzeptuelle Änderung mehr nachträglich realisieren wollten. Ein bestehendes IDS zu Nutzen hat es uns ermöglicht den zeitlichen Rahmen des Projekts einzuhalten und nützliche Fähigkeiten für unser weiteres Studium zu erlernen.
 
@@ -30,7 +32,9 @@ Einrichtung Pi
 
 Für die Realisierung des IDS wurde sich für ein Raspberry Pi 4 entschieden. Mit 4 GB RAM - in der ausgewälten Konfiguration - ist das Pi geeignet Snort als IDS zu verwenden. Als Betriebssystem wird das Raspberry Pi OS (früher Raspbian genannt) genutzt, welches von der offiziellen Seite bezogen wurde (https://www.raspberrypi.org/downloads/). Dies wurde mit einem Image-Tool auf eine SD-Karte gespielt und über SSH wurden dann die restlichen Einrichtungen vorgenommen. Nachdem alles eingerichtet war, konnte das Pi in das LICSTER Netzwerk eingesetzt werden. Das Pi wurde an den Mirrorport des Switchs angeschlossen, damit der gesamte Traffic des LICSTERs am Pi empfangen werden kann. Um durch den Dauerbetrieb entstehende Abwärme entgegenzuwirken wurde eine Hülle mit Lüftern für das Pi angeschafft. Im Home-Verzeichnis wurde das Git aus GitLab gecloned. Dieses Repository enthält die Configs und Rules für Snort, sowie weitere Skripte für das IDS.
 
-.. image:: img/Rapsberry_IDS_Showcase.jpg
+.. figure:: img/Rapsberry_IDS_Showcase.jpg
+
+    Unser IDS-Raspberry
 
 
 Einrichtung VM
@@ -42,16 +46,15 @@ Aus Kostengründen konnte nicht für jedes der drei Mitglieder ein Raspberry Pi 
 Was ist ein IDS
 ***************
 
-Eine Definition, um zu verstehen was genau ein IDS ist lautet Folgens.
 „Ein IDS (Intrusion Detection System) ist ein Gerät oder eine Anwendung,
 mit der der gesamte Netzwerkverkehr überprüft und der Benutzer oder Administrator
 benachrichtigt wird, wenn nicht autorisierte Versuche oder Zugriffe stattgefunden haben.“ (Bradley, T., 2014. IDS. [online] verfügbar unter: https://techspective.net/2014/03/08/ids/ [Besucht 12 July 2020].)
-Im Gegensatz zu einer Firewall welche meist eher als Gatekeeper fungiert also nur den
-Netzwerkverkehr überwacht und bestimmt ob er ins Netzwerk darf. Konzentriert sich Ids
-System auf den traffic, der im internen Netzwerk abläuft. Dabei wird anhand von
-verschieden rule sets geschaut ob ein traffic verdächtig ist bzw. er sich ungewöhnlich
-verhält bspw. Modbus mehr traffic in der Sekunde als eigentlich der Standard für das
-System ist. Durch diese Weise kann ein ids Angriffe erkennen welche an der Firewall
+Im Gegensatz dazu steht die Firewall, welche meist als Gatekeeper fungiert und somit nur den
+Netzwerkverkehr überwacht und regelt. Das IDS konzentriert sich
+auf den Traffic, der im internen Netzwerk abläuft. Dabei wird anhand von
+verschieden Rulesets entschieden, ob der Traffic verdächtig ist bzw. er sich ungewöhnlich
+verhält. Beispielhaft hierzu wäre es, wenn ein plötzlicher Anstieg des Traffic im Netzwerk erkannt wird.
+Durch diese Weise kann ein IDS Angriffe erkennen welche an der Firewall
 vorbei kommen oder aus dem eigenem Netzwerk stammen.
 
 Wieso man es braucht
@@ -122,15 +125,15 @@ bekommen, haben wir, mit Wireshark, den Netzwerkverkehr aufgezeichnet.
 Als erstes haben wir pcaps während dem Einschalten, Betrieb und Abschalten von dem Testbed, mithilfe des Mirror Ports erstellt,
 um zu sehen was während einem Regulären betrieb auf dem Netzwerk passiert.
 
-.. image:: img/wireshark_normal.png
+.. figure:: img/wireshark_normal.png
 
-Wireshark pcap vom LICSTER-Testbed während einem Leerlauf
+    Wireshark pcap vom LICSTER-Testbed während einem Leerlauf
 
 Als nächstes haben wir pcaps von Angriffen, die wir Durchgeführt haben, aufgezeichnet, um Regeln für unser Intrusion-Detection-System entwickeln zu können.
 
-.. image:: img/wireshark_flood.png
+.. figure:: img/wireshark_flood.png
 
-Wireshark pcap vom LICSTER-Testbed während einem Denial of Service Angriffs
+    Wireshark pcap vom LICSTER-Testbed während einem Denial of Service Angriffs
 
 Durchgeführte Angriffe
 ======================
@@ -251,7 +254,9 @@ Es gibt vier Kategorien von Regeloptionen:
 - non-payload - diese Optionen schauen für nicht payload Daten
 - post-detection - diese Optionen sind Regelspezifische trigger, die ausgeführt werden, nachdem eine Regel ausgelöst wird 
 
-.. image:: img/rules.png
+.. figure:: img/rules.png
+    
+    Aufbau einer Beispielregel
 
 Eine komplette Auflistung von Regeloptionen findet man hier:
 http://manual-snort-org.s3-website-us-east-1.amazonaws.com/node32.html

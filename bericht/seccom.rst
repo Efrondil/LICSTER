@@ -68,8 +68,7 @@ Um TLS auf den Remote-IOs zu implementieren haben wurde die Mbed TLS Bibliothek 
 Heap Speicher
 ^^^^^^^^^^^^^
 
-FreeRTOS verwaltet den gesamten Heap Speicher, darum schlagen Aufrufe der Standardbibliotheksfunktionen für dynamische Speicherverwaltung fehl. Das heißt jeder Aufruf an ``calloc`` oder ``malloc`` geben ``NULL`` zurück. Jedoch benötigt Mbed TLS dynamischen Speicher. Explizit benötigt Mbed TLS ``calloc`` und ``free``. Alternativ kann Mbed TLS auch mit einem statischen Block an Speicher arbeiten, jedoch wurde den dynamischen Ansatz gewählt.
-:raw-html-m2r:`<!-- TODO: WARUM DYNAMISCHER ANSATZ UND NICHT STATISCHER! -->`
+FreeRTOS verwaltet den gesamten Heap Speicher, darum schlagen Aufrufe der Standardbibliotheksfunktionen für dynamische Speicherverwaltung fehl. Das heißt jeder Aufruf an ``calloc`` oder ``malloc`` geben ``NULL`` zurück. Jedoch benötigt Mbed TLS dynamischen Speicher. Explizit benötigt Mbed TLS ``calloc`` und ``free``. Alternativ kann Mbed TLS auch mit einem statischen Block an Speicher arbeiten, jedoch wurde den dynamischen Ansatz gewählt. Aufgrund der schwer vorhersehbaren Speicheraufwand wurde dieser Ansatz gewählt, da mit dem statischen Block eine vordefinierte Menge an Speicher reserviert wird und dieser meist zu groß oder zu klein ist.
 
 Diese Implementation ist in ``heap_mem.h`` deklariert und in ``heap_mem.c`` definiert.
 
