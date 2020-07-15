@@ -13,7 +13,11 @@ Zugriff auf das LICSTER
    Screenshot von der Übergangslösung von Teamviewer und Custom Webseite
 
 
-Der physische Zugriff auf das Testsystem welches beim Projektaufseher vor Ort installiert war, wurde durch Teamviewer und SSH ersetzt. Durch diesen Teamviewer Zugriff waren wir dann trotzdem in der Lage das Gerät ein- und auszuschalten und die Kamera zu rebooten.
+Der physische Zugriff auf das Testsystem welches beim Projektbetreuer vor Ort installiert war, wurde durch Teamviewer und SSH ersetzt. Durch diesen Teamviewer Zugriff waren wir dann trotzdem in der Lage das Gerät ein- und auszuschalten und die Kamera zu rebooten.
+
+Auch die Kommunikation im Team musste komplett kontaktlos ablaufen. Dies erforderte Anfangs einen hohen Aufwand an Organisation und Eigenmanagment, da es für alle eine vollkommen neue Situation darstellte. Dieses Problem löste sich nach einer kurzen Eingewöhnungsphase von selber.
+
+Da das LICSTER schon ein bereits bestehendes und komplexes System war, musste einige Zeit in die Einarbeitung investiert werden. Der technische Hintergrund bei den einzelnen Projektmitgliedern variierte stark, weswegen erst einmal ein gemeinsamer Wissenstand erarbeitet werden musste.
 
 Projekttag
 ==========
