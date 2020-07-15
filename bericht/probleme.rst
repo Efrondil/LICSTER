@@ -22,4 +22,6 @@ Da das LICSTER schon ein bereits bestehendes und komplexes System war, musste ei
 Projekttag
 ==========
 
-Der Projekttag war ebenfalls von der Pandemie beeinträchtigt jedoch war es uns möglich eine gemeinsame Präsentation über Microsoft Powerpoint online zu erstellen und diese auch an unseren Vortrag anzupassen.
+Der Projekttag war ebenfalls von der Pandemie beeinträchtigt jedoch war es uns möglich eine gemeinsame Präsentation über Microsoft Powerpoint online zu erstellen und diese auch an unseren Vortrag anzupassen. 
+Im Laufe des Projekttages haben wir kurze Teilpräsentationen, welche in einer großen Präsentation zusammengefasst war, gehalten um den Fortschritt, der in den letzten Monaten erzielt wurde, zusammenzufassen. 
+Ziel des Projekttages war es LICSTER vorzustellen und möglichst vielen Interessenten unsere Arbeit näher zu bringen. Darauf folgte ein "Meet-the-Team" Session, in der wir für Fragen zur Verfügung standen.
