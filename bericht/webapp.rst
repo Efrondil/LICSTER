@@ -69,19 +69,17 @@ Design
 
 Für das Design haben wir uns zusammengesetzt und beschlossen dass ein schlichteres Design ohne viele visuelle Features besser ist. Es handelt sich nämlich um ein IT-Sicherheits-Projekt bei dem natürlich die Sicherheit des Systems an erster Stelle steht und es seriös wirken soll.
 
-.. image:: img/webbapp0.png
+.. figure:: img/webbapp0.png
    :alt: LICSTER PIN
 
+Die Abbildung zeigt das PIN-Feld. Für das PIN-Feld wurde eine HTML Seite erstellt, welche für die Anzeige der Tasten und das Handling von Eingaben zuständig ist. Diese Anzeige ist nicht für mehrere Geräte angelegt sondern direkt auf das HMI angepasst.
 
-Die Abbildung zeigt das PIN-Feld. Für das PIN-Feld wurde eine JavaScript Klasse erstellt, welche für die Anzeige der Tasten und das Handling von Eingaben zuständig ist. Diese Anzeige ist nicht für mehrere Geräte angelegt sondern direkt auf das HMI angepasst.
 
-
-.. image:: img/webbapp1.gif
+.. figure:: img/remotecontrol.jpeg
    :alt: admin
 
-Die  Abbildung zeigt die normale Anmeldeseite welche so realisiert wurde, dass sie auf allen Geräten gut verwendet werden kann. 
+   Die  Abbildung zeigt das LICSTER und das Admin-Dashboard, welches so realisiert wurde, dass es auf allen Geräten gut verwendet werden kann
 
-----
 
 Erweiterungen
 -------------
@@ -97,10 +95,10 @@ Die dritte Rolle des Benutzverwaltungssystems erlaubt den Zugriff auf das Admini
 Das Styling der Admin Dashboard-Ansicht wurde mithilfe von HTML und CSS (Cascade Style Sheets) verwirklicht. Hierbei haben wir beschlossen das alle Funktionen auf einer einzigen Seite sind, damit es übersichtlich bleibt und die Bedienung schneller ist.
 
 
-.. image:: img/webbapp2.png
+.. figure:: img/webbapp2.png
    :alt: LICSTER WEB
 
-Das Bild zeigt das Admin Dashboard. Zusätzlich gibt noch eine Reset-Funktion mit der man alle snort Einträge aus der Datenbank löschen kann.
+   Das Bild zeigt das Admin Dashboard. Zusätzlich gibt noch eine Reset-Funktion mit der man alle snort Einträge aus der Datenbank löschen kann.
 
 Datenbank
 ^^^^^^^^^
