@@ -24,11 +24,11 @@ LICSTER
 | Janis Schickram, <Janis.Schickram@hs-augsburg.de>
 
 
-Inhalt:
 
 .. toctree::
    :maxdepth: 2
    :numbered:
+   :name: Inhalt
 
    einleitung
    kommunikation
@@ -38,9 +38,3 @@ Inhalt:
    probleme
 
 
-Index
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
