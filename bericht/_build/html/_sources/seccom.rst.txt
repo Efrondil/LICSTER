@@ -8,7 +8,7 @@
 Secure Communication
 ====================
 
-Als die Secure Communication Gruppe haben wir uns ausschließlich mit der internen Kommunikation des LICSTERs auseinandergesetzt. Als Ziel haben wir es uns gesetzt das bereits implementierte Modbus-Protokoll, das in dieser Form sich als sehr unsicher bewiesen hat, zu verschlüsseln. Dabei haben wir uns dazu entschieden, das TLS-Protokoll einzusetzen. Dieses bietet zusätzlich zu der Verschlüsselung der Anwendungsschicht ein Handshake-Protokoll, das die Authentifizierung der Kommunikationspartner ermöglicht.
+Als die Secure Communication Gruppe haben wir uns ausschließlich mit der internen Kommunikation des LICSTERs auseinandergesetzt. Als Ziel haben wir, Raphael Hausmanninger und Muhammet Bilbey, es uns gesetzt das bereits implementierte Modbus-Protokoll, das in dieser Form sich als sehr unsicher bewiesen hat, zu verschlüsseln. Dabei haben wir uns dazu entschieden, das TLS-Protokoll einzusetzen. Dieses bietet zusätzlich zu der Verschlüsselung der Anwendungsschicht ein Handshake-Protokoll, das die Authentifizierung der Kommunikationspartner ermöglicht.
 
 .. figure:: ./assets/diagrams/No_Secure_Layer_Overview.png
    :alt: 

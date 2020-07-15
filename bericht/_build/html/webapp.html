@@ -1,7 +1,8 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="de" >
+<!--[if IE 8]><html class="no-js lt-ie9" lang="de" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="de" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
@@ -11,18 +12,12 @@
   
 
   
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-
-  
   
   
   
 
   
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -35,6 +30,10 @@
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
     <link rel="search" title="Suche" href="search.html" />
     <link rel="next" title="7. Probleme" href="probleme.html" />
@@ -52,7 +51,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> LICSTER
+            <a href="index.html" class="icon icon-home"> LICSTER
           
 
           
@@ -70,7 +69,7 @@
           
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Dokumentation durchsuchen" />
+    <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -79,7 +78,6 @@
           
         </div>
 
-        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -125,7 +123,6 @@
             
           
         </div>
-        
       </div>
     </nav>
 
@@ -164,7 +161,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="index.html">Docs</a> &raquo;</li>
         
       <li><span class="section-number">6. </span>Webapplikation</li>
     
@@ -172,7 +169,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/webapp.rst.txt" rel="nofollow"> Quelltext anzeigen</a>
+            <a href="_sources/webapp.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -188,7 +185,7 @@
   <div class="section" id="webapplikation">
 <h1><span class="section-number">6. </span>Webapplikation<a class="headerlink" href="#webapplikation" title="Link zu dieser Überschrift">¶</a></h1>
 <p>Unsere Aufgabe war es die Web-Applikation des LICSTER zu verbessern.</p>
-<p>Konkret haben wir das Frontent für mehrere Geräte zugänglich gemacht und das Backend um eine Benutzerverwaltung erweitert. Des weiteren haben wir ein PIN-Feld für das HMI programmiert, die Datenbank der Benutzerverwaltung von der Kommandozeile aufsetzbar gemacht und die Logs des IDS zeigen wir nicht nur auf dem Admin Dashboard an, sondern benachrichtigen Admins auch über Breaches per Email. Ein WSGI (Web Server Gateway Interface) wurde implementiert, um die Einbindung eines Web Servers für Endbenutzer zu vereinfachen.</p>
+<p>Konkret haben wir, Fabian Klemm und Athanasios Luludis, das Frontent für mehrere Geräte zugänglich gemacht und das Backend um eine Benutzerverwaltung erweitert. Des weiteren haben wir ein PIN-Feld für das HMI programmiert, die Datenbank der Benutzerverwaltung von der Kommandozeile aufsetzbar gemacht und die Logs des IDS zeigen wir nicht nur auf dem Admin Dashboard an, sondern benachrichtigen Admins auch über Breaches per Email. Ein WSGI (Web Server Gateway Interface) wurde implementiert, um die Einbindung eines Web Servers für Endbenutzer zu vereinfachen.</p>
 <p>Die Flask Applikation der ersten LICSTER Gruppe war ein abgeschlossenes System, welches nur zur Benutzung auf dem HMI konzipiert war. Sie zeigt den Stand aller Servomotoren an, kann Orders anzeigen und plazieren und Motoren einzeln ansteuern.</p>
 <p>Sie in einem Unternehmensnetzwerk laufen zu lassen wäre ein Sicherheitsrisiko gewesen, da jeder die Motoren bedienen konnte. Des weiteren würde es Anzeigeprobleme geben, da die Web Applikation nur für einen Bildschirm - den des HMI - programmiert wurde.</p>
 <p>Im Folgenden präsentieren wir unsere Veränderungen und Erweiterungen.</p>
@@ -333,10 +330,10 @@ hinzugefügt. Falls sich der Benutzer zum ersten Mal anmeldet, wird er nun weite
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="probleme.html" class="btn btn-neutral float-right" title="7. Probleme" accesskey="n" rel="next">Weiter <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="probleme.html" class="btn btn-neutral float-right" title="7. Probleme" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="seccom.html" class="btn btn-neutral float-left" title="5. Secure Communication" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Zurück</a>
+        <a href="seccom.html" class="btn btn-neutral float-left" title="5. Secure Communication" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -345,19 +342,11 @@ hinzugefügt. Falls sich der Benutzer zum ersten Mal anmeldet, wird er nun weite
 
   <div role="contentinfo">
     <p>
-        
         &copy; Copyright 2020, Muhammet Bilbey, Raphael Hausmanninger, Eric Hoffmann, Michael Janzer, Fabian Klemm, Athanasios Luludis, Janis Schickram
 
     </p>
   </div>
-    
-    
-    
-    Erstellt mit <a href="http://sphinx-doc.org/">Sphinx</a> mit einem
-    
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
-    
-    bereitgestellt von <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -368,6 +357,7 @@ hinzugefügt. Falls sich der Benutzer zum ersten Mal anmeldet, wird er nun weite
 
   </div>
   
+
 
   <script type="text/javascript">
       jQuery(function () {
