@@ -46,16 +46,15 @@ Aus Kostengründen konnte nicht für jedes der drei Mitglieder ein Raspberry Pi 
 Was ist ein IDS
 ***************
 
-Eine Definition, um zu verstehen was genau ein IDS ist lautet Folgens.
 „Ein IDS (Intrusion Detection System) ist ein Gerät oder eine Anwendung,
 mit der der gesamte Netzwerkverkehr überprüft und der Benutzer oder Administrator
 benachrichtigt wird, wenn nicht autorisierte Versuche oder Zugriffe stattgefunden haben.“ (Bradley, T., 2014. IDS. [online] verfügbar unter: https://techspective.net/2014/03/08/ids/ [Besucht 12 July 2020].)
-Im Gegensatz zu einer Firewall welche meist eher als Gatekeeper fungiert also nur den
-Netzwerkverkehr überwacht und bestimmt ob er ins Netzwerk darf. Konzentriert sich Ids
-System auf den traffic, der im internen Netzwerk abläuft. Dabei wird anhand von
-verschieden rule sets geschaut ob ein traffic verdächtig ist bzw. er sich ungewöhnlich
-verhält bspw. Modbus mehr traffic in der Sekunde als eigentlich der Standard für das
-System ist. Durch diese Weise kann ein ids Angriffe erkennen welche an der Firewall
+Im Gegensatz dazu steht die Firewall, welche meist als Gatekeeper fungiert und somit nur den
+Netzwerkverkehr überwacht und regelt. Das IDS konzentriert sich
+auf den Traffic, der im internen Netzwerk abläuft. Dabei wird anhand von
+verschieden Rulesets entschieden, ob der Traffic verdächtig ist bzw. er sich ungewöhnlich
+verhält. Beispielhaft hierzu wäre es, wenn ein plötzlicher Anstieg des Traffic im Netzwerk erkannt wird.
+Durch diese Weise kann ein IDS Angriffe erkennen welche an der Firewall
 vorbei kommen oder aus dem eigenem Netzwerk stammen.
 
 Wieso man es braucht
