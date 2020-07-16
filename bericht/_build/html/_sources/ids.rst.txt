@@ -19,8 +19,9 @@ Unser Team
 **********
 
 Unser Team für das Teilprojekt „Intrusion Detection System“ (IDS) besteht aus den Projektmitgliedern Eric Hoffmann, Michael Janzer und Janis Schickram, die auch schon in ihrem Studium einen starken Fokus auf IT-Sicherheit gelegt haben. Wir haben zusammen mehrerer Kurse in Richtung IT-Sicherheit besucht und teilen uns die Faszination Systeme sicherer machen zu wollen. Deswegen wurde schnell klar, dass unser Team einen großen Wert auf den Sicherheitsaspekt von LICSTER legen wird.
-Die Sicherheitslage von Industriesystemen auf der ganzen Welt wird immer kritischer. Bei Angriffen auf diese Systeme können in kürzester Zeit große wirtschaftliche Schäden erzielt werden.  
+Die Sicherheitslage von Industriesystemen auf der ganzen Welt wird immer kritischer (siehe :numref:`cyberattacken`). Bei Angriffen auf diese Systeme können in kürzester Zeit große wirtschaftliche Schäden erzielt werden.  
 
+.. _cyberattacken:
 .. figure:: img/cyberattacken_excel.png
 
     Cyberattacken auf deutsche Unternehmen im Jahre 2015
@@ -31,8 +32,9 @@ Deswegen haben wir uns zur Aufgabe gemacht, LICSTER eine weitere Sicherheitsschi
 Einrichtung Pi
 **************
 
-Für die Realisierung des IDS wurde sich für ein Raspberry Pi 4 entschieden. Mit 4 GB RAM - in der ausgewälten Konfiguration - ist das Pi geeignet Snort als IDS zu verwenden. Als Betriebssystem wird das Raspberry Pi OS (früher Raspbian genannt) genutzt, welches von der offiziellen Seite bezogen wurde (https://www.raspberrypi.org/downloads/). Dies wurde mit einem Image-Tool auf eine SD-Karte gespielt und über SSH wurden dann die restlichen Einrichtungen vorgenommen. Nachdem alles eingerichtet war, konnte das Pi in das LICSTER Netzwerk eingesetzt werden. Das Pi wurde an den Mirrorport des Switchs angeschlossen, damit der gesamte Traffic des LICSTERs am Pi empfangen werden kann. Um durch den Dauerbetrieb entstehende Abwärme entgegenzuwirken wurde eine Hülle mit Lüftern für das Pi angeschafft. Im Home-Verzeichnis wurde das Git aus GitLab gecloned. Dieses Repository enthält die Configs und Rules für Snort, sowie weitere Skripte für das IDS.
+Für die Realisierung des IDS wurde sich für ein Raspberry Pi 4 entschieden. Mit 4 GB RAM - in der ausgewälten Konfiguration - ist das Pi geeignet Snort als IDS zu verwenden. Als Betriebssystem wird das Raspberry Pi OS (früher Raspbian genannt) genutzt, welches von der offiziellen Seite bezogen wurde (https://www.raspberrypi.org/downloads/). Dies wurde mit einem Image-Tool auf eine SD-Karte gespielt und über SSH wurden dann die restlichen Einrichtungen vorgenommen. Nachdem alles eingerichtet war (siehe :numref:`ids_raspberry`), konnte das Pi in das LICSTER Netzwerk eingesetzt werden. Das Pi wurde an den Mirrorport des Switchs angeschlossen, damit der gesamte Traffic des LICSTERs am Pi empfangen werden kann. Um durch den Dauerbetrieb entstehende Abwärme entgegenzuwirken wurde eine Hülle mit Lüftern für das Pi angeschafft. Im Home-Verzeichnis wurde das Git aus GitLab gecloned. Dieses Repository enthält die Configs und Rules für Snort, sowie weitere Skripte für das IDS.
 
+.. _ids_raspberry:
 .. figure:: img/Rapsberry_IDS_Showcase.jpg
 
     Unser IDS-Raspberry
@@ -125,15 +127,17 @@ Um einen Überblick über die Pakete, die im LICSTER Netzwerk unterwegs sind, zu
 bekommen, haben wir, mit Wireshark, den Netzwerkverkehr aufgezeichnet.
 
 Als erstes haben wir pcaps während dem Einschalten, Betrieb und Abschalten von dem Testbed, mithilfe des Mirror Ports erstellt,
-um zu sehen was während einem Regulären betrieb auf dem Netzwerk passiert.
+um zu sehen was während einem Regulären betrieb auf dem Netzwerk passiert (siehe :numref:`wireshark_normal`).
 
+.. _wireshark_normal:
 .. figure:: img/wireshark_normal.png
 
     Wireshark pcap vom LICSTER-Testbed während einem Leerlauf
     | Quelle: Eigene Darstellung
 
-Als nächstes haben wir pcaps von Angriffen, die wir Durchgeführt haben, aufgezeichnet, um Regeln für unser Intrusion-Detection-System entwickeln zu können.
+Als nächstes haben wir pcaps von Angriffen, die wir Durchgeführt haben, aufgezeichnet, um Regeln für unser Intrusion-Detection-System entwickeln zu können (siehe :numref:`wireshark_flood`).
 
+.. _wireshark_flood:
 .. figure:: img/wireshark_flood.png
 
     Wireshark pcap vom LICSTER-Testbed während einem Denial of Service Angriffs
@@ -260,6 +264,9 @@ Es gibt vier Kategorien von Regeloptionen:
 - non-payload: diese Optionen schauen für nicht payload Daten
 - post-detection: diese Optionen sind Regelspezifische trigger, die ausgeführt werden, nachdem eine Regel ausgelöst wird 
 
+Mit diesen Kategoreien kann eine Regel beispielhaft aufgebaut werden (siehe :numref:`rules`).
+
+.. _rules:
 .. figure:: img/rules.png
     
     Aufbau einer Beispielregel

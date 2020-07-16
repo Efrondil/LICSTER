@@ -1,7 +1,8 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="de" >
+<!--[if IE 8]><html class="no-js lt-ie9" lang="de" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="de" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
@@ -11,18 +12,12 @@
   
 
   
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-
-  
   
   
   
 
   
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -35,6 +30,10 @@
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
     <link rel="search" title="Suche" href="search.html" />
     <link rel="next" title="5. Secure Communication" href="seccom.html" />
@@ -52,7 +51,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> LICSTER
+            <a href="index.html" class="icon icon-home"> LICSTER
           
 
           
@@ -70,7 +69,7 @@
           
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Dokumentation durchsuchen" />
+    <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -79,7 +78,6 @@
           
         </div>
 
-        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -143,7 +141,6 @@
             
           
         </div>
-        
       </div>
     </nav>
 
@@ -182,7 +179,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="index.html">Docs</a> &raquo;</li>
         
       <li><span class="section-number">4. </span>Intrusion Detection System</li>
     
@@ -190,7 +187,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/ids.rst.txt" rel="nofollow"> Quelltext anzeigen</a>
+            <a href="_sources/ids.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -219,9 +216,9 @@ Teil Projekt, bei dem wir ein solches System in dem Testbed LICSTER implementier
 <div class="section" id="unser-team">
 <h2><span class="section-number">4.1. </span>Unser Team<a class="headerlink" href="#unser-team" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Unser Team für das Teilprojekt „Intrusion Detection System“ (IDS) besteht aus den Projektmitgliedern Eric Hoffmann, Michael Janzer und Janis Schickram, die auch schon in ihrem Studium einen starken Fokus auf IT-Sicherheit gelegt haben. Wir haben zusammen mehrerer Kurse in Richtung IT-Sicherheit besucht und teilen uns die Faszination Systeme sicherer machen zu wollen. Deswegen wurde schnell klar, dass unser Team einen großen Wert auf den Sicherheitsaspekt von LICSTER legen wird.
-Die Sicherheitslage von Industriesystemen auf der ganzen Welt wird immer kritischer. Bei Angriffen auf diese Systeme können in kürzester Zeit große wirtschaftliche Schäden erzielt werden.</p>
+Die Sicherheitslage von Industriesystemen auf der ganzen Welt wird immer kritischer (siehe <a class="reference internal" href="#cyberattacken"><span class="std std-numref">Abb. 4.1.1</span></a>). Bei Angriffen auf diese Systeme können in kürzester Zeit große wirtschaftliche Schäden erzielt werden.</p>
 <div class="figure align-default" id="id1">
-<img alt="_images/cyberattacken_excel.png" src="_images/cyberattacken_excel.png" />
+<span id="cyberattacken"></span><img alt="_images/cyberattacken_excel.png" src="_images/cyberattacken_excel.png" />
 <p class="caption"><span class="caption-number">Abb. 4.1.1 </span><span class="caption-text">Cyberattacken auf deutsche Unternehmen im Jahre 2015
 | Quelle: <a class="reference external" href="https://de.statista.com/statistik/daten/studie/348989/umfrage/haeufigkeit-von-cyberattacken-auf-unternehmen/">https://de.statista.com/statistik/daten/studie/348989/umfrage/haeufigkeit-von-cyberattacken-auf-unternehmen/</a></span><a class="headerlink" href="#id1" title="Link zu diesem Bild">¶</a></p>
 </div>
@@ -229,9 +226,9 @@ Die Sicherheitslage von Industriesystemen auf der ganzen Welt wird immer kritisc
 </div>
 <div class="section" id="einrichtung-pi">
 <h2><span class="section-number">4.2. </span>Einrichtung Pi<a class="headerlink" href="#einrichtung-pi" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Für die Realisierung des IDS wurde sich für ein Raspberry Pi 4 entschieden. Mit 4 GB RAM - in der ausgewälten Konfiguration - ist das Pi geeignet Snort als IDS zu verwenden. Als Betriebssystem wird das Raspberry Pi OS (früher Raspbian genannt) genutzt, welches von der offiziellen Seite bezogen wurde (<a class="reference external" href="https://www.raspberrypi.org/downloads/">https://www.raspberrypi.org/downloads/</a>). Dies wurde mit einem Image-Tool auf eine SD-Karte gespielt und über SSH wurden dann die restlichen Einrichtungen vorgenommen. Nachdem alles eingerichtet war, konnte das Pi in das LICSTER Netzwerk eingesetzt werden. Das Pi wurde an den Mirrorport des Switchs angeschlossen, damit der gesamte Traffic des LICSTERs am Pi empfangen werden kann. Um durch den Dauerbetrieb entstehende Abwärme entgegenzuwirken wurde eine Hülle mit Lüftern für das Pi angeschafft. Im Home-Verzeichnis wurde das Git aus GitLab gecloned. Dieses Repository enthält die Configs und Rules für Snort, sowie weitere Skripte für das IDS.</p>
+<p>Für die Realisierung des IDS wurde sich für ein Raspberry Pi 4 entschieden. Mit 4 GB RAM - in der ausgewälten Konfiguration - ist das Pi geeignet Snort als IDS zu verwenden. Als Betriebssystem wird das Raspberry Pi OS (früher Raspbian genannt) genutzt, welches von der offiziellen Seite bezogen wurde (<a class="reference external" href="https://www.raspberrypi.org/downloads/">https://www.raspberrypi.org/downloads/</a>). Dies wurde mit einem Image-Tool auf eine SD-Karte gespielt und über SSH wurden dann die restlichen Einrichtungen vorgenommen. Nachdem alles eingerichtet war (siehe <a class="reference internal" href="#ids-raspberry"><span class="std std-numref">Abb. 4.2.1</span></a>), konnte das Pi in das LICSTER Netzwerk eingesetzt werden. Das Pi wurde an den Mirrorport des Switchs angeschlossen, damit der gesamte Traffic des LICSTERs am Pi empfangen werden kann. Um durch den Dauerbetrieb entstehende Abwärme entgegenzuwirken wurde eine Hülle mit Lüftern für das Pi angeschafft. Im Home-Verzeichnis wurde das Git aus GitLab gecloned. Dieses Repository enthält die Configs und Rules für Snort, sowie weitere Skripte für das IDS.</p>
 <div class="figure align-default" id="id2">
-<img alt="_images/Rapsberry_IDS_Showcase.jpg" src="_images/Rapsberry_IDS_Showcase.jpg" />
+<span id="ids-raspberry"></span><img alt="_images/Rapsberry_IDS_Showcase.jpg" src="_images/Rapsberry_IDS_Showcase.jpg" />
 <p class="caption"><span class="caption-number">Abb. 4.2.1 </span><span class="caption-text">Unser IDS-Raspberry
 | Quelle: Eigene Darstellung</span><a class="headerlink" href="#id2" title="Link zu diesem Bild">¶</a></p>
 </div>
@@ -309,15 +306,15 @@ böswillige Verhalten unter das akzeptierende Verhalten fällt.</p>
 <p>Um einen Überblick über die Pakete, die im LICSTER Netzwerk unterwegs sind, zu
 bekommen, haben wir, mit Wireshark, den Netzwerkverkehr aufgezeichnet.</p>
 <p>Als erstes haben wir pcaps während dem Einschalten, Betrieb und Abschalten von dem Testbed, mithilfe des Mirror Ports erstellt,
-um zu sehen was während einem Regulären betrieb auf dem Netzwerk passiert.</p>
+um zu sehen was während einem Regulären betrieb auf dem Netzwerk passiert (siehe <a class="reference internal" href="#wireshark-normal"><span class="std std-numref">Abb. 4.7.1</span></a>).</p>
 <div class="figure align-default" id="id3">
-<img alt="_images/wireshark_normal.png" src="_images/wireshark_normal.png" />
+<span id="wireshark-normal"></span><img alt="_images/wireshark_normal.png" src="_images/wireshark_normal.png" />
 <p class="caption"><span class="caption-number">Abb. 4.7.1 </span><span class="caption-text">Wireshark pcap vom LICSTER-Testbed während einem Leerlauf
 | Quelle: Eigene Darstellung</span><a class="headerlink" href="#id3" title="Link zu diesem Bild">¶</a></p>
 </div>
-<p>Als nächstes haben wir pcaps von Angriffen, die wir Durchgeführt haben, aufgezeichnet, um Regeln für unser Intrusion-Detection-System entwickeln zu können.</p>
+<p>Als nächstes haben wir pcaps von Angriffen, die wir Durchgeführt haben, aufgezeichnet, um Regeln für unser Intrusion-Detection-System entwickeln zu können (siehe <a class="reference internal" href="#wireshark-flood"><span class="std std-numref">Abb. 4.7.2</span></a>).</p>
 <div class="figure align-default" id="id4">
-<img alt="_images/wireshark_flood.png" src="_images/wireshark_flood.png" />
+<span id="wireshark-flood"></span><img alt="_images/wireshark_flood.png" src="_images/wireshark_flood.png" />
 <p class="caption"><span class="caption-number">Abb. 4.7.2 </span><span class="caption-text">Wireshark pcap vom LICSTER-Testbed während einem Denial of Service Angriffs
 | Quelle: Eigene Darstellung</span><a class="headerlink" href="#id4" title="Link zu diesem Bild">¶</a></p>
 </div>
@@ -418,8 +415,9 @@ Es gibt vier Kategorien von Regeloptionen:</p>
 <li><p>non-payload: diese Optionen schauen für nicht payload Daten</p></li>
 <li><p>post-detection: diese Optionen sind Regelspezifische trigger, die ausgeführt werden, nachdem eine Regel ausgelöst wird</p></li>
 </ul>
+<p>Mit diesen Kategoreien kann eine Regel beispielhaft aufgebaut werden (siehe <a class="reference internal" href="#rules"><span class="std std-numref">Abb. 4.8.1</span></a>).</p>
 <div class="figure align-default" id="id5">
-<img alt="_images/rules.png" src="_images/rules.png" />
+<span id="rules"></span><img alt="_images/rules.png" src="_images/rules.png" />
 <p class="caption"><span class="caption-number">Abb. 4.8.1 </span><span class="caption-text">Aufbau einer Beispielregel
 | Quelle: Eigene Darstellung</span><a class="headerlink" href="#id5" title="Link zu diesem Bild">¶</a></p>
 </div>
@@ -544,10 +542,10 @@ dropped.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="seccom.html" class="btn btn-neutral float-right" title="5. Secure Communication" accesskey="n" rel="next">Weiter <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="seccom.html" class="btn btn-neutral float-right" title="5. Secure Communication" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="kommunikation.html" class="btn btn-neutral float-left" title="3. Workflow" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Zurück</a>
+        <a href="kommunikation.html" class="btn btn-neutral float-left" title="3. Workflow" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -556,19 +554,11 @@ dropped.</p>
 
   <div role="contentinfo">
     <p>
-        
         &copy; Copyright 2020, Muhammet Bilbey, Raphael Hausmanninger, Eric Hoffmann, Michael Janzer, Fabian Klemm, Athanasios Luludis, Janis Schickram
 
     </p>
   </div>
-    
-    
-    
-    Erstellt mit <a href="http://sphinx-doc.org/">Sphinx</a> mit einem
-    
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
-    
-    bereitgestellt von <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -579,6 +569,7 @@ dropped.</p>
 
   </div>
   
+
 
   <script type="text/javascript">
       jQuery(function () {

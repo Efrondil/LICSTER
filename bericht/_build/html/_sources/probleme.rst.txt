@@ -6,15 +6,15 @@ Das Projekt LICSTER wurde 2020 etwas von der COVID-19 Pandemie beinträchtigt, d
 Zugriff auf das LICSTER
 =======================
 
+Der physische Zugriff auf das Testsystem welches beim Projektbetreuer vor Ort installiert war, wurde durch Teamviewer und SSH ersetzt. Durch diesen Teamviewer Zugriff waren wir dann trotzdem in der Lage das Gerät ein- und auszuschalten und die Kamera zu rebooten (siehe :numref:`teamviewer`).
 
+.. _teamviewer:
 .. figure:: img/problems_web_control.png
    :alt: LICSTER WEB CONTROL
 
    Screenshot von der Übergangslösung von Teamviewer und Custom Webseite
    | Quelle: Eigene Darstellung
 
-
-Der physische Zugriff auf das Testsystem welches beim Projektbetreuer vor Ort installiert war, wurde durch Teamviewer und SSH ersetzt. Durch diesen Teamviewer Zugriff waren wir dann trotzdem in der Lage das Gerät ein- und auszuschalten und die Kamera zu rebooten.
 
 Auch die Kommunikation im Team musste komplett kontaktlos ablaufen. Dies erforderte Anfangs einen hohen Aufwand an Organisation und Eigenmanagment, da es für alle eine vollkommen neue Situation darstellte. Dieses Problem löste sich nach einer kurzen Eingewöhnungsphase von selber.
 
