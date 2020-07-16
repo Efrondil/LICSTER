@@ -67,8 +67,9 @@ Zur Implementierung der Application Faktory haben wir den Startpunkt der App aus
 Design
 ^^^^^^
 
-Für das Design haben wir uns zusammengesetzt und beschlossen dass ein schlichteres Design ohne viele visuelle Features besser ist. Es handelt sich nämlich um ein IT-Sicherheits-Projekt bei dem natürlich die Sicherheit des Systems an erster Stelle steht und es seriös wirken soll.
+Für das Design haben wir uns zusammengesetzt und beschlossen dass ein schlichteres Design ohne viele visuelle Features besser ist (siehe :numref:`webbapp0` und :numref:`remotecontrol`). Es handelt sich nämlich um ein IT-Sicherheits-Projekt bei dem natürlich die Sicherheit des Systems an erster Stelle steht und es seriös wirken soll.
 
+.. _webbapp0:
 .. figure:: img/webbapp0.png
    :alt: LICSTER PIN
 
@@ -76,6 +77,7 @@ Für das Design haben wir uns zusammengesetzt und beschlossen dass ein schlichte
    | Quelle: Eigene Darstellung
 
 
+.. _remotecontrol:
 .. figure:: img/remotecontrol.jpeg
    :alt: admin
 
@@ -94,9 +96,10 @@ Angemeldete Benutzer können LICSTER wie zuvor auf dem Bildschirm des HMI nun ü
 
 Die dritte Rolle des Benutzverwaltungssystems erlaubt den Zugriff auf das Administratoren Dashboard, wo Benutzer hinzugefügt und gelöscht werden. Hier werden außerdem alle Nutzer tabellarisch angezeigt. Des Weiteren werden tabellarisch IDS Logs auf dem Dashboard angezeigt, falls der Benutzer dies aktiviert hat und bei Hinzufügen einer Email-Adressse zu einem Admin Account wird der Benutzer über Breaches direkt per Email benachrichtigt.
 
-Das Styling der Admin Dashboard-Ansicht wurde mithilfe von HTML und CSS (Cascade Style Sheets) verwirklicht. Hierbei haben wir beschlossen das alle Funktionen auf einer einzigen Seite sind, damit es übersichtlich bleibt und die Bedienung schneller ist.
+Das Styling der Admin Dashboard-Ansicht wurde mithilfe von HTML und CSS (Cascade Style Sheets) verwirklicht. Hierbei haben wir beschlossen das alle Funktionen auf einer einzigen Seite sind, damit es übersichtlich bleibt und die Bedienung schneller ist (siehe :numref:`webbapp2`).
 
 
+.. _webbapp2:
 .. figure:: img/webbapp2.png
    :alt: LICSTER WEB
 
