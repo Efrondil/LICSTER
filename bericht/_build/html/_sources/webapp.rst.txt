@@ -72,13 +72,15 @@ Für das Design haben wir uns zusammengesetzt und beschlossen dass ein schlichte
 .. figure:: img/webbapp0.png
    :alt: LICSTER PIN
 
-   Die Abbildung zeigt das PIN-Feld. Für das PIN-Feld wurde eine HTML Seite erstellt, welche für die Anzeige der Tasten und das Handling von Eingaben zuständig ist. Diese Anzeige ist nicht für mehrere Geräte angelegt sondern direkt auf das HMI angepasst.
+   HTML basiertes PIN Feld
+   | Quelle: Eigene Darstellung
 
 
 .. figure:: img/remotecontrol.jpeg
    :alt: admin
 
-   Die  Abbildung zeigt das LICSTER und das Admin-Dashboard, welches so realisiert wurde, dass es auf allen Geräten gut verwendet werden kann
+   LICSTER und HMI mit Admin Dashboard
+   | Quelle: Eigene Darstellung
 
 
 Erweiterungen
@@ -98,7 +100,8 @@ Das Styling der Admin Dashboard-Ansicht wurde mithilfe von HTML und CSS (Cascade
 .. figure:: img/webbapp2.png
    :alt: LICSTER WEB
 
-   Das Bild zeigt das Admin Dashboard. Zusätzlich gibt noch eine Reset-Funktion mit der man alle snort Einträge aus der Datenbank löschen kann.
+   Admin Dashboard mit Reset Funktion
+   | Quelle: Eigene Darstellung
 
 Datenbank
 ^^^^^^^^^

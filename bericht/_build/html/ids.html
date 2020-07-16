@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="de" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="de" > <!--<![endif]-->
+<html class="writer-html5" lang="de" >
 <head>
   <meta charset="utf-8">
   
@@ -12,12 +11,18 @@
   
 
   
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -30,10 +35,6 @@
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
     <link rel="search" title="Suche" href="search.html" />
     <link rel="next" title="5. Secure Communication" href="seccom.html" />
@@ -51,7 +52,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> LICSTER
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> LICSTER
           
 
           
@@ -69,7 +70,7 @@
           
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Dokumentation durchsuchen" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -78,6 +79,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -128,11 +130,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#ssh-regel">4.9.4. SSH Regel</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#fazit-und-ausblick">4.10. Fazit und Ausblick</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#fazit">4.10.1. Fazit</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ausblick">4.10.2. Ausblick</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="#fazit-und-ausblick">4.10. Fazit und Ausblick</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="seccom.html">5. Secure Communication</a></li>
@@ -145,6 +143,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -183,7 +182,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li><span class="section-number">4. </span>Intrusion Detection System</li>
     
@@ -191,7 +190,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/ids.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/ids.rst.txt" rel="nofollow"> Quelltext anzeigen</a>
           
         
       </li>
@@ -223,8 +222,8 @@ Teil Projekt, bei dem wir ein solches System in dem Testbed LICSTER implementier
 Die Sicherheitslage von Industriesystemen auf der ganzen Welt wird immer kritischer. Bei Angriffen auf diese Systeme können in kürzester Zeit große wirtschaftliche Schäden erzielt werden.</p>
 <div class="figure align-default" id="id1">
 <img alt="_images/cyberattacken_excel.png" src="_images/cyberattacken_excel.png" />
-<p class="caption"><span class="caption-number">Abb. 4.1.1 </span><span class="caption-text">Cyberattacken auf deutsche Unternehmen im Jahre 2015,
-Quelle: <a class="reference external" href="https://de.statista.com/statistik/daten/studie/348989/umfrage/haeufigkeit-von-cyberattacken-auf-unternehmen/">https://de.statista.com/statistik/daten/studie/348989/umfrage/haeufigkeit-von-cyberattacken-auf-unternehmen/</a>, Zugriff am 15.07.2020</span><a class="headerlink" href="#id1" title="Link zu diesem Bild">¶</a></p>
+<p class="caption"><span class="caption-number">Abb. 4.1.1 </span><span class="caption-text">Cyberattacken auf deutsche Unternehmen im Jahre 2015
+| Quelle: <a class="reference external" href="https://de.statista.com/statistik/daten/studie/348989/umfrage/haeufigkeit-von-cyberattacken-auf-unternehmen/">https://de.statista.com/statistik/daten/studie/348989/umfrage/haeufigkeit-von-cyberattacken-auf-unternehmen/</a></span><a class="headerlink" href="#id1" title="Link zu diesem Bild">¶</a></p>
 </div>
 <p>Deswegen haben wir uns zur Aufgabe gemacht, LICSTER eine weitere Sicherheitsschicht hinzuzufügen. Schnell wurde klar, dass ein IDS eine schnelle und aufwandseffiziente Lösung für unsere Problemstellung ist. Ein IDS kann in ein bestehendes System eingebaut werden, ohne dass direkte Änderungen am System gemacht werden müssen. Dies war uns besonders wichtig, da LICSTER bereits vor unserem Projekt schon fertiggestellt war und wir keine konzeptuelle Änderung mehr nachträglich realisieren wollten. Ein bestehendes IDS zu Nutzen hat es uns ermöglicht den zeitlichen Rahmen des Projekts einzuhalten und nützliche Fähigkeiten für unser weiteres Studium zu erlernen.</p>
 </div>
@@ -233,7 +232,8 @@ Quelle: <a class="reference external" href="https://de.statista.com/statistik/da
 <p>Für die Realisierung des IDS wurde sich für ein Raspberry Pi 4 entschieden. Mit 4 GB RAM - in der ausgewälten Konfiguration - ist das Pi geeignet Snort als IDS zu verwenden. Als Betriebssystem wird das Raspberry Pi OS (früher Raspbian genannt) genutzt, welches von der offiziellen Seite bezogen wurde (<a class="reference external" href="https://www.raspberrypi.org/downloads/">https://www.raspberrypi.org/downloads/</a>). Dies wurde mit einem Image-Tool auf eine SD-Karte gespielt und über SSH wurden dann die restlichen Einrichtungen vorgenommen. Nachdem alles eingerichtet war, konnte das Pi in das LICSTER Netzwerk eingesetzt werden. Das Pi wurde an den Mirrorport des Switchs angeschlossen, damit der gesamte Traffic des LICSTERs am Pi empfangen werden kann. Um durch den Dauerbetrieb entstehende Abwärme entgegenzuwirken wurde eine Hülle mit Lüftern für das Pi angeschafft. Im Home-Verzeichnis wurde das Git aus GitLab gecloned. Dieses Repository enthält die Configs und Rules für Snort, sowie weitere Skripte für das IDS.</p>
 <div class="figure align-default" id="id2">
 <img alt="_images/Rapsberry_IDS_Showcase.jpg" src="_images/Rapsberry_IDS_Showcase.jpg" />
-<p class="caption"><span class="caption-number">Abb. 4.2.1 </span><span class="caption-text">Unser IDS-Raspberry</span><a class="headerlink" href="#id2" title="Link zu diesem Bild">¶</a></p>
+<p class="caption"><span class="caption-number">Abb. 4.2.1 </span><span class="caption-text">Unser IDS-Raspberry
+| Quelle: Eigene Darstellung</span><a class="headerlink" href="#id2" title="Link zu diesem Bild">¶</a></p>
 </div>
 </div>
 <div class="section" id="einrichtung-vm">
@@ -312,12 +312,14 @@ bekommen, haben wir, mit Wireshark, den Netzwerkverkehr aufgezeichnet.</p>
 um zu sehen was während einem Regulären betrieb auf dem Netzwerk passiert.</p>
 <div class="figure align-default" id="id3">
 <img alt="_images/wireshark_normal.png" src="_images/wireshark_normal.png" />
-<p class="caption"><span class="caption-number">Abb. 4.7.1 </span><span class="caption-text">Wireshark pcap vom LICSTER-Testbed während einem Leerlauf</span><a class="headerlink" href="#id3" title="Link zu diesem Bild">¶</a></p>
+<p class="caption"><span class="caption-number">Abb. 4.7.1 </span><span class="caption-text">Wireshark pcap vom LICSTER-Testbed während einem Leerlauf
+| Quelle: Eigene Darstellung</span><a class="headerlink" href="#id3" title="Link zu diesem Bild">¶</a></p>
 </div>
 <p>Als nächstes haben wir pcaps von Angriffen, die wir Durchgeführt haben, aufgezeichnet, um Regeln für unser Intrusion-Detection-System entwickeln zu können.</p>
 <div class="figure align-default" id="id4">
 <img alt="_images/wireshark_flood.png" src="_images/wireshark_flood.png" />
-<p class="caption"><span class="caption-number">Abb. 4.7.2 </span><span class="caption-text">Wireshark pcap vom LICSTER-Testbed während einem Denial of Service Angriffs</span><a class="headerlink" href="#id4" title="Link zu diesem Bild">¶</a></p>
+<p class="caption"><span class="caption-number">Abb. 4.7.2 </span><span class="caption-text">Wireshark pcap vom LICSTER-Testbed während einem Denial of Service Angriffs
+| Quelle: Eigene Darstellung</span><a class="headerlink" href="#id4" title="Link zu diesem Bild">¶</a></p>
 </div>
 <div class="section" id="durchgefuhrte-angriffe">
 <h3><span class="section-number">4.7.1. </span>Durchgeführte Angriffe<a class="headerlink" href="#durchgefuhrte-angriffe" title="Link zu dieser Überschrift">¶</a></h3>
@@ -353,6 +355,7 @@ Ausgeführt wird er mit:</p>
 </div>
 <div class="section" id="snort">
 <h2><span class="section-number">4.8. </span>Snort<a class="headerlink" href="#snort" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Snort ist eine Open-Source-Software für NIDS (Network Intrusion Detection System) und NIPS (Network Intrusion Prevention System). Veröffentlicht wurde sie 1998 von der Firma Sourcefire.</p>
 <div class="section" id="wieso-snort">
 <h3><span class="section-number">4.8.1. </span>Wieso Snort?<a class="headerlink" href="#wieso-snort" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Es wurde sich für Snort entschieden, da es schon seit längerem auf dem Markt verfügbar ist. Dank dieser Zeit ist Snort sehr ausgereift und auch weit verbreitet. Es ist kostenlos und durch seine große Community ist es leicht bei Problemen Unterstützung zu bekommen. Ein weiterer Punkt, warum sich für Snort entschieden wurde, ist, dass bereits einige Gruppenmitglieder sich ein wenig mit den Regeln auskannten. Die Syntax der Regeln ist leicht zu verstehen, bieten aber dennoch die nötige Komplexität, um aussagekräftige Meldungen zu bekommen.</p>
@@ -417,7 +420,8 @@ Es gibt vier Kategorien von Regeloptionen:</p>
 </ul>
 <div class="figure align-default" id="id5">
 <img alt="_images/rules.png" src="_images/rules.png" />
-<p class="caption"><span class="caption-number">Abb. 4.8.1 </span><span class="caption-text">Aufbau einer Beispielregel</span><a class="headerlink" href="#id5" title="Link zu diesem Bild">¶</a></p>
+<p class="caption"><span class="caption-number">Abb. 4.8.1 </span><span class="caption-text">Aufbau einer Beispielregel
+| Quelle: Eigene Darstellung</span><a class="headerlink" href="#id5" title="Link zu diesem Bild">¶</a></p>
 </div>
 <p>Eine komplette Auflistung von Regeloptionen:
 <a class="reference external" href="http://manual-snort-org.s3-website-us-east-1.amazonaws.com/node32.html">http://manual-snort-org.s3-website-us-east-1.amazonaws.com/node32.html</a></p>
@@ -426,8 +430,10 @@ Es gibt vier Kategorien von Regeloptionen:</p>
 </div>
 <div class="section" id="unsere-snort-regeln">
 <h2><span class="section-number">4.9. </span>Unsere Snort Regeln<a class="headerlink" href="#unsere-snort-regeln" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Um Snort noch effektiver zu gestalten, wurden eigene Regeln für LICSTER entworfen.</p>
 <div class="section" id="http-regeln">
 <h3><span class="section-number">4.9.1. </span>HTTP Regeln<a class="headerlink" href="#http-regeln" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Mit HTTP Regeln wird der Traffic zwischen Webservern und Usern überwacht.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>alert tcp !$HOME_NET any -&gt; 192.168.0.10 $HTTP_PORTS (msg:&quot;HTTP Get from EXTERNAL to 192.168.0.10&quot;; \
 classtype: bad-unknown; content: &quot;HTTP&quot;; sid 1002000; rev: 1;)
 </pre></div>
@@ -441,6 +447,7 @@ classtype: bad-unknown; content: &quot;HTTP&quot;; sid 1002005; rev: 1;)
 </div>
 <div class="section" id="icmp-regel">
 <h3><span class="section-number">4.9.2. </span>ICMP Regel<a class="headerlink" href="#icmp-regel" title="Link zu dieser Überschrift">¶</a></h3>
+<p>ICMP Regeln dienen zur Überwachung von Scans und DoS Attacken.</p>
 <p><strong>Portscan</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alert</span> <span class="n">icmp</span> <span class="nb">any</span> <span class="nb">any</span> <span class="o">-&gt;</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">0.10</span> <span class="nb">any</span> <span class="p">(</span><span class="n">msg</span><span class="p">:</span><span class="s2">&quot;Ping nmap Portscan 192.168.0.10&quot;</span><span class="p">;</span> \
 <span class="n">dsize</span><span class="p">:</span><span class="mi">0</span><span class="p">;</span> <span class="n">itype</span><span class="p">:</span><span class="mi">8</span><span class="p">;</span> <span class="n">classtype</span><span class="p">:</span> <span class="n">network</span><span class="o">-</span><span class="n">scan</span><span class="p">;</span> <span class="n">sid</span><span class="p">:</span><span class="mi">1003000</span><span class="p">;</span> <span class="n">rev</span><span class="p">:</span><span class="mi">1</span><span class="p">;)</span>
@@ -477,6 +484,7 @@ wird hier <code class="docutils literal notranslate"><span class="pre">'fragbits
 </div>
 <div class="section" id="modbus-regel">
 <h3><span class="section-number">4.9.3. </span>Modbus Regel<a class="headerlink" href="#modbus-regel" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Die Regeln für Modbus überwachen den Verkehr von RemoteIO und PLC.</p>
 <p><strong>DoS</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alert</span> <span class="n">tcp</span> <span class="nb">any</span> <span class="nb">any</span> <span class="o">-&gt;</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">0.51</span> <span class="mi">502</span> <span class="p">(</span><span class="n">msg</span><span class="p">:</span><span class="s2">&quot;Modbus threshold violation 51&quot;</span><span class="p">;</span> <span class="n">threshold</span><span class="p">:</span> \
 <span class="nb">type</span> <span class="n">both</span><span class="p">,</span> <span class="n">track</span> <span class="n">by_dst</span><span class="p">,</span> <span class="n">count</span> <span class="mi">60</span><span class="p">,</span> <span class="n">seconds</span> <span class="mi">1</span><span class="p">;</span> <span class="n">classtype</span><span class="p">:</span> <span class="n">successful</span><span class="o">-</span><span class="n">dos</span><span class="p">;</span> <span class="n">sid</span><span class="p">:</span><span class="mi">1001004</span><span class="p">;)</span>
@@ -486,6 +494,7 @@ wird hier <code class="docutils literal notranslate"><span class="pre">'fragbits
 </div>
 <div class="section" id="ssh-regel">
 <h3><span class="section-number">4.9.4. </span>SSH Regel<a class="headerlink" href="#ssh-regel" title="Link zu dieser Überschrift">¶</a></h3>
+<p>SSH Regeln dienen zur Zugriffskontrolle auf die einzelnen Komponenten.</p>
 <p><strong>Strange Traffic</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>alert tcp !$HOME_NET any -&gt; 192.168.0.10 22 (msg:&quot;SSH Request from EXTERNAL NET to 192.168.0.10&quot;; \
 content:&quot;SSH&quot;; nocase; offset:0; depth:4; classtype: attempted-user; sid:1000101; rev:1;)
@@ -513,23 +522,17 @@ content:&quot;SSH&quot;; nocase; offset:0; depth:4; classtype: attempted-user; s
 </div>
 <div class="section" id="fazit-und-ausblick">
 <h2><span class="section-number">4.10. </span>Fazit und Ausblick<a class="headerlink" href="#fazit-und-ausblick" title="Link zu dieser Überschrift">¶</a></h2>
-<div class="section" id="fazit">
-<h3><span class="section-number">4.10.1. </span>Fazit<a class="headerlink" href="#fazit" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Durch die Implementierung eines Intrusion Detection Systems können wir jetzt den Netzwerkverkehr
 überwachen sowie Angriffe und unberechtigte Zugriffe erkennen. Mit dem entwickeln von eigenen SSH, HTML, MODBUS
 und ICMP Regeln, konnten wir Snort an das LICSTER-Testbed so anpassen, dass erkannt wird welches Gerät vom
 LICSTER-Testbed angegriffen wird. So kann man direkt sehen welches Gerät unter Angriff steht und man kann direkt
 dagegen vorgehen. Auch werden die Logs mittels einem Cronjob im Minutentakt mit SCP an die Webapplikation
 versendet.</p>
-</div>
-<div class="section" id="ausblick">
-<h3><span class="section-number">4.10.2. </span>Ausblick<a class="headerlink" href="#ausblick" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Nachdem jetzt das LICSTER-Testbed mit Snort überwacht wird, kann man zusätzlich noch weitere an das
 LICSTER-Testbed angepasste Regeln entwickeln, um mehr LICSTER spezifische Angriffe zu erkennen. Ergänzend
 kann man ein Intrusion Prevention System (IPS) implementieren. Ein IPS kann neben den Funktionen eines IDS,
 wie das erkennen eines Angriffs auch aktiv Angriffe verhindern, indem es die jeweiligen Pakete im Netzwerkverkehr
 dropped.</p>
-</div>
 </div>
 </div>
 
@@ -541,10 +544,10 @@ dropped.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="seccom.html" class="btn btn-neutral float-right" title="5. Secure Communication" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="seccom.html" class="btn btn-neutral float-right" title="5. Secure Communication" accesskey="n" rel="next">Weiter <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="kommunikation.html" class="btn btn-neutral float-left" title="3. Workflow" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="kommunikation.html" class="btn btn-neutral float-left" title="3. Workflow" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Zurück</a>
       
     </div>
   
@@ -553,11 +556,19 @@ dropped.</p>
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, Muhammet Bilbey, Raphael Hausmanninger, Eric Hoffmann, Michael Janzer, Fabian Klemm, Athanasios Luludis, Janis Schickram
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Erstellt mit <a href="http://sphinx-doc.org/">Sphinx</a> mit einem
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    bereitgestellt von <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -568,7 +579,6 @@ dropped.</p>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

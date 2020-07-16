@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="de" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="de" > <!--<![endif]-->
+<html class="writer-html5" lang="de" >
 <head>
   <meta charset="utf-8">
   
@@ -12,12 +11,18 @@
   
 
   
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -30,10 +35,6 @@
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
     <link rel="search" title="Suche" href="search.html" />
     <link rel="next" title="8. Fazit und Ausblick" href="fazit-ausblick.html" />
@@ -51,7 +52,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> LICSTER
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> LICSTER
           
 
           
@@ -69,7 +70,7 @@
           
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Dokumentation durchsuchen" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -78,6 +79,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -104,6 +106,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -142,7 +145,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li><span class="section-number">7. </span>Probleme</li>
     
@@ -150,7 +153,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/probleme.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/probleme.rst.txt" rel="nofollow"> Quelltext anzeigen</a>
           
         
       </li>
@@ -170,7 +173,8 @@
 <h2><span class="section-number">7.1. </span>Zugriff auf das LICSTER<a class="headerlink" href="#zugriff-auf-das-licster" title="Link zu dieser Überschrift">¶</a></h2>
 <div class="figure align-default" id="id1">
 <img alt="LICSTER WEB CONTROL" src="_images/problems_web_control.png" />
-<p class="caption"><span class="caption-number">Abb. 7.1.1 </span><span class="caption-text">Screenshot von der Übergangslösung von Teamviewer und Custom Webseite</span><a class="headerlink" href="#id1" title="Link zu diesem Bild">¶</a></p>
+<p class="caption"><span class="caption-number">Abb. 7.1.1 </span><span class="caption-text">Screenshot von der Übergangslösung von Teamviewer und Custom Webseite
+| Quelle: Eigene Darstellung</span><a class="headerlink" href="#id1" title="Link zu diesem Bild">¶</a></p>
 </div>
 <p>Der physische Zugriff auf das Testsystem welches beim Projektbetreuer vor Ort installiert war, wurde durch Teamviewer und SSH ersetzt. Durch diesen Teamviewer Zugriff waren wir dann trotzdem in der Lage das Gerät ein- und auszuschalten und die Kamera zu rebooten.</p>
 <p>Auch die Kommunikation im Team musste komplett kontaktlos ablaufen. Dies erforderte Anfangs einen hohen Aufwand an Organisation und Eigenmanagment, da es für alle eine vollkommen neue Situation darstellte. Dieses Problem löste sich nach einer kurzen Eingewöhnungsphase von selber.</p>
@@ -192,10 +196,10 @@ Ziel des Projekttages war es LICSTER vorzustellen und möglichst vielen Interess
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="fazit-ausblick.html" class="btn btn-neutral float-right" title="8. Fazit und Ausblick" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="fazit-ausblick.html" class="btn btn-neutral float-right" title="8. Fazit und Ausblick" accesskey="n" rel="next">Weiter <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="webapp.html" class="btn btn-neutral float-left" title="6. Webapplikation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="webapp.html" class="btn btn-neutral float-left" title="6. Webapplikation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Zurück</a>
       
     </div>
   
@@ -204,11 +208,19 @@ Ziel des Projekttages war es LICSTER vorzustellen und möglichst vielen Interess
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, Muhammet Bilbey, Raphael Hausmanninger, Eric Hoffmann, Michael Janzer, Fabian Klemm, Athanasios Luludis, Janis Schickram
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Erstellt mit <a href="http://sphinx-doc.org/">Sphinx</a> mit einem
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    bereitgestellt von <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -219,7 +231,6 @@ Ziel des Projekttages war es LICSTER vorzustellen und möglichst vielen Interess
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="de" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="de" > <!--<![endif]-->
+<html class="writer-html5" lang="de" >
 <head>
   <meta charset="utf-8">
   
@@ -12,12 +11,18 @@
   
 
   
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -30,10 +35,6 @@
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
     <link rel="search" title="Suche" href="search.html" />
     <link rel="next" title="7. Probleme" href="probleme.html" />
@@ -51,7 +52,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> LICSTER
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> LICSTER
           
 
           
@@ -69,7 +70,7 @@
           
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Dokumentation durchsuchen" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -78,6 +79,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -123,6 +125,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -161,7 +164,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li><span class="section-number">6. </span>Webapplikation</li>
     
@@ -169,7 +172,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/webapp.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/webapp.rst.txt" rel="nofollow"> Quelltext anzeigen</a>
           
         
       </li>
@@ -232,11 +235,13 @@
 <p>Für das Design haben wir uns zusammengesetzt und beschlossen dass ein schlichteres Design ohne viele visuelle Features besser ist. Es handelt sich nämlich um ein IT-Sicherheits-Projekt bei dem natürlich die Sicherheit des Systems an erster Stelle steht und es seriös wirken soll.</p>
 <div class="figure align-default" id="id1">
 <img alt="LICSTER PIN" src="_images/webbapp0.png" />
-<p class="caption"><span class="caption-number">Abb. 6.1.1 </span><span class="caption-text">Die Abbildung zeigt das PIN-Feld. Für das PIN-Feld wurde eine HTML Seite erstellt, welche für die Anzeige der Tasten und das Handling von Eingaben zuständig ist. Diese Anzeige ist nicht für mehrere Geräte angelegt sondern direkt auf das HMI angepasst.</span><a class="headerlink" href="#id1" title="Link zu diesem Bild">¶</a></p>
+<p class="caption"><span class="caption-number">Abb. 6.1.1 </span><span class="caption-text">HTML basiertes PIN Feld
+| Quelle: Eigene Darstellung</span><a class="headerlink" href="#id1" title="Link zu diesem Bild">¶</a></p>
 </div>
 <div class="figure align-default" id="id2">
 <img alt="admin" src="_images/remotecontrol.jpeg" />
-<p class="caption"><span class="caption-number">Abb. 6.1.2 </span><span class="caption-text">Die  Abbildung zeigt das LICSTER und das Admin-Dashboard, welches so realisiert wurde, dass es auf allen Geräten gut verwendet werden kann</span><a class="headerlink" href="#id2" title="Link zu diesem Bild">¶</a></p>
+<p class="caption"><span class="caption-number">Abb. 6.1.2 </span><span class="caption-text">LICSTER und HMI mit Admin Dashboard
+| Quelle: Eigene Darstellung</span><a class="headerlink" href="#id2" title="Link zu diesem Bild">¶</a></p>
 </div>
 </div>
 </div>
@@ -249,7 +254,8 @@
 <p>Das Styling der Admin Dashboard-Ansicht wurde mithilfe von HTML und CSS (Cascade Style Sheets) verwirklicht. Hierbei haben wir beschlossen das alle Funktionen auf einer einzigen Seite sind, damit es übersichtlich bleibt und die Bedienung schneller ist.</p>
 <div class="figure align-default" id="id3">
 <img alt="LICSTER WEB" src="_images/webbapp2.png" />
-<p class="caption"><span class="caption-number">Abb. 6.2.1 </span><span class="caption-text">Das Bild zeigt das Admin Dashboard. Zusätzlich gibt noch eine Reset-Funktion mit der man alle snort Einträge aus der Datenbank löschen kann.</span><a class="headerlink" href="#id3" title="Link zu diesem Bild">¶</a></p>
+<p class="caption"><span class="caption-number">Abb. 6.2.1 </span><span class="caption-text">Admin Dashboard mit Reset Funktion
+| Quelle: Eigene Darstellung</span><a class="headerlink" href="#id3" title="Link zu diesem Bild">¶</a></p>
 </div>
 <div class="section" id="datenbank">
 <h3><span class="section-number">6.2.1. </span>Datenbank<a class="headerlink" href="#datenbank" title="Link zu dieser Überschrift">¶</a></h3>
@@ -330,10 +336,10 @@ hinzugefügt. Falls sich der Benutzer zum ersten Mal anmeldet, wird er nun weite
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="probleme.html" class="btn btn-neutral float-right" title="7. Probleme" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="probleme.html" class="btn btn-neutral float-right" title="7. Probleme" accesskey="n" rel="next">Weiter <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="seccom.html" class="btn btn-neutral float-left" title="5. Secure Communication" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="seccom.html" class="btn btn-neutral float-left" title="5. Secure Communication" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Zurück</a>
       
     </div>
   
@@ -342,11 +348,19 @@ hinzugefügt. Falls sich der Benutzer zum ersten Mal anmeldet, wird er nun weite
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, Muhammet Bilbey, Raphael Hausmanninger, Eric Hoffmann, Michael Janzer, Fabian Klemm, Athanasios Luludis, Janis Schickram
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Erstellt mit <a href="http://sphinx-doc.org/">Sphinx</a> mit einem
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    bereitgestellt von <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -357,7 +371,6 @@ hinzugefügt. Falls sich der Benutzer zum ersten Mal anmeldet, wird er nun weite
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

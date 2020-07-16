@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="de" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="de" > <!--<![endif]-->
+<html class="writer-html5" lang="de" >
 <head>
   <meta charset="utf-8">
   
@@ -12,12 +11,18 @@
   
 
   
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -30,10 +35,6 @@
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
     <link rel="search" title="Suche" href="search.html" />
     <link rel="next" title="6. Webapplikation" href="webapp.html" />
@@ -51,7 +52,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> LICSTER
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> LICSTER
           
 
           
@@ -69,7 +70,7 @@
           
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Dokumentation durchsuchen" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -78,6 +79,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -116,6 +118,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -154,7 +157,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li><span class="section-number">5. </span>Secure Communication</li>
     
@@ -162,7 +165,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/seccom.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/seccom.rst.txt" rel="nofollow"> Quelltext anzeigen</a>
           
         
       </li>
@@ -177,24 +180,27 @@
             
   <div class="section" id="secure-communication">
 <h1><span class="section-number">5. </span>Secure Communication<a class="headerlink" href="#secure-communication" title="Link zu dieser Überschrift">¶</a></h1>
-<p>Als die Secure Communication Gruppe haben wir uns ausschließlich mit der internen Kommunikation des LICSTERs auseinandergesetzt. Als Ziel haben wir, Raphael Hausmanninger und Muhammet Bilbey, es uns gesetzt das bereits implementierte Modbus-Protokoll, das in dieser Form sich als sehr unsicher bewiesen hat, zu verschlüsseln. Dabei haben wir uns dazu entschieden, das TLS-Protokoll einzusetzen. Dieses bietet zusätzlich zu der Verschlüsselung der Anwendungsschicht ein Handshake-Protokoll, das die Authentifizierung der Kommunikationspartner ermöglicht.</p>
+<p>Als die Secure Communication Gruppe haben wir uns ausschließlich mit der internen Kommunikation des LICSTERs auseinandergesetzt. Als Ziel haben wir, Raphael Hausmanninger und Muhammet Bilbey, es uns gesetzt das bereits implementierte Modbus-Protokoll, das in dieser Form sich als sehr unsicher bewiesen hat (siehe <a class="reference internal" href="#seccom-no-secure-layer-overview"><span class="std std-numref">Abb. 5.1</span></a>), zu verschlüsseln. Dabei haben wir uns dazu entschieden, das TLS-Protokoll einzusetzen. Dieses bietet zusätzlich zu der Verschlüsselung der Anwendungsschicht ein Handshake-Protokoll, das die Authentifizierung der Kommunikationspartner ermöglicht.</p>
 <div class="figure align-default" id="id4">
-<img alt="" src="_images/No_Secure_Layer_Overview.png" />
-<p class="caption"><span class="caption-number">Abb. 5.1 </span><span class="caption-text">Veranschaulichung der ursprünglichen Kommunikation</span><a class="headerlink" href="#id4" title="Link zu diesem Bild">¶</a></p>
+<span id="seccom-no-secure-layer-overview"></span><img alt="" src="_images/No_Secure_Layer_Overview.png" />
+<p class="caption"><span class="caption-number">Abb. 5.1 </span><span class="caption-text">Veranschaulichung der ursprünglichen Kommunikation
+| Quelle: Eigene Darstellung</span><a class="headerlink" href="#id4" title="Link zu diesem Bild">¶</a></p>
 </div>
-<p>Dies wurde realisiert, indem wir eine zusätzliche Softwareschnittstelle (Secure Layer) im PLC implementiert haben. Diese ermöglicht eine beidseitig verschlüsselte Kommunikation zwischen dem PLC und den Remote-IOs, indem sie eingehende Pakete von den Remote-IOs entschlüsselt und von dem PLC ausgehende Pakete verschlüsselt. Die interne Kommunikation im PLC zwischen dem Secure-Layer und dem OpenPLC findet unverschlüsselt statt.</p>
+<p>Dies wurde realisiert, indem wir eine zusätzliche Softwareschnittstelle (Secure Layer) im PLC implementiert haben. Diese ermöglicht eine beidseitig verschlüsselte Kommunikation zwischen dem PLC und den Remote-IOs, indem sie eingehende Pakete von den Remote-IOs entschlüsselt und von dem PLC ausgehende Pakete verschlüsselt. Die interne Kommunikation im PLC zwischen dem Secure-Layer und dem OpenPLC findet unverschlüsselt statt (siehe <a class="reference internal" href="#seccom-secure-layer-overview"><span class="std std-numref">Abb. 5.2</span></a>).</p>
 <div class="figure align-default" id="id5">
-<img alt="" src="_images/Secure_Layer_Overview.png" />
-<p class="caption"><span class="caption-number">Abb. 5.2 </span><span class="caption-text">Veranschaulichung mit Secure Layer</span><a class="headerlink" href="#id5" title="Link zu diesem Bild">¶</a></p>
+<span id="seccom-secure-layer-overview"></span><img alt="" src="_images/Secure_Layer_Overview.png" />
+<p class="caption"><span class="caption-number">Abb. 5.2 </span><span class="caption-text">Veranschaulichung mit Secure Layer
+| Quelle: Eigene Darstellung</span><a class="headerlink" href="#id5" title="Link zu diesem Bild">¶</a></p>
 </div>
 <div class="section" id="secure-layer">
 <h2><span class="section-number">5.1. </span>Secure Layer<a class="headerlink" href="#secure-layer" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Der Secure Layer (sichere Schicht) ist die Komponente die zwischen den Remote-IOs und OpenPLC sitz.</p>
+<p>Der Secure Layer (sichere Schicht)  ist die Komponente die zwischen den Remote-IOs und OpenPLC sitz (siehe <a class="reference internal" href="#seccom-secure-layer-details"><span class="std std-numref">Abb. 5.1.1</span></a>).</p>
 <div class="figure align-default" id="id6">
-<img alt="" src="_images/Secure_Layer_Details.png" />
-<p class="caption"><span class="caption-number">Abb. 5.1.1 </span><span class="caption-text">Detaillierte Veranschaulichung des Secure Layers</span><a class="headerlink" href="#id6" title="Link zu diesem Bild">¶</a></p>
+<span id="seccom-secure-layer-details"></span><img alt="" src="_images/Secure_Layer_Details.png" />
+<p class="caption"><span class="caption-number">Abb. 5.1.1 </span><span class="caption-text">Detaillierte Veranschaulichung des Secure Layers
+| Quelle: Eigene Darstellung</span><a class="headerlink" href="#id6" title="Link zu diesem Bild">¶</a></p>
 </div>
-<p>Der Secure Layer ist in Python3.6 geschrieben und in 2 Hauptkomponenten zu unterteilen:</p>
+<p>Der Secure Layer ist in Python3.6 geschrieben und in zwei Hauptkomponenten zu unterteilen:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="#bridge">Bridge</a></p></li>
 <li><p><a class="reference external" href="#bridgemanager">Bridgemanager</a></p></li>
@@ -375,7 +381,7 @@ Daraufhin werden die für die Remote-IOs benötigten Schlüssel und Zertifikate 
 </div>
 <div class="section" id="fazit-und-ausblick">
 <h2><span class="section-number">5.4. </span>Fazit und Ausblick<a class="headerlink" href="#fazit-und-ausblick" title="Link zu dieser Überschrift">¶</a></h2>
-<!-- evtl. überarbeiten --><p>Durch die zusätzlichen Implementierungen kann nun optional zwischen der ursprünglich unverschlüsselten Modbus Verbindung und der durch das TLS-Protokoll verschlüsselten Verbindung ausgewählt werden. Zusätzlich zu der verschlüsselten Verbindung übernimmt das Protokoll auch die Überprüfung der Authentizität der Kommunikationspartner. So muss bei einem Verbindungsaufbau das Remote-IO mit einem Zertifikat belegen, dass dieser dem LICSTER-Netzwerk zugehörig ist.</p>
+<p>Durch die zusätzlichen Implementierungen kann nun optional zwischen der ursprünglich unverschlüsselten Modbus Verbindung und der durch das TLS-Protokoll verschlüsselten Verbindung ausgewählt werden. Zusätzlich zu der verschlüsselten Verbindung übernimmt das Protokoll auch die Überprüfung der Authentizität der Kommunikationspartner. So muss bei einem Verbindungsaufbau das Remote-IO mit einem Zertifikat belegen, dass dieser dem LICSTER-Netzwerk zugehörig ist.</p>
 <p>Nach der durch die Verschlüsselung der Kommunikationswege zwischen dem PLC und der Remote-IOs erzielten Sicherheit kann an der Beschleunigung des TLS-Handshakes gearbeitet werden. Durch verwenden eines Secure Elements kann der momentan sehr langsame Verbindungsaufbau von etwa 10 Sekunden beschleunigt werden. Solch ein Microchip würde zusätzliche Sicherheit mit sich bringen, da die Privat Keys dieser unzugänglich sind. Nach der Verbesserung der Performance des Protokolls könnte die sichere Modbus Verbindung auch auf die weiteren Komponenten (HMI und SCADA) des Netzwerkes ausgeweitet werden. Um eine höhere Authentizität im LICSTER-Netzwerk zu erreichen könnte man die Client Authentifizierung derartig erweitern, dass zusätzlich zu den Remote-IOs auch das PLC mithilfe von Zertifikaten seine Zugehörigkeit bestätigen muss.</p>
 </div>
 </div>
@@ -388,10 +394,10 @@ Daraufhin werden die für die Remote-IOs benötigten Schlüssel und Zertifikate 
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="webapp.html" class="btn btn-neutral float-right" title="6. Webapplikation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="webapp.html" class="btn btn-neutral float-right" title="6. Webapplikation" accesskey="n" rel="next">Weiter <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="ids.html" class="btn btn-neutral float-left" title="4. Intrusion Detection System" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="ids.html" class="btn btn-neutral float-left" title="4. Intrusion Detection System" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Zurück</a>
       
     </div>
   
@@ -400,11 +406,19 @@ Daraufhin werden die für die Remote-IOs benötigten Schlüssel und Zertifikate 
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, Muhammet Bilbey, Raphael Hausmanninger, Eric Hoffmann, Michael Janzer, Fabian Klemm, Athanasios Luludis, Janis Schickram
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Erstellt mit <a href="http://sphinx-doc.org/">Sphinx</a> mit einem
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    bereitgestellt von <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -415,7 +429,6 @@ Daraufhin werden die für die Remote-IOs benötigten Schlüssel und Zertifikate 
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

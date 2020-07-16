@@ -11,6 +11,7 @@ Zugriff auf das LICSTER
    :alt: LICSTER WEB CONTROL
 
    Screenshot von der Übergangslösung von Teamviewer und Custom Webseite
+   | Quelle: Eigene Darstellung
 
 
 Der physische Zugriff auf das Testsystem welches beim Projektbetreuer vor Ort installiert war, wurde durch Teamviewer und SSH ersetzt. Durch diesen Teamviewer Zugriff waren wir dann trotzdem in der Lage das Gerät ein- und auszuschalten und die Kamera zu rebooten.
