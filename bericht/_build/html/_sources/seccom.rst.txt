@@ -58,6 +58,7 @@ Der Bridgemanager (Brückenverwalter) verwaltet die einzelnen Brücken und start
 Remote-IO
 ---------
 
+Das Remote-IO ist die Komponente, die als Schnittstelle zwischen dem PLC und den Sensoren/Motoren dient. Diese verarbeitet von dem PLC kommende Aufträge zur Steuerung der Motoren sowohl auch Aufträge zum Auslesen der Sensoren. Um eine beidseitig verschlüsselte Kommunikation gewährleisten zu können, wurden auch auf den Remote-IOs Änderungen vorgenommen, um das TLS-Protokoll zwischen dem Secure Layer auf dem PLC und den Remote-IOs zu implementieren.
 
 Mbed TLS
 ^^^^^^^^
