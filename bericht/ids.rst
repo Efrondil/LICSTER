@@ -183,6 +183,8 @@ Anschließend kann man dann Befehle senden um das Testbed zu steuern.
 Snort
 *****
 
+Snort ist eine Open-Source-Software für NIDS (Network Intrusion Detection System) und NIPS (Network Intrusion Prevention System). Veröffentlicht wurde sie 1998 von der Firma Sourcefire.
+
 Wieso Snort?
 ============
 Es wurde sich für Snort entschieden, da es schon seit längerem auf dem Markt verfügbar ist. Dank dieser Zeit ist Snort sehr ausgereift und auch weit verbreitet. Es ist kostenlos und durch seine große Community ist es leicht bei Problemen Unterstützung zu bekommen. Ein weiterer Punkt, warum sich für Snort entschieden wurde, ist, dass bereits einige Gruppenmitglieder sich ein wenig mit den Regeln auskannten. Die Syntax der Regeln ist leicht zu verstehen, bieten aber dennoch die nötige Komplexität, um aussagekräftige Meldungen zu bekommen.
@@ -359,6 +361,8 @@ Diese Regel erkennt einen Denial-of-Service Angriff über das Modbus.
 
 SSH Regel
 =========
+
+SSH Regeln dienen zur Zugriffskontrolle auf die einzelnen Komponenten.
 
 **Strange Traffic**
 
