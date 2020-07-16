@@ -14,8 +14,7 @@ Als die Secure Communication Gruppe haben wir uns ausschließlich mit der intern
    :alt: 
 
    Veranschaulichung der ursprünglichen Kommunikation
-
-   Quelle: Eigene Darstellung
+   | Quelle: Eigene Darstellung
 
 Dies wurde realisiert, indem wir eine zusätzliche Softwareschnittstelle (Secure Layer) im PLC implementiert haben. Diese ermöglicht eine beidseitig verschlüsselte Kommunikation zwischen dem PLC und den Remote-IOs, indem sie eingehende Pakete von den Remote-IOs entschlüsselt und von dem PLC ausgehende Pakete verschlüsselt. Die interne Kommunikation im PLC zwischen dem Secure-Layer und dem OpenPLC findet unverschlüsselt statt.
 
@@ -23,8 +22,7 @@ Dies wurde realisiert, indem wir eine zusätzliche Softwareschnittstelle (Secure
    :alt: 
 
    Veranschaulichung mit Secure Layer
-
-   Quelle: Eigene Darstellung
+   | Quelle: Eigene Darstellung
 
 Secure Layer
 ------------
@@ -35,8 +33,7 @@ Der Secure Layer (sichere Schicht) ist die Komponente die zwischen den Remote-IO
    :alt: 
 
    Detaillierte Veranschaulichung des Secure Layers
-
-   Quelle: Eigene Darstellung
+   | Quelle: Eigene Darstellung
 
 Der Secure Layer ist in Python3.6 geschrieben und in 2 Hauptkomponenten zu unterteilen:
 

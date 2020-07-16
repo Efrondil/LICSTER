@@ -24,8 +24,7 @@ Die Sicherheitslage von Industriesystemen auf der ganzen Welt wird immer kritisc
 .. figure:: img/cyberattacken_excel.png
 
     Cyberattacken auf deutsche Unternehmen im Jahre 2015
-
-    Quelle: https://de.statista.com/statistik/daten/studie/348989/umfrage/haeufigkeit-von-cyberattacken-auf-unternehmen/
+    | Quelle: https://de.statista.com/statistik/daten/studie/348989/umfrage/haeufigkeit-von-cyberattacken-auf-unternehmen/
 
 Deswegen haben wir uns zur Aufgabe gemacht, LICSTER eine weitere Sicherheitsschicht hinzuzufügen. Schnell wurde klar, dass ein IDS eine schnelle und aufwandseffiziente Lösung für unsere Problemstellung ist. Ein IDS kann in ein bestehendes System eingebaut werden, ohne dass direkte Änderungen am System gemacht werden müssen. Dies war uns besonders wichtig, da LICSTER bereits vor unserem Projekt schon fertiggestellt war und wir keine konzeptuelle Änderung mehr nachträglich realisieren wollten. Ein bestehendes IDS zu Nutzen hat es uns ermöglicht den zeitlichen Rahmen des Projekts einzuhalten und nützliche Fähigkeiten für unser weiteres Studium zu erlernen.
 
@@ -37,8 +36,7 @@ Für die Realisierung des IDS wurde sich für ein Raspberry Pi 4 entschieden. Mi
 .. figure:: img/Rapsberry_IDS_Showcase.jpg
 
     Unser IDS-Raspberry
-
-    Quelle: Eigene Darstellung
+    | Quelle: Eigene Darstellung
 
 
 Einrichtung VM
@@ -132,16 +130,14 @@ um zu sehen was während einem Regulären betrieb auf dem Netzwerk passiert.
 .. figure:: img/wireshark_normal.png
 
     Wireshark pcap vom LICSTER-Testbed während einem Leerlauf
-
-    Quelle: Eigene Darstellung
+    | Quelle: Eigene Darstellung
 
 Als nächstes haben wir pcaps von Angriffen, die wir Durchgeführt haben, aufgezeichnet, um Regeln für unser Intrusion-Detection-System entwickeln zu können.
 
 .. figure:: img/wireshark_flood.png
 
     Wireshark pcap vom LICSTER-Testbed während einem Denial of Service Angriffs
-
-    Quelle: Eigene Darstellung
+    | Quelle: Eigene Darstellung
 
 Durchgeführte Angriffe
 ======================
@@ -265,6 +261,7 @@ Es gibt vier Kategorien von Regeloptionen:
 .. figure:: img/rules.png
     
     Aufbau einer Beispielregel
+    | Quelle: Eigene Darstellung
 
 Eine komplette Auflistung von Regeloptionen:
 http://manual-snort-org.s3-website-us-east-1.amazonaws.com/node32.html

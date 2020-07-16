@@ -73,16 +73,14 @@ Für das Design haben wir uns zusammengesetzt und beschlossen dass ein schlichte
    :alt: LICSTER PIN
 
    HTML basiertes PIN Feld
-
-   Quelle: Eigene Darstellung
+   | Quelle: Eigene Darstellung
 
 
 .. figure:: img/remotecontrol.jpeg
    :alt: admin
 
-   Admin Dashboard
-
-   Quelle: Eigene Darstellung
+   LICSTER und HMI mit Admin Dashboard
+   | Quelle: Eigene Darstellung
 
 
 Erweiterungen
@@ -103,8 +101,7 @@ Das Styling der Admin Dashboard-Ansicht wurde mithilfe von HTML und CSS (Cascade
    :alt: LICSTER WEB
 
    Admin Dashboard mit Reset Funktion
-
-   Quelle: Eigene Darstellung
+   | Quelle: Eigene Darstellung
 
 Datenbank
 ^^^^^^^^^
