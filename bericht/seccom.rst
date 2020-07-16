@@ -15,12 +15,16 @@ Als die Secure Communication Gruppe haben wir uns ausschließlich mit der intern
 
    Veranschaulichung der ursprünglichen Kommunikation
 
+   Quelle: Eigene Darstellung
+
 Dies wurde realisiert, indem wir eine zusätzliche Softwareschnittstelle (Secure Layer) im PLC implementiert haben. Diese ermöglicht eine beidseitig verschlüsselte Kommunikation zwischen dem PLC und den Remote-IOs, indem sie eingehende Pakete von den Remote-IOs entschlüsselt und von dem PLC ausgehende Pakete verschlüsselt. Die interne Kommunikation im PLC zwischen dem Secure-Layer und dem OpenPLC findet unverschlüsselt statt.
 
 .. figure:: ./assets/diagrams/Secure_Layer_Overview.png
    :alt: 
 
    Veranschaulichung mit Secure Layer
+
+   Quelle: Eigene Darstellung
 
 Secure Layer
 ------------
@@ -31,6 +35,8 @@ Der Secure Layer (sichere Schicht) ist die Komponente die zwischen den Remote-IO
    :alt: 
 
    Detaillierte Veranschaulichung des Secure Layers
+
+   Quelle: Eigene Darstellung
 
 Der Secure Layer ist in Python3.6 geschrieben und in 2 Hauptkomponenten zu unterteilen:
 
@@ -243,12 +249,6 @@ Daraufhin werden die für die Remote-IOs benötigten Schlüssel und Zertifikate 
 
 Fazit und Ausblick
 ------------------
-
-
-.. raw:: html
-
-   <!-- evtl. überarbeiten -->
-
 
 Durch die zusätzlichen Implementierungen kann nun optional zwischen der ursprünglich unverschlüsselten Modbus Verbindung und der durch das TLS-Protokoll verschlüsselten Verbindung ausgewählt werden. Zusätzlich zu der verschlüsselten Verbindung übernimmt das Protokoll auch die Überprüfung der Authentizität der Kommunikationspartner. So muss bei einem Verbindungsaufbau das Remote-IO mit einem Zertifikat belegen, dass dieser dem LICSTER-Netzwerk zugehörig ist. 
 
