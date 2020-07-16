@@ -9,10 +9,10 @@ Diese Strategien werden im Folgenden genauer erklärt.
 
 Jitsi
 *****
-Um die Kommunikation mit dem Professor herzustellen wurde das Tool jitsi benützt.
+Um die Kommunikation mit dem Projektbetreuer herzustellen wurde das Tool jitsi benützt.
 Der Vorteil dabei liegt darin das man sich keinen Account erstellen muss.
 Somit wurde es ermöglicht das jeder leicht an den Meetings teilnehmen konnte.
-Das Meeting mit dem Professor war standartmäßig immer am Donnerstag um 17:30.
+Das Meeting mit dem Projektbetreuer war standartmäßig immer am Donnerstag um 17:30.
 
 Discord
 *******
@@ -24,7 +24,10 @@ einen eigenen Kanal hat. Dies haben wir getan damit eine gute Übersicht gewähr
 wird und man somit auch bei einem späteren Zeitpunkt die Informationen leicht nachschauen
 kann die man braucht.
 
-.. image:: img/Discord.png
+.. figure:: img/Discord.png
+    :alt:
+
+    Kommunikationsverlauf bei Discord
 
 Jira
 ****
@@ -38,4 +41,7 @@ jeweiligen Personen zugewiesen. Ideen oder aufgaben die für diese Woche noch ni
 bearbeiten sind oder noch nicht möglich sind zu bearbeiten wurden ins Backlog gesetzt.
 Die aufgaben könne dabei drei zustände einnehmen: Aufgabe, wird ausgeführt und fertig.
 
-.. image:: img/Jira.png
+.. figure:: img/Jira.png
+    :alt:
+
+    Sprint vom 16.06 - 30.06

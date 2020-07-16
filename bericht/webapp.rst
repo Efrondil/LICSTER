@@ -1,13 +1,13 @@
 
 Webapplikation
-======================
+==============
 
 .. Fabian Klemm, Athanasios Luludis
 
 
 Unsere Aufgabe war es die Web-Applikation des LICSTER zu verbessern. 
 
-Konkret haben wir das Frontent für mehrere Geräte zugänglich gemacht und das Backend um eine Benutzerverwaltung erweitert. Des weiteren haben wir ein PIN-Feld für das HMI programmiert, die Datenbank der Benutzerverwaltung von der Kommandozeile aufsetzbar gemacht und die Logs des IDS zeigen wir nicht nur auf dem Admin Dashboard an, sondern benachrichtigen Admins auch über Breaches per Email. Ein WSGI (Web Server Gateway Interface) wurde implementiert, um die Einbindung eines Web Servers für Endbenutzer zu vereinfachen.
+Konkret haben wir, Fabian Klemm und Athanasios Luludis, das Frontent für mehrere Geräte zugänglich gemacht und das Backend um eine Benutzerverwaltung erweitert. Des weiteren haben wir ein PIN-Feld für das HMI programmiert, die Datenbank der Benutzerverwaltung von der Kommandozeile aufsetzbar gemacht und die Logs des IDS zeigen wir nicht nur auf dem Admin Dashboard an, sondern benachrichtigen Admins auch über Breaches per Email. Ein WSGI (Web Server Gateway Interface) wurde implementiert, um die Einbindung eines Web Servers für Endbenutzer zu vereinfachen.
 
 Die Flask Applikation der ersten LICSTER Gruppe war ein abgeschlossenes System, welches nur zur Benutzung auf dem HMI konzipiert war. Sie zeigt den Stand aller Servomotoren an, kann Orders anzeigen und plazieren und Motoren einzeln ansteuern.
 
@@ -69,19 +69,19 @@ Design
 
 Für das Design haben wir uns zusammengesetzt und beschlossen dass ein schlichteres Design ohne viele visuelle Features besser ist. Es handelt sich nämlich um ein IT-Sicherheits-Projekt bei dem natürlich die Sicherheit des Systems an erster Stelle steht und es seriös wirken soll.
 
-.. image:: img/webbapp0.png
+.. figure:: img/webbapp0.png
    :alt: LICSTER PIN
 
+   HTML basiertes PIN Feld
+   | Quelle: Eigene Darstellung
 
-Die Abbildung zeigt das PIN-Feld. Für das PIN-Feld wurde eine JavaScript Klasse erstellt, welche für die Anzeige der Tasten und das Handling von Eingaben zuständig ist. Diese Anzeige ist nicht für mehrere Geräte angelegt sondern direkt auf das HMI angepasst.
 
-
-.. image:: img/webbapp1.gif
+.. figure:: img/remotecontrol.jpeg
    :alt: admin
 
-Die  Abbildung zeigt die normale Anmeldeseite welche so realisiert wurde, dass sie auf allen Geräten gut verwendet werden kann. 
+   LICSTER und HMI mit Admin Dashboard
+   | Quelle: Eigene Darstellung
 
-----
 
 Erweiterungen
 -------------
@@ -97,10 +97,11 @@ Die dritte Rolle des Benutzverwaltungssystems erlaubt den Zugriff auf das Admini
 Das Styling der Admin Dashboard-Ansicht wurde mithilfe von HTML und CSS (Cascade Style Sheets) verwirklicht. Hierbei haben wir beschlossen das alle Funktionen auf einer einzigen Seite sind, damit es übersichtlich bleibt und die Bedienung schneller ist.
 
 
-.. image:: img/webbapp2.png
+.. figure:: img/webbapp2.png
    :alt: LICSTER WEB
 
-Das Bild zeigt das Admin Dashboard. Zusätzlich gibt noch eine Reset-Funktion mit der man alle snort Einträge aus der Datenbank löschen kann.
+   Admin Dashboard mit Reset Funktion
+   | Quelle: Eigene Darstellung
 
 Datenbank
 ^^^^^^^^^

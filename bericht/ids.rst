@@ -18,12 +18,13 @@ Teil Projekt, bei dem wir ein solches System in dem Testbed LICSTER implementier
 Unser Team
 **********
 
-Unser Team für das Teilprojekt „Intrusion Detection System“ (IDS) besteht aus drei Leuten, die auch schon in ihrem Studium einen starken Fokus auf IT-Sicherheit gelegt haben. Wir haben zusammen mehrerer Kurse in Richtung IT-Sicherheit besucht und teilen uns die Faszination Systeme sicherer machen zu wollen. Deswegen wurde schnell klar, dass unser Team einen großen Wert auf den Sicherheitsaspekt von LICSTER legen wird.
+Unser Team für das Teilprojekt „Intrusion Detection System“ (IDS) besteht aus den Projektmitgliedern Eric Hoffmann, Michael Janzer und Janis Schickram, die auch schon in ihrem Studium einen starken Fokus auf IT-Sicherheit gelegt haben. Wir haben zusammen mehrerer Kurse in Richtung IT-Sicherheit besucht und teilen uns die Faszination Systeme sicherer machen zu wollen. Deswegen wurde schnell klar, dass unser Team einen großen Wert auf den Sicherheitsaspekt von LICSTER legen wird.
 Die Sicherheitslage von Industriesystemen auf der ganzen Welt wird immer kritischer. Bei Angriffen auf diese Systeme können in kürzester Zeit große wirtschaftliche Schäden erzielt werden.  
 
-.. figure:: img/cyberattacken.png
+.. figure:: img/cyberattacken_excel.png
 
     Cyberattacken auf deutsche Unternehmen im Jahre 2015
+    | Quelle: https://de.statista.com/statistik/daten/studie/348989/umfrage/haeufigkeit-von-cyberattacken-auf-unternehmen/
 
 Deswegen haben wir uns zur Aufgabe gemacht, LICSTER eine weitere Sicherheitsschicht hinzuzufügen. Schnell wurde klar, dass ein IDS eine schnelle und aufwandseffiziente Lösung für unsere Problemstellung ist. Ein IDS kann in ein bestehendes System eingebaut werden, ohne dass direkte Änderungen am System gemacht werden müssen. Dies war uns besonders wichtig, da LICSTER bereits vor unserem Projekt schon fertiggestellt war und wir keine konzeptuelle Änderung mehr nachträglich realisieren wollten. Ein bestehendes IDS zu Nutzen hat es uns ermöglicht den zeitlichen Rahmen des Projekts einzuhalten und nützliche Fähigkeiten für unser weiteres Studium zu erlernen.
 
@@ -35,6 +36,7 @@ Für die Realisierung des IDS wurde sich für ein Raspberry Pi 4 entschieden. Mi
 .. figure:: img/Rapsberry_IDS_Showcase.jpg
 
     Unser IDS-Raspberry
+    | Quelle: Eigene Darstellung
 
 
 Einrichtung VM
@@ -128,12 +130,14 @@ um zu sehen was während einem Regulären betrieb auf dem Netzwerk passiert.
 .. figure:: img/wireshark_normal.png
 
     Wireshark pcap vom LICSTER-Testbed während einem Leerlauf
+    | Quelle: Eigene Darstellung
 
 Als nächstes haben wir pcaps von Angriffen, die wir Durchgeführt haben, aufgezeichnet, um Regeln für unser Intrusion-Detection-System entwickeln zu können.
 
 .. figure:: img/wireshark_flood.png
 
     Wireshark pcap vom LICSTER-Testbed während einem Denial of Service Angriffs
+    | Quelle: Eigene Darstellung
 
 Durchgeführte Angriffe
 ======================
@@ -249,23 +253,28 @@ Regeloptionen
 Alle Regeloptionen werden durch das Semikolon (;) voneinander getrennt.
 Es gibt vier Kategorien von Regeloptionen:
 
-- general - enthält extra Informationen über die Regel, haben aber keine auswirkung während der Erkennung 
-- payload - diese Optionen schauen in den Packet-Payload rein
-- non-payload - diese Optionen schauen für nicht payload Daten
-- post-detection - diese Optionen sind Regelspezifische trigger, die ausgeführt werden, nachdem eine Regel ausgelöst wird 
+- general: enthält extra Informationen über die Regel, haben aber keine auswirkung während der Erkennung 
+- payload: diese Optionen schauen in den Packet-Payload rein
+- non-payload: diese Optionen schauen für nicht payload Daten
+- post-detection: diese Optionen sind Regelspezifische trigger, die ausgeführt werden, nachdem eine Regel ausgelöst wird 
 
 .. figure:: img/rules.png
     
     Aufbau einer Beispielregel
+    | Quelle: Eigene Darstellung
 
-Eine komplette Auflistung von Regeloptionen findet man hier:
+Eine komplette Auflistung von Regeloptionen:
 http://manual-snort-org.s3-website-us-east-1.amazonaws.com/node32.html
 
 Unsere Snort Regeln
 *******************
 
+Um Snort noch effektiver zu gestalten, wurden eigene Regeln für LICSTER entworfen.
+
 HTTP Regeln
 ===========
+
+Mit HTTP Regeln wird der Traffic zwischen Webservern und Usern überwacht.
 
 .. code-block::
   
@@ -283,6 +292,8 @@ Hier ähnlich wie bei der vorherigen Regel, nur wird hier der Alarm geworfen, fa
 
 ICMP Regel
 ==========
+
+ICMP Regeln dienen zur Überwachung von Scans und DoS Attacken.
 
 **Portscan**
 
@@ -335,6 +346,8 @@ Diese Regel ist dafür da, falls zu große ICMP Pakete gesendet werden. ``'dsize
 Modbus Regel
 ============
 
+Die Regeln für Modbus überwachen den Verkehr von RemoteIO und PLC.
+
 **DoS**
 
 .. code-block::
@@ -384,18 +397,12 @@ Gleich wie oben, nur ist diese Regel für das Erkennen eines Distributed-Denial-
 Fazit und Ausblick
 ******************
 
-Fazit
-=====
-
 Durch die Implementierung eines Intrusion Detection Systems können wir jetzt den Netzwerkverkehr
 überwachen sowie Angriffe und unberechtigte Zugriffe erkennen. Mit dem entwickeln von eigenen SSH, HTML, MODBUS
 und ICMP Regeln, konnten wir Snort an das LICSTER-Testbed so anpassen, dass erkannt wird welches Gerät vom
 LICSTER-Testbed angegriffen wird. So kann man direkt sehen welches Gerät unter Angriff steht und man kann direkt
 dagegen vorgehen. Auch werden die Logs mittels einem Cronjob im Minutentakt mit SCP an die Webapplikation
 versendet.
-
-Ausblick
-========
 
 Nachdem jetzt das LICSTER-Testbed mit Snort überwacht wird, kann man zusätzlich noch weitere an das
 LICSTER-Testbed angepasste Regeln entwickeln, um mehr LICSTER spezifische Angriffe zu erkennen. Ergänzend

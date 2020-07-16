@@ -12,35 +12,18 @@ LICSTER
 | Projektarbeit
 | Sommersemester 2020
 
-**Team**
------------
-
-| Fabian Klemm, <Fabian.Klemm@hs-augsburg.de>
-| Eric Hoffmann, <Eric.Hoffmann1@hs-augsburg.de>
-| Raphael Hausmanninger, <Raphael.Hausmanninger@hs-augsburg.de>
-| Michael Janzer, <Michael.Janzer@hs-augsburg.de>
-| Muhammet Bilbey <muhammet.bilbey@hs-augsburg.de>
-| Athanasios Luludis <athanasios.luludis@hs-augsburg.de>
-| Janis Schickram, <Janis.Schickram@hs-augsburg.de>
-
-
-Inhalt:
 
 .. toctree::
    :maxdepth: 2
-   :numbered:
+   :numbered: 
 
+   team
    einleitung
    kommunikation
    ids
    seccom
    webapp
    probleme
+   fazit-ausblick
+   abkuerzungsverzeichnis
 
-
-Index
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`

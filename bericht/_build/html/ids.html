@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3. Intrusion Detection System &mdash; LICSTER 2020 Dokumentation</title>
+  <title>4. Intrusion Detection System &mdash; LICSTER 2020 Dokumentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
     <link rel="search" title="Suche" href="search.html" />
-    <link rel="next" title="4. Secure Communication" href="seccom.html" />
-    <link rel="prev" title="2. Workflow" href="kommunikation.html" /> 
+    <link rel="next" title="5. Secure Communication" href="seccom.html" />
+    <link rel="prev" title="3. Workflow" href="kommunikation.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -86,52 +86,60 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="einleitung.html">1. Einleitung</a></li>
-<li class="toctree-l1"><a class="reference internal" href="kommunikation.html">2. Workflow</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">3. Intrusion Detection System</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#unser-team">3.1. Unser Team</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#einrichtung-pi">3.2. Einrichtung Pi</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#einrichtung-vm">3.3. Einrichtung VM</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#was-ist-ein-ids">3.4. Was ist ein IDS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#wieso-man-es-braucht">3.5. Wieso man es braucht</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#arten-von-ids">3.6. Arten von IDS</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#signature-based-detection">3.6.1. Signature-based detection</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#anomaly-based-detection">3.6.2. Anomaly-based detection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="team.html">1. Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="einleitung.html">2. Einleitung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kommunikation.html">3. Workflow</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">4. Intrusion Detection System</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#unser-team">4.1. Unser Team</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#einrichtung-pi">4.2. Einrichtung Pi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#einrichtung-vm">4.3. Einrichtung VM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#was-ist-ein-ids">4.4. Was ist ein IDS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#wieso-man-es-braucht">4.5. Wieso man es braucht</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#arten-von-ids">4.6. Arten von IDS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#signature-based-detection">4.6.1. Signature-based detection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#anomaly-based-detection">4.6.2. Anomaly-based detection</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#wireshark">3.7. Wireshark</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#durchgefuhrte-angriffe">3.7.1. Durchgeführte Angriffe</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#flooding">3.7.1.1. Flooding</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#angriff-auf-das-flieszband">3.7.1.2. Angriff auf das Fließband</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#angriff-auf-die-manuelle-kontrolle">3.7.1.3. Angriff auf die manuelle Kontrolle</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#snort">3.8. Snort</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#wieso-snort">3.8.1. Wieso Snort?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#snort-einrichtung">3.8.2. Snort Einrichtung</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#snort-regeln">3.8.3. Snort Regeln</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#regel-schreiben">3.8.3.1. Regel schreiben</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#aktion">3.8.3.2. Aktion</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#kopf">3.8.3.3. Kopf</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#regeloptionen">3.8.3.4. Regeloptionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#wireshark">4.7. Wireshark</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#durchgefuhrte-angriffe">4.7.1. Durchgeführte Angriffe</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#flooding">4.7.1.1. Flooding</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#angriff-auf-das-flieszband">4.7.1.2. Angriff auf das Fließband</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#angriff-auf-die-manuelle-kontrolle">4.7.1.3. Angriff auf die manuelle Kontrolle</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#unsere-snort-regeln">3.9. Unsere Snort Regeln</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#http-regeln">3.9.1. HTTP Regeln</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#icmp-regel">3.9.2. ICMP Regel</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#modbus-regel">3.9.3. Modbus Regel</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ssh-regel">3.9.4. SSH Regel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#snort">4.8. Snort</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#wieso-snort">4.8.1. Wieso Snort?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#snort-einrichtung">4.8.2. Snort Einrichtung</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#snort-regeln">4.8.3. Snort Regeln</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#regel-schreiben">4.8.3.1. Regel schreiben</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aktion">4.8.3.2. Aktion</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kopf">4.8.3.3. Kopf</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#regeloptionen">4.8.3.4. Regeloptionen</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="seccom.html">4. Secure Communication</a></li>
-<li class="toctree-l1"><a class="reference internal" href="webapp.html">5. Webapplikation Backend</a></li>
-<li class="toctree-l1"><a class="reference internal" href="probleme.html">6. Probleme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#unsere-snort-regeln">4.9. Unsere Snort Regeln</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#http-regeln">4.9.1. HTTP Regeln</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#icmp-regel">4.9.2. ICMP Regel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modbus-regel">4.9.3. Modbus Regel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ssh-regel">4.9.4. SSH Regel</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#fazit-und-ausblick">4.10. Fazit und Ausblick</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#fazit">4.10.1. Fazit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ausblick">4.10.2. Ausblick</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="seccom.html">5. Secure Communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="webapp.html">6. Webapplikation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="probleme.html">7. Probleme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fazit-ausblick.html">8. Fazit und Ausblick</a></li>
+<li class="toctree-l1"><a class="reference internal" href="abkuerzungsverzeichnis.html">9. Abkürzungsverzeichnis</a></li>
 </ul>
 
             
@@ -177,7 +185,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li><span class="section-number">3. </span>Intrusion Detection System</li>
+      <li><span class="section-number">4. </span>Intrusion Detection System</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -197,7 +205,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="intrusion-detection-system">
-<h1><span class="section-number">3. </span>Intrusion Detection System<a class="headerlink" href="#intrusion-detection-system" title="Link zu dieser Überschrift">¶</a></h1>
+<h1><span class="section-number">4. </span>Intrusion Detection System<a class="headerlink" href="#intrusion-detection-system" title="Link zu dieser Überschrift">¶</a></h1>
 <p>In unserer heutigen Zeit nehmen Angriffe auf industriele Systeme stetig weiter zu.
 Immer wieder werden neue arten gefunden wie ein System angegriffen werden kann.
 Dementsprechend gibt es auch schon sehr viele verschieden Tools die dafür da sind um
@@ -208,39 +216,45 @@ E-Mail-Nachrichten zu verhindern und Antiware-Tools zum Schutz von Endpunkten vo
 All diese Tools werden in so gut wie jedem Unternehmen eingesetzt egal welche Branche
 oder wie groß es ist. Ein weiteres wertvolles Sicherheitstool was ebenfalls eingesetzt
 wird ist ein Netzwerk-IDS (Intrusion Detection-System). Um dieses geht es auch in unserem
-Teil Projekt, bei dem wir ein solches System in dem Testbed Licster implementiert haben.</p>
+Teil Projekt, bei dem wir ein solches System in dem Testbed LICSTER implementiert haben.</p>
 <div class="section" id="unser-team">
-<h2><span class="section-number">3.1. </span>Unser Team<a class="headerlink" href="#unser-team" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Unser Team für das Teilprojekt „Intrusion Detection System“ (IDS) besteht aus drei Leuten, die auch schon in ihrem Studium einen starken Fokus auf IT-Sicherheit gelegt haben. Wir haben zusammen mehrerer Kurse in Richtung IT-Sicherheit besucht und teilen uns die Faszination Systeme sicherer machen zu wollen. Deswegen wurde schnell klar, dass unser Team einen großen Wert auf den Sicherheitsaspekt von LICSTER legen wird.
+<h2><span class="section-number">4.1. </span>Unser Team<a class="headerlink" href="#unser-team" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Unser Team für das Teilprojekt „Intrusion Detection System“ (IDS) besteht aus den Projektmitgliedern Eric Hoffmann, Michael Janzer und Janis Schickram, die auch schon in ihrem Studium einen starken Fokus auf IT-Sicherheit gelegt haben. Wir haben zusammen mehrerer Kurse in Richtung IT-Sicherheit besucht und teilen uns die Faszination Systeme sicherer machen zu wollen. Deswegen wurde schnell klar, dass unser Team einen großen Wert auf den Sicherheitsaspekt von LICSTER legen wird.
 Die Sicherheitslage von Industriesystemen auf der ganzen Welt wird immer kritischer. Bei Angriffen auf diese Systeme können in kürzester Zeit große wirtschaftliche Schäden erzielt werden.</p>
-<img alt="_images/cyberattacken.png" src="_images/cyberattacken.png" />
+<div class="figure align-default" id="id1">
+<img alt="_images/cyberattacken_excel.png" src="_images/cyberattacken_excel.png" />
+<p class="caption"><span class="caption-number">Abb. 4.1.1 </span><span class="caption-text">Cyberattacken auf deutsche Unternehmen im Jahre 2015,
+Quelle: <a class="reference external" href="https://de.statista.com/statistik/daten/studie/348989/umfrage/haeufigkeit-von-cyberattacken-auf-unternehmen/">https://de.statista.com/statistik/daten/studie/348989/umfrage/haeufigkeit-von-cyberattacken-auf-unternehmen/</a>, Zugriff am 15.07.2020</span><a class="headerlink" href="#id1" title="Link zu diesem Bild">¶</a></p>
+</div>
 <p>Deswegen haben wir uns zur Aufgabe gemacht, LICSTER eine weitere Sicherheitsschicht hinzuzufügen. Schnell wurde klar, dass ein IDS eine schnelle und aufwandseffiziente Lösung für unsere Problemstellung ist. Ein IDS kann in ein bestehendes System eingebaut werden, ohne dass direkte Änderungen am System gemacht werden müssen. Dies war uns besonders wichtig, da LICSTER bereits vor unserem Projekt schon fertiggestellt war und wir keine konzeptuelle Änderung mehr nachträglich realisieren wollten. Ein bestehendes IDS zu Nutzen hat es uns ermöglicht den zeitlichen Rahmen des Projekts einzuhalten und nützliche Fähigkeiten für unser weiteres Studium zu erlernen.</p>
 </div>
 <div class="section" id="einrichtung-pi">
-<h2><span class="section-number">3.2. </span>Einrichtung Pi<a class="headerlink" href="#einrichtung-pi" title="Link zu dieser Überschrift">¶</a></h2>
+<h2><span class="section-number">4.2. </span>Einrichtung Pi<a class="headerlink" href="#einrichtung-pi" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Für die Realisierung des IDS wurde sich für ein Raspberry Pi 4 entschieden. Mit 4 GB RAM - in der ausgewälten Konfiguration - ist das Pi geeignet Snort als IDS zu verwenden. Als Betriebssystem wird das Raspberry Pi OS (früher Raspbian genannt) genutzt, welches von der offiziellen Seite bezogen wurde (<a class="reference external" href="https://www.raspberrypi.org/downloads/">https://www.raspberrypi.org/downloads/</a>). Dies wurde mit einem Image-Tool auf eine SD-Karte gespielt und über SSH wurden dann die restlichen Einrichtungen vorgenommen. Nachdem alles eingerichtet war, konnte das Pi in das LICSTER Netzwerk eingesetzt werden. Das Pi wurde an den Mirrorport des Switchs angeschlossen, damit der gesamte Traffic des LICSTERs am Pi empfangen werden kann. Um durch den Dauerbetrieb entstehende Abwärme entgegenzuwirken wurde eine Hülle mit Lüftern für das Pi angeschafft. Im Home-Verzeichnis wurde das Git aus GitLab gecloned. Dieses Repository enthält die Configs und Rules für Snort, sowie weitere Skripte für das IDS.</p>
+<div class="figure align-default" id="id2">
 <img alt="_images/Rapsberry_IDS_Showcase.jpg" src="_images/Rapsberry_IDS_Showcase.jpg" />
+<p class="caption"><span class="caption-number">Abb. 4.2.1 </span><span class="caption-text">Unser IDS-Raspberry</span><a class="headerlink" href="#id2" title="Link zu diesem Bild">¶</a></p>
+</div>
 </div>
 <div class="section" id="einrichtung-vm">
-<h2><span class="section-number">3.3. </span>Einrichtung VM<a class="headerlink" href="#einrichtung-vm" title="Link zu dieser Überschrift">¶</a></h2>
+<h2><span class="section-number">4.3. </span>Einrichtung VM<a class="headerlink" href="#einrichtung-vm" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Aus Kostengründen konnte nicht für jedes der drei Mitglieder ein Raspberry Pi gekauft werden. Dieses Problem wurde mit Virtuellen Maschinen gelöst. Virtuelle Maschinen emulieren Hardware als Software auf einem Hostsystem. Als Virtualisierungssoftware wurde VirtualBox verwendet welches ein Image des Raspberry Pi Desktops nutzte. Somit konnte jedes Mitglied seine eigenes Raspberry Pi simulieren und jede Aufgabe konnte von Jedem erledigt werden. Bei der Einrichtung des Betriebssystems musste auf die bautechnischen Beschränkungen des Raspberry Pi 4 geachtet werden. Somit musste in der VM der Hauptspeicher auf 4 GB RAM beschränkt und der Festplattenspeicher musste auf die 64 GB der eingebauten SD-Karte begrenzt werden.</p>
 </div>
 <div class="section" id="was-ist-ein-ids">
-<h2><span class="section-number">3.4. </span>Was ist ein IDS<a class="headerlink" href="#was-ist-ein-ids" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Doch was genau ist nun ein Intrusion Detection system. Eine gute Definition für ein ids
-lauten folgend. „Ein IDS (Intrusion Detection System) ist ein Gerät oder eine Anwendung,
+<h2><span class="section-number">4.4. </span>Was ist ein IDS<a class="headerlink" href="#was-ist-ein-ids" title="Link zu dieser Überschrift">¶</a></h2>
+<p>„Ein IDS (Intrusion Detection System) ist ein Gerät oder eine Anwendung,
 mit der der gesamte Netzwerkverkehr überprüft und der Benutzer oder Administrator
-benachrichtigt wird, wenn nicht autorisierte Versuche oder Zugriffe stattgefunden haben.“
-Im Gegensatz zu einer Firewall welche meist eher als Gatekeeper fungiert also nur den
-Netzwerkverkehr überwacht und bestimmt ob er ins Netzwerk darf. Konzentriert sich Ids
-System auf den traffic, der im internen Netzwerk abläuft. Dabei wird anhand von
-verschieden rule sets geschaut ob ein traffic verdächtig ist bzw. er sich ungewöhnlich
-verhält bspw. Modbus mehr traffic in der Sekunde als eigentlich der Standard für das
-System ist. Durch diese Weise kann ein ids Angriffe erkennen welche an der Firewall
+benachrichtigt wird, wenn nicht autorisierte Versuche oder Zugriffe stattgefunden haben.“ (Bradley, T., 2014. IDS. [online] verfügbar unter: <a class="reference external" href="https://techspective.net/2014/03/08/ids/">https://techspective.net/2014/03/08/ids/</a> [Besucht 12 July 2020].)
+Im Gegensatz dazu steht die Firewall, welche meist als Gatekeeper fungiert und somit nur den
+Netzwerkverkehr überwacht und regelt. Das IDS konzentriert sich
+auf den Traffic, der im internen Netzwerk abläuft. Dabei wird anhand von
+verschieden Rulesets entschieden, ob der Traffic verdächtig ist bzw. er sich ungewöhnlich
+verhält. Beispielhaft hierzu wäre es, wenn ein plötzlicher Anstieg des Traffic im Netzwerk erkannt wird.
+Durch diese Weise kann ein IDS Angriffe erkennen welche an der Firewall
 vorbei kommen oder aus dem eigenem Netzwerk stammen.</p>
 </div>
 <div class="section" id="wieso-man-es-braucht">
-<h2><span class="section-number">3.5. </span>Wieso man es braucht<a class="headerlink" href="#wieso-man-es-braucht" title="Link zu dieser Überschrift">¶</a></h2>
+<h2><span class="section-number">4.5. </span>Wieso man es braucht<a class="headerlink" href="#wieso-man-es-braucht" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Keine Firewall ist fehlerfrei und kein Netzwerk ist undurchdringlich. Angreifer
 entwickeln ständig neue Exploits und Angriffstechniken, um auf ein System zu kommen.
 Was von vielen Angreifern zusätzlich gerne genutzt wird ist Social Engineering oder
@@ -256,11 +270,11 @@ Personal besteht nun darin zu schauen welche nachrichtig stimmen und welche ein 
 positiv sind.</p>
 </div>
 <div class="section" id="arten-von-ids">
-<h2><span class="section-number">3.6. </span>Arten von IDS<a class="headerlink" href="#arten-von-ids" title="Link zu dieser Überschrift">¶</a></h2>
+<h2><span class="section-number">4.6. </span>Arten von IDS<a class="headerlink" href="#arten-von-ids" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Im Grundlegen werden zwischen zwei Arten von ids Systemen unterschieden nämlich der signature-based detection
 und der anomaly-based detection.</p>
 <div class="section" id="signature-based-detection">
-<h3><span class="section-number">3.6.1. </span>Signature-based detection<a class="headerlink" href="#signature-based-detection" title="Link zu dieser Überschrift">¶</a></h3>
+<h3><span class="section-number">4.6.1. </span>Signature-based detection<a class="headerlink" href="#signature-based-detection" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Bei dieser Methode werden feste Muster verwendet, um den traffic zu kontrollieren.
 Diese Muster beschreiben verdächtige Sammlung von Abfolgen von Aktivitäten oder
 Operationen, die möglicherweise schädlich sein können. Diese werden dann meist in einer
@@ -276,7 +290,7 @@ arbeiten. Desweitern tuen sich solches System sehr schwer mit Angriffen bei dene
 Menschen aktiv etwas tun.</p>
 </div>
 <div class="section" id="anomaly-based-detection">
-<h3><span class="section-number">3.6.2. </span>Anomaly-based detection<a class="headerlink" href="#anomaly-based-detection" title="Link zu dieser Überschrift">¶</a></h3>
+<h3><span class="section-number">4.6.2. </span>Anomaly-based detection<a class="headerlink" href="#anomaly-based-detection" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Bei diesem System ist das Netzwerkverhalten der Haupt Parameter. Deshalb wird vorerst ein
 Model erstellt, welches zeigt wie der normale traffic im Netzwerk aussehen soll.
 Dieser kann entweder vorbestimmt werden oder durch vom Netzwerkadministrator festgelegte
@@ -291,19 +305,25 @@ böswillige Verhalten unter das akzeptierende Verhalten fällt.</p>
 </div>
 </div>
 <div class="section" id="wireshark">
-<h2><span class="section-number">3.7. </span>Wireshark<a class="headerlink" href="#wireshark" title="Link zu dieser Überschrift">¶</a></h2>
+<h2><span class="section-number">4.7. </span>Wireshark<a class="headerlink" href="#wireshark" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Um einen Überblick über die Pakete, die im LICSTER Netzwerk unterwegs sind, zu
 bekommen, haben wir, mit Wireshark, den Netzwerkverkehr aufgezeichnet.</p>
 <p>Als erstes haben wir pcaps während dem Einschalten, Betrieb und Abschalten von dem Testbed, mithilfe des Mirror Ports erstellt,
 um zu sehen was während einem Regulären betrieb auf dem Netzwerk passiert.</p>
+<div class="figure align-default" id="id3">
 <img alt="_images/wireshark_normal.png" src="_images/wireshark_normal.png" />
+<p class="caption"><span class="caption-number">Abb. 4.7.1 </span><span class="caption-text">Wireshark pcap vom LICSTER-Testbed während einem Leerlauf</span><a class="headerlink" href="#id3" title="Link zu diesem Bild">¶</a></p>
+</div>
 <p>Als nächstes haben wir pcaps von Angriffen, die wir Durchgeführt haben, aufgezeichnet, um Regeln für unser Intrusion-Detection-System entwickeln zu können.</p>
+<div class="figure align-default" id="id4">
 <img alt="_images/wireshark_flood.png" src="_images/wireshark_flood.png" />
+<p class="caption"><span class="caption-number">Abb. 4.7.2 </span><span class="caption-text">Wireshark pcap vom LICSTER-Testbed während einem Denial of Service Angriffs</span><a class="headerlink" href="#id4" title="Link zu diesem Bild">¶</a></p>
+</div>
 <div class="section" id="durchgefuhrte-angriffe">
-<h3><span class="section-number">3.7.1. </span>Durchgeführte Angriffe<a class="headerlink" href="#durchgefuhrte-angriffe" title="Link zu dieser Überschrift">¶</a></h3>
+<h3><span class="section-number">4.7.1. </span>Durchgeführte Angriffe<a class="headerlink" href="#durchgefuhrte-angriffe" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Die Skripte für die Angriffe sind im Offiziellen Github Repository zu finden (<a class="reference external" href="https://github.com/hsainnos/LICSTER/tree/master/attacks">https://github.com/hsainnos/LICSTER/tree/master/attacks</a>).</p>
 <div class="section" id="flooding">
-<h4><span class="section-number">3.7.1.1. </span>Flooding<a class="headerlink" href="#flooding" title="Link zu dieser Überschrift">¶</a></h4>
+<h4><span class="section-number">4.7.1.1. </span>Flooding<a class="headerlink" href="#flooding" title="Link zu dieser Überschrift">¶</a></h4>
 <p>Flooding ist eine einfache und beliebte Art eines Denial-of-Service Angriffs.
 Für den Angriff haben wir hping3 benutzt. Ein Einfaches CLI-tool um Pakete zu versenden.</p>
 <p>Hier wird eins der beiden RemoteIO’s vom LICSTER Testbed geflutet.</p>
@@ -312,7 +332,7 @@ Für den Angriff haben wir hping3 benutzt. Ein Einfaches CLI-tool um Pakete zu v
 </div>
 </div>
 <div class="section" id="angriff-auf-das-flieszband">
-<h4><span class="section-number">3.7.1.2. </span>Angriff auf das Fließband<a class="headerlink" href="#angriff-auf-das-flieszband" title="Link zu dieser Überschrift">¶</a></h4>
+<h4><span class="section-number">4.7.1.2. </span>Angriff auf das Fließband<a class="headerlink" href="#angriff-auf-das-flieszband" title="Link zu dieser Überschrift">¶</a></h4>
 <p>Hier haben wir mit einem kleinen Python-Skript das Fließband vom LICSTER Testbed angegriffen und zum stoppen gebracht.
 Ausgeführt wird er mit:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo ./conveyer_belt.py
@@ -320,7 +340,7 @@ Ausgeführt wird er mit:</p>
 </div>
 </div>
 <div class="section" id="angriff-auf-die-manuelle-kontrolle">
-<h4><span class="section-number">3.7.1.3. </span>Angriff auf die manuelle Kontrolle<a class="headerlink" href="#angriff-auf-die-manuelle-kontrolle" title="Link zu dieser Überschrift">¶</a></h4>
+<h4><span class="section-number">4.7.1.3. </span>Angriff auf die manuelle Kontrolle<a class="headerlink" href="#angriff-auf-die-manuelle-kontrolle" title="Link zu dieser Überschrift">¶</a></h4>
 <p>Hier wird, mit einem Python-Skript, die manuelle Kontrolle vom LICSTER Testbed übernommen.
 Ausgeführt wird er mit:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python3 -i client.py
@@ -332,20 +352,20 @@ Ausgeführt wird er mit:</p>
 </div>
 </div>
 <div class="section" id="snort">
-<h2><span class="section-number">3.8. </span>Snort<a class="headerlink" href="#snort" title="Link zu dieser Überschrift">¶</a></h2>
+<h2><span class="section-number">4.8. </span>Snort<a class="headerlink" href="#snort" title="Link zu dieser Überschrift">¶</a></h2>
 <div class="section" id="wieso-snort">
-<h3><span class="section-number">3.8.1. </span>Wieso Snort?<a class="headerlink" href="#wieso-snort" title="Link zu dieser Überschrift">¶</a></h3>
+<h3><span class="section-number">4.8.1. </span>Wieso Snort?<a class="headerlink" href="#wieso-snort" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Es wurde sich für Snort entschieden, da es schon seit längerem auf dem Markt verfügbar ist. Dank dieser Zeit ist Snort sehr ausgereift und auch weit verbreitet. Es ist kostenlos und durch seine große Community ist es leicht bei Problemen Unterstützung zu bekommen. Ein weiterer Punkt, warum sich für Snort entschieden wurde, ist, dass bereits einige Gruppenmitglieder sich ein wenig mit den Regeln auskannten. Die Syntax der Regeln ist leicht zu verstehen, bieten aber dennoch die nötige Komplexität, um aussagekräftige Meldungen zu bekommen.</p>
 </div>
 <div class="section" id="snort-einrichtung">
-<h3><span class="section-number">3.8.2. </span>Snort Einrichtung<a class="headerlink" href="#snort-einrichtung" title="Link zu dieser Überschrift">¶</a></h3>
+<h3><span class="section-number">4.8.2. </span>Snort Einrichtung<a class="headerlink" href="#snort-einrichtung" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Als Erstes hat jedes Gruppenmitglied Snort bei seiner eigenen VM eingerichtet. So konnten schon die ersten Erfahrungen mit den Regeln und der Funktion von Snort gesammelt werden. Dann wurde abgewogen, welche Snort Version am geeignetsten für das Vorhaben ist. Zur Auswahl standen v2 und v3. Die neuere Version v3 besitzt neue Funktionen, aber dies kommt auch mit Performanceeinbußen einher. Da das Raspberry Pi 4 nur begrenzte Rechenleistung und Hauptspeicher besitzt, wurde sich für die ausgereiftere v2 entschieden. Snort wurde über apt install snort bezogen und war dann auch bereit für den Einsatz. Um die gleichen Konfigurationen und Regeln zu haben, wurde ein GitLab Repository eingerichtet welches alle Konfigurationsdateien und Regeln beinhaltet. Somit musste, um Snort zu starten, nur noch der Pfad zu der Konfiguration angegeben werden. Diese Konfigurationsdatei beinhaltete wiederrum die relativen Pfade zu den Regeln im Repository. Nach der Einrichtung sieht der Befehl zum Starten von Snort so aus: sudo snort -c /path/to/snort.conf</p>
 </div>
 <div class="section" id="snort-regeln">
-<h3><span class="section-number">3.8.3. </span>Snort Regeln<a class="headerlink" href="#snort-regeln" title="Link zu dieser Überschrift">¶</a></h3>
+<h3><span class="section-number">4.8.3. </span>Snort Regeln<a class="headerlink" href="#snort-regeln" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Damit Snort Angriffe/Abnormalitäten erkennen kann, müssen Regeln vorhanden sein, wonach Snort sich richten kann. Darauf Achten sollte man, dass man nicht zu viele Regeln implementiert, denn so kann es passieren, das Snort zu viele Alarme wirft, von denen viele  falsch sind und der echte Alarm untergeht (Man sieht den Angriff vor lauter „Angriffe“ nicht mehr). Hat man aber zu wenige Regel implementiert, kann es passieren, dass mögliche Angriffe nicht erkannt werden. Es müssen also so wenig Regeln wie möglich, aber so viele wie nötig implementiert werden um Fehlalarme zu vermeiden und dennoch echte Angriffe erkennen zu können.</p>
 <div class="section" id="regel-schreiben">
-<h4><span class="section-number">3.8.3.1. </span>Regel schreiben<a class="headerlink" href="#regel-schreiben" title="Link zu dieser Überschrift">¶</a></h4>
+<h4><span class="section-number">4.8.3.1. </span>Regel schreiben<a class="headerlink" href="#regel-schreiben" title="Link zu dieser Überschrift">¶</a></h4>
 <p>Damit man Regeln schreiben kann muss man erst verstehen wie eine Regel
 aufgebaut ist. Hier Hilft die offizielle Anleitung
 (<a class="reference external" href="http://manual-snort-org.s3-website-us-east-1.amazonaws.com/node27.html">http://manual-snort-org.s3-website-us-east-1.amazonaws.com/node27.html</a>).</p>
@@ -358,7 +378,7 @@ aufgebaut ist. Hier Hilft die offizielle Anleitung
 </ul>
 </div>
 <div class="section" id="aktion">
-<h4><span class="section-number">3.8.3.2. </span>Aktion<a class="headerlink" href="#aktion" title="Link zu dieser Überschrift">¶</a></h4>
+<h4><span class="section-number">4.8.3.2. </span>Aktion<a class="headerlink" href="#aktion" title="Link zu dieser Überschrift">¶</a></h4>
 <p>Hier wird angegeben was Snort tun soll, wenn es ein Paket findet, das den
 Regel Kriterien entspricht. Es gibt 3 verfügbare Standardaktionen in Snort,
 alert, log und pass. Wenn Snort im inline-modus ausgeführt wird, stehen drop,
@@ -373,7 +393,7 @@ reject und sdrop zur verfügung.</p>
 </ul>
 </div>
 <div class="section" id="kopf">
-<h4><span class="section-number">3.8.3.3. </span>Kopf<a class="headerlink" href="#kopf" title="Link zu dieser Überschrift">¶</a></h4>
+<h4><span class="section-number">4.8.3.3. </span>Kopf<a class="headerlink" href="#kopf" title="Link zu dieser Überschrift">¶</a></h4>
 <p>Dieses Feld steht für das Protokoll, die IP Adresse, die Ports und die
 Richtungsanweisung.</p>
 <p><strong>Protokolle</strong></p>
@@ -386,41 +406,28 @@ von Snort festlegen. Das Schlüsselwort any kann zur Definition einer beliebigen
 Adresse verwendet werden.</p>
 </div>
 <div class="section" id="regeloptionen">
-<h4><span class="section-number">3.8.3.4. </span>Regeloptionen<a class="headerlink" href="#regeloptionen" title="Link zu dieser Überschrift">¶</a></h4>
+<h4><span class="section-number">4.8.3.4. </span>Regeloptionen<a class="headerlink" href="#regeloptionen" title="Link zu dieser Überschrift">¶</a></h4>
 <p>Alle Regeloptionen werden durch das Semikolon (;) voneinander getrennt.
 Es gibt vier Kategorien von Regeloptionen:</p>
 <ul class="simple">
-<li><dl class="simple">
-<dt>general</dt><dd><p>enthält extra Informationen über die Regel, haben aber keine auswirkung während der Erkennung</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>payload</dt><dd><p>diese Optionen schauen in den Packet-Payload rein</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>non-payload</dt><dd><p>diese Optionen schauen für nicht payload Daten</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>post-detection</dt><dd><p>diese Optionen sind Regelspezifische trigger, die ausgeführt werden, nachdem eine Regel ausgelöst wird</p>
-</dd>
-</dl>
-</li>
+<li><p>general: enthält extra Informationen über die Regel, haben aber keine auswirkung während der Erkennung</p></li>
+<li><p>payload: diese Optionen schauen in den Packet-Payload rein</p></li>
+<li><p>non-payload: diese Optionen schauen für nicht payload Daten</p></li>
+<li><p>post-detection: diese Optionen sind Regelspezifische trigger, die ausgeführt werden, nachdem eine Regel ausgelöst wird</p></li>
 </ul>
+<div class="figure align-default" id="id5">
 <img alt="_images/rules.png" src="_images/rules.png" />
-<p>Für genauere Regeloptionen schaut man hier am besten nach:
+<p class="caption"><span class="caption-number">Abb. 4.8.1 </span><span class="caption-text">Aufbau einer Beispielregel</span><a class="headerlink" href="#id5" title="Link zu diesem Bild">¶</a></p>
+</div>
+<p>Eine komplette Auflistung von Regeloptionen:
 <a class="reference external" href="http://manual-snort-org.s3-website-us-east-1.amazonaws.com/node32.html">http://manual-snort-org.s3-website-us-east-1.amazonaws.com/node32.html</a></p>
 </div>
 </div>
 </div>
 <div class="section" id="unsere-snort-regeln">
-<h2><span class="section-number">3.9. </span>Unsere Snort Regeln<a class="headerlink" href="#unsere-snort-regeln" title="Link zu dieser Überschrift">¶</a></h2>
+<h2><span class="section-number">4.9. </span>Unsere Snort Regeln<a class="headerlink" href="#unsere-snort-regeln" title="Link zu dieser Überschrift">¶</a></h2>
 <div class="section" id="http-regeln">
-<h3><span class="section-number">3.9.1. </span>HTTP Regeln<a class="headerlink" href="#http-regeln" title="Link zu dieser Überschrift">¶</a></h3>
+<h3><span class="section-number">4.9.1. </span>HTTP Regeln<a class="headerlink" href="#http-regeln" title="Link zu dieser Überschrift">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>alert tcp !$HOME_NET any -&gt; 192.168.0.10 $HTTP_PORTS (msg:&quot;HTTP Get from EXTERNAL to 192.168.0.10&quot;; \
 classtype: bad-unknown; content: &quot;HTTP&quot;; sid 1002000; rev: 1;)
 </pre></div>
@@ -433,7 +440,7 @@ classtype: bad-unknown; content: &quot;HTTP&quot;; sid 1002005; rev: 1;)
 <p>Hier ähnlich wie bei der vorherigen Regel, nur wird hier der Alarm geworfen, falls das GET request vom Heimnetz, aber nicht vom HMI, kommt.</p>
 </div>
 <div class="section" id="icmp-regel">
-<h3><span class="section-number">3.9.2. </span>ICMP Regel<a class="headerlink" href="#icmp-regel" title="Link zu dieser Überschrift">¶</a></h3>
+<h3><span class="section-number">4.9.2. </span>ICMP Regel<a class="headerlink" href="#icmp-regel" title="Link zu dieser Überschrift">¶</a></h3>
 <p><strong>Portscan</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alert</span> <span class="n">icmp</span> <span class="nb">any</span> <span class="nb">any</span> <span class="o">-&gt;</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">0.10</span> <span class="nb">any</span> <span class="p">(</span><span class="n">msg</span><span class="p">:</span><span class="s2">&quot;Ping nmap Portscan 192.168.0.10&quot;</span><span class="p">;</span> \
 <span class="n">dsize</span><span class="p">:</span><span class="mi">0</span><span class="p">;</span> <span class="n">itype</span><span class="p">:</span><span class="mi">8</span><span class="p">;</span> <span class="n">classtype</span><span class="p">:</span> <span class="n">network</span><span class="o">-</span><span class="n">scan</span><span class="p">;</span> <span class="n">sid</span><span class="p">:</span><span class="mi">1003000</span><span class="p">;</span> <span class="n">rev</span><span class="p">:</span><span class="mi">1</span><span class="p">;)</span>
@@ -446,7 +453,8 @@ Da die Paketgröße 0 ist wird hier <code class="docutils literal notranslate"><
 <span class="n">itype</span><span class="p">:</span><span class="mi">8</span><span class="p">;</span> <span class="n">count</span> <span class="mi">20</span><span class="p">,</span> <span class="n">seconds</span> <span class="mi">1</span><span class="p">;</span> <span class="n">classtype</span><span class="p">:</span> <span class="n">denial</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">service</span><span class="p">;</span> <span class="n">sid</span><span class="p">:</span><span class="mi">1003010</span><span class="p">;</span> <span class="n">rev</span><span class="p">:</span><span class="mi">1</span><span class="p">;)</span>
 </pre></div>
 </div>
-<p>Standard DoS Ping flood.</p>
+<p>Diese Regel ist für einen einfachen Ping flood Denial-of-Service Angriff. Ausgelöst wird die Regel, wenn
+in einem Intervall von einer Sekunde, 20 Ping Pakete ankommen.</p>
 <p><strong>DoS Teardrop</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alert</span> <span class="n">icmp</span> <span class="nb">any</span> <span class="nb">any</span> <span class="o">-&gt;</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">0.10</span> <span class="nb">any</span> <span class="p">(</span><span class="n">msg</span><span class="p">:</span><span class="s2">&quot;ICMP Teardrop attack 192.168.0.10&quot;</span><span class="p">;</span> \
 <span class="n">fragbits</span><span class="p">:</span><span class="n">M</span><span class="p">;</span> <span class="n">classtype</span><span class="p">:</span> <span class="n">denial</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">service</span><span class="p">;</span> <span class="n">sid</span><span class="p">:</span><span class="mi">1003020</span><span class="p">;</span><span class="n">rev</span><span class="p">:</span><span class="mi">1</span><span class="p">;)</span>
@@ -468,7 +476,7 @@ wird hier <code class="docutils literal notranslate"><span class="pre">'fragbits
 <p>Diese Regel ist dafür da, falls zu große ICMP Pakete gesendet werden. <code class="docutils literal notranslate"><span class="pre">'dsize'</span></code> ist für die Paketgröße und wurde hier auf größer 1500 gesetzt.</p>
 </div>
 <div class="section" id="modbus-regel">
-<h3><span class="section-number">3.9.3. </span>Modbus Regel<a class="headerlink" href="#modbus-regel" title="Link zu dieser Überschrift">¶</a></h3>
+<h3><span class="section-number">4.9.3. </span>Modbus Regel<a class="headerlink" href="#modbus-regel" title="Link zu dieser Überschrift">¶</a></h3>
 <p><strong>DoS</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alert</span> <span class="n">tcp</span> <span class="nb">any</span> <span class="nb">any</span> <span class="o">-&gt;</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">0.51</span> <span class="mi">502</span> <span class="p">(</span><span class="n">msg</span><span class="p">:</span><span class="s2">&quot;Modbus threshold violation 51&quot;</span><span class="p">;</span> <span class="n">threshold</span><span class="p">:</span> \
 <span class="nb">type</span> <span class="n">both</span><span class="p">,</span> <span class="n">track</span> <span class="n">by_dst</span><span class="p">,</span> <span class="n">count</span> <span class="mi">60</span><span class="p">,</span> <span class="n">seconds</span> <span class="mi">1</span><span class="p">;</span> <span class="n">classtype</span><span class="p">:</span> <span class="n">successful</span><span class="o">-</span><span class="n">dos</span><span class="p">;</span> <span class="n">sid</span><span class="p">:</span><span class="mi">1001004</span><span class="p">;)</span>
@@ -477,7 +485,7 @@ wird hier <code class="docutils literal notranslate"><span class="pre">'fragbits
 <p>Diese Regel erkennt einen Denial-of-Service Angriff über das Modbus.</p>
 </div>
 <div class="section" id="ssh-regel">
-<h3><span class="section-number">3.9.4. </span>SSH Regel<a class="headerlink" href="#ssh-regel" title="Link zu dieser Überschrift">¶</a></h3>
+<h3><span class="section-number">4.9.4. </span>SSH Regel<a class="headerlink" href="#ssh-regel" title="Link zu dieser Überschrift">¶</a></h3>
 <p><strong>Strange Traffic</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>alert tcp !$HOME_NET any -&gt; 192.168.0.10 22 (msg:&quot;SSH Request from EXTERNAL NET to 192.168.0.10&quot;; \
 content:&quot;SSH&quot;; nocase; offset:0; depth:4; classtype: attempted-user; sid:1000101; rev:1;)
@@ -503,6 +511,26 @@ content:&quot;SSH&quot;; nocase; offset:0; depth:4; classtype: attempted-user; s
 <p>Gleich wie oben, nur ist diese Regel für das Erkennen eines Distributed-Denial-of-Service Angriffs zuständig.</p>
 </div>
 </div>
+<div class="section" id="fazit-und-ausblick">
+<h2><span class="section-number">4.10. </span>Fazit und Ausblick<a class="headerlink" href="#fazit-und-ausblick" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="section" id="fazit">
+<h3><span class="section-number">4.10.1. </span>Fazit<a class="headerlink" href="#fazit" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Durch die Implementierung eines Intrusion Detection Systems können wir jetzt den Netzwerkverkehr
+überwachen sowie Angriffe und unberechtigte Zugriffe erkennen. Mit dem entwickeln von eigenen SSH, HTML, MODBUS
+und ICMP Regeln, konnten wir Snort an das LICSTER-Testbed so anpassen, dass erkannt wird welches Gerät vom
+LICSTER-Testbed angegriffen wird. So kann man direkt sehen welches Gerät unter Angriff steht und man kann direkt
+dagegen vorgehen. Auch werden die Logs mittels einem Cronjob im Minutentakt mit SCP an die Webapplikation
+versendet.</p>
+</div>
+<div class="section" id="ausblick">
+<h3><span class="section-number">4.10.2. </span>Ausblick<a class="headerlink" href="#ausblick" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Nachdem jetzt das LICSTER-Testbed mit Snort überwacht wird, kann man zusätzlich noch weitere an das
+LICSTER-Testbed angepasste Regeln entwickeln, um mehr LICSTER spezifische Angriffe zu erkennen. Ergänzend
+kann man ein Intrusion Prevention System (IPS) implementieren. Ein IPS kann neben den Funktionen eines IDS,
+wie das erkennen eines Angriffs auch aktiv Angriffe verhindern, indem es die jeweiligen Pakete im Netzwerkverkehr
+dropped.</p>
+</div>
+</div>
 </div>
 
 
@@ -513,10 +541,10 @@ content:&quot;SSH&quot;; nocase; offset:0; depth:4; classtype: attempted-user; s
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="seccom.html" class="btn btn-neutral float-right" title="4. Secure Communication" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="seccom.html" class="btn btn-neutral float-right" title="5. Secure Communication" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="kommunikation.html" class="btn btn-neutral float-left" title="2. Workflow" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="kommunikation.html" class="btn btn-neutral float-left" title="3. Workflow" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -525,7 +553,7 @@ content:&quot;SSH&quot;; nocase; offset:0; depth:4; classtype: attempted-user; s
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2020, Fabian Klemm, Eric Hoffmann, Raphael Hausmanninger, Michael Janzer, Muhammet Bilbey, Athanasios Luludis, Janis Schickram
+        &copy; Copyright 2020, Muhammet Bilbey, Raphael Hausmanninger, Eric Hoffmann, Michael Janzer, Fabian Klemm, Athanasios Luludis, Janis Schickram
 
     </p>
   </div>

@@ -20,8 +20,8 @@ import sphinx_rtd_theme
 # -- Project information -----------------------------------------------------
 
 project = 'LICSTER'
-copyright = '2020, Fabian Klemm, Eric Hoffmann, Raphael Hausmanninger, Michael Janzer, Muhammet Bilbey, Athanasios Luludis, Janis Schickram'
-author = 'Fabian Klemm, Eric Hoffmann, Raphael Hausmanninger, Michael Janzer, Muhammet Bilbey, Athanasios Luludis, Janis Schickram'
+copyright = '2020, Muhammet Bilbey, Raphael Hausmanninger, Eric Hoffmann, Michael Janzer, Fabian Klemm, Athanasios Luludis, Janis Schickram'
+author = 'Muhammet Bilbey, Raphael Hausmanninger, Eric Hoffmann, Michael Janzer, Fabian Klemm, Athanasios Luludis, Janis Schickram'
 
 # The full version, including alpha/beta/rc tags
 release = '2020'

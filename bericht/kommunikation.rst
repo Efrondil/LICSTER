@@ -28,6 +28,7 @@ kann die man braucht.
     :alt:
 
     Kommunikationsverlauf bei Discord
+    | Quelle: Eigene Darstellung
 
 Jira
 ****
@@ -45,3 +46,4 @@ Die aufgaben könne dabei drei zustände einnehmen: Aufgabe, wird ausgeführt un
     :alt:
 
     Sprint vom 16.06 - 30.06
+    | Quelle: Eigene Darstellung
