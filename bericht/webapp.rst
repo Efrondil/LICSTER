@@ -19,6 +19,9 @@ Im Folgenden präsentieren wir unsere Veränderungen und Erweiterungen.
 Veränderungen
 -------------
 
+Um eine leichtere Erweiterungen des bestehenden Projekts zu ermöglichen, wurde der Aufbau der Flask Applikation angepasst.
+Des Weiteren wurde das Design für eine bessere Bedienung auf anderen Geräten angepasst.
+
 Modularer Aufbau
 ^^^^^^^^^^^^^^^^
 
@@ -88,15 +91,16 @@ Für das Design haben wir uns zusammengesetzt und beschlossen dass ein schlichte
 Erweiterungen
 -------------
 
-Als zwei Große Erweiterungen wurden das Benutzerverwaltungssytem und der Auswertung und Anzeige der IDS Logs zur Web Applikation hinzugefügt.
+Als zwei große Erweiterungen wurden die Benutzerverwaltung und die Auswertung und Anzeige der IDS Logs zur Web Applikation hinzugefügt.
 
-Im Benutzerverwaltungssytem gibt es drei Rollen, Admins, Users und nicht angemeldete Personen. Nicht angemeldete Personen haben die Möglichkeit die Startseite der Webapplikation zu besuchen. Andere Webseiten können sie allerdings nicht besuchen, da dies ein Sicherheitsrisiko wäre. 
+Im Benutzerverwaltungssytem gibt es drei Rollen, Admins, Users und nicht angemeldete Personen. Nicht angemeldete Personen haben die Möglichkeit sich die Startseite der Webapplikation anzeigen zu lassen. Andere Webseiten können sie allerdings nicht besuchen, da dies ein Sicherheitsrisiko wäre. 
 
-Angemeldete Benutzer können LICSTER wie zuvor auf dem Bildschirm des HMI nun über jedes Gerät, welches ihnen zur Verfügung steht bedienen.
+Angemeldete Benutzer können wie zuvor LICSTER mithilfe des HMI und nun auch über jedes andere Gerät im Netzwerk bedienen.
 
-Die dritte Rolle des Benutzverwaltungssystems erlaubt den Zugriff auf das Administratoren Dashboard, wo Benutzer hinzugefügt und gelöscht werden. Hier werden außerdem alle Nutzer tabellarisch angezeigt. Des Weiteren werden tabellarisch IDS Logs auf dem Dashboard angezeigt, falls der Benutzer dies aktiviert hat und bei Hinzufügen einer Email-Adressse zu einem Admin Account wird der Benutzer über Breaches direkt per Email benachrichtigt.
+Die dritte Rolle des Benutzverwaltungssystems erlaubt den Zugriff auf das Administratoren Dashboard. Ein Administratior hat hier die Möglichkeit Benutzer hinzuzufügen und zu löschen. Die tabellarische Benutzerübersicht ermöglicht dem Administrator einen leichten Überblick über alle Benutzer. 
+Des Weiteren kann man nach der Aktivierung des IDS sich hier die IDS Logs anzeigen lassen. Eine Erweiterung für Email Benachrichtigungen bei IDS Verstößen wurde integriert und ist nach dem Hinzufügen einer Email Adresse zu einem Administrator möglich.
 
-Das Styling der Admin Dashboard-Ansicht wurde mithilfe von HTML und CSS (Cascade Style Sheets) verwirklicht. Hierbei haben wir beschlossen das alle Funktionen auf einer einzigen Seite sind, damit es übersichtlich bleibt und die Bedienung schneller ist (siehe :numref:`webbapp2`).
+Es wurde beschlossen alle Funktionen auf einer Seite anzuzeigen, um eine schnelle Bedienung und Übersichtlichkeit zu gewährleisten (siehe :numref:`webbapp2`).
 
 
 .. _webbapp2:
@@ -185,13 +189,8 @@ Um die leichte Einbindung in einen Server wie nginx zu gewährtleisten, haben wi
 Fazit und Ausblick
 ------------------
 
-Fazit
-^^^^^
-
 LICSTER zu verbessern war ein interessantes und forderndes Projekt. Wir mussten uns mit dem Framework Flask auseinandersetzen und in ein bestehendes Projekt einarbeiten. Es hat jedoch auch Spaß gemacht ein bestehendes Projekt durch eigene Funktionalitäten erweitern zu können. Wir haben die Web Applikation geräteübergreifend zugänglich gemacht und ein Benutzerverwaltungssystem hinzugefügt.
 
-Ausblick
-^^^^^^^^
 
 Bisher läuft die Server-Client Kommunikation über HTTP. Dies stellt ein Sicherheitsrisiko dar, da Benutzernamen und Passwörter unverschlüsselt über das Netz übertragen werden. Es ist möglich, HTTPS mithilfe von Self-Signed Certificates zu implementieren. Eine Anleitung hierzu kann unter https://gist.github.com/fntlnz/cf14feb5a46b2eda428e000157447309 gefunden werden. Google Chrome hat spezifische Anforderungen an die Zertifikate, welche Probleme verursachen können. Ein Thread zu diesem Problem kann unter https://github.com/webpack/webpack-dev-server/issues/854 gefunden werden.
 
