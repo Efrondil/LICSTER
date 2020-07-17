@@ -1,7 +1,8 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="de" >
+<!--[if IE 8]><html class="no-js lt-ie9" lang="de" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="de" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
@@ -11,18 +12,12 @@
   
 
   
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-
-  
   
   
   
 
   
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -35,6 +30,10 @@
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
     <link rel="search" title="Suche" href="search.html" />
     <link rel="next" title="7. Probleme" href="probleme.html" />
@@ -52,7 +51,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> LICSTER
+            <a href="index.html" class="icon icon-home"> LICSTER
           
 
           
@@ -70,7 +69,7 @@
           
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Dokumentation durchsuchen" />
+    <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -79,7 +78,6 @@
           
         </div>
 
-        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -110,11 +108,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#wsgi">6.2.7. WSGI</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#fazit-und-ausblick">6.3. Fazit und Ausblick</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#fazit">6.3.1. Fazit</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ausblick">6.3.2. Ausblick</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="#fazit-und-ausblick">6.3. Fazit und Ausblick</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="probleme.html">7. Probleme</a></li>
@@ -125,7 +119,6 @@
             
           
         </div>
-        
       </div>
     </nav>
 
@@ -164,7 +157,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="index.html">Docs</a> &raquo;</li>
         
       <li><span class="section-number">6. </span>Webapplikation</li>
     
@@ -172,7 +165,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/webapp.rst.txt" rel="nofollow"> Quelltext anzeigen</a>
+            <a href="_sources/webapp.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -194,6 +187,8 @@
 <p>Im Folgenden präsentieren wir unsere Veränderungen und Erweiterungen.</p>
 <div class="section" id="veranderungen">
 <h2><span class="section-number">6.1. </span>Veränderungen<a class="headerlink" href="#veranderungen" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Um eine leichtere Erweiterungen des bestehenden Projekts zu ermöglichen, wurde der Aufbau der Flask Applikation angepasst.
+Des Weiteren wurde das Design für eine bessere Bedienung auf anderen Geräten angepasst.</p>
 <div class="section" id="modularer-aufbau">
 <h3><span class="section-number">6.1.1. </span>Modularer Aufbau<a class="headerlink" href="#modularer-aufbau" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Die bestehende Webapp war eine Standart Flask App. Da wir sowohl eine Datenbank als auch Wege zum Administrieren und Einloggen hinzufügen wollten, haben wir uns dazu entschlossen der Flask App einen Modularen Aufbau zu geben. Dieser Aufbau wird es auch zukünftigen Gruppen erleichtern sich in die App einzuarbeiten und neue Funktionalitäten hinzuzufügen.</p>
@@ -247,11 +242,12 @@
 </div>
 <div class="section" id="erweiterungen">
 <h2><span class="section-number">6.2. </span>Erweiterungen<a class="headerlink" href="#erweiterungen" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Als zwei Große Erweiterungen wurden das Benutzerverwaltungssytem und der Auswertung und Anzeige der IDS Logs zur Web Applikation hinzugefügt.</p>
-<p>Im Benutzerverwaltungssytem gibt es drei Rollen, Admins, Users und nicht angemeldete Personen. Nicht angemeldete Personen haben die Möglichkeit die Startseite der Webapplikation zu besuchen. Andere Webseiten können sie allerdings nicht besuchen, da dies ein Sicherheitsrisiko wäre.</p>
-<p>Angemeldete Benutzer können LICSTER wie zuvor auf dem Bildschirm des HMI nun über jedes Gerät, welches ihnen zur Verfügung steht bedienen.</p>
-<p>Die dritte Rolle des Benutzverwaltungssystems erlaubt den Zugriff auf das Administratoren Dashboard, wo Benutzer hinzugefügt und gelöscht werden. Hier werden außerdem alle Nutzer tabellarisch angezeigt. Des Weiteren werden tabellarisch IDS Logs auf dem Dashboard angezeigt, falls der Benutzer dies aktiviert hat und bei Hinzufügen einer Email-Adressse zu einem Admin Account wird der Benutzer über Breaches direkt per Email benachrichtigt.</p>
-<p>Das Styling der Admin Dashboard-Ansicht wurde mithilfe von HTML und CSS (Cascade Style Sheets) verwirklicht. Hierbei haben wir beschlossen das alle Funktionen auf einer einzigen Seite sind, damit es übersichtlich bleibt und die Bedienung schneller ist (siehe <a class="reference internal" href="#webbapp2"><span class="std std-numref">Abb. 6.2.1</span></a>).</p>
+<p>Als zwei große Erweiterungen wurden die Benutzerverwaltung und die Auswertung und Anzeige der IDS Logs zur Web Applikation hinzugefügt.</p>
+<p>Im Benutzerverwaltungssytem gibt es drei Rollen, Admins, Users und nicht angemeldete Personen. Nicht angemeldete Personen haben die Möglichkeit sich die Startseite der Webapplikation anzeigen zu lassen. Andere Webseiten können sie allerdings nicht besuchen, da dies ein Sicherheitsrisiko wäre.</p>
+<p>Angemeldete Benutzer können wie zuvor LICSTER mithilfe des HMI und nun auch über jedes andere Gerät im Netzwerk bedienen.</p>
+<p>Die dritte Rolle des Benutzverwaltungssystems erlaubt den Zugriff auf das Administratoren Dashboard. Ein Administratior hat hier die Möglichkeit Benutzer hinzuzufügen und zu löschen. Die tabellarische Benutzerübersicht ermöglicht dem Administrator einen leichten Überblick über alle Benutzer.
+Des Weiteren kann man nach der Aktivierung des IDS sich hier die IDS Logs anzeigen lassen. Eine Erweiterung für Email Benachrichtigungen bei IDS Verstößen wurde integriert und ist nach dem Hinzufügen einer Email Adresse zu einem Administrator möglich.</p>
+<p>Es wurde beschlossen alle Funktionen auf einer Seite anzuzeigen, um eine schnelle Bedienung und Übersichtlichkeit zu gewährleisten (siehe <a class="reference internal" href="#webbapp2"><span class="std std-numref">Abb. 6.2.1</span></a>).</p>
 <div class="figure align-default" id="id3">
 <span id="webbapp2"></span><img alt="LICSTER WEB" src="_images/webbapp2.png" />
 <p class="caption"><span class="caption-number">Abb. 6.2.1 </span><span class="caption-text">Admin Dashboard mit Reset Funktion
@@ -316,15 +312,9 @@ hinzugefügt. Falls sich der Benutzer zum ersten Mal anmeldet, wird er nun weite
 </div>
 <div class="section" id="fazit-und-ausblick">
 <h2><span class="section-number">6.3. </span>Fazit und Ausblick<a class="headerlink" href="#fazit-und-ausblick" title="Link zu dieser Überschrift">¶</a></h2>
-<div class="section" id="fazit">
-<h3><span class="section-number">6.3.1. </span>Fazit<a class="headerlink" href="#fazit" title="Link zu dieser Überschrift">¶</a></h3>
 <p>LICSTER zu verbessern war ein interessantes und forderndes Projekt. Wir mussten uns mit dem Framework Flask auseinandersetzen und in ein bestehendes Projekt einarbeiten. Es hat jedoch auch Spaß gemacht ein bestehendes Projekt durch eigene Funktionalitäten erweitern zu können. Wir haben die Web Applikation geräteübergreifend zugänglich gemacht und ein Benutzerverwaltungssystem hinzugefügt.</p>
-</div>
-<div class="section" id="ausblick">
-<h3><span class="section-number">6.3.2. </span>Ausblick<a class="headerlink" href="#ausblick" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Bisher läuft die Server-Client Kommunikation über HTTP. Dies stellt ein Sicherheitsrisiko dar, da Benutzernamen und Passwörter unverschlüsselt über das Netz übertragen werden. Es ist möglich, HTTPS mithilfe von Self-Signed Certificates zu implementieren. Eine Anleitung hierzu kann unter <a class="reference external" href="https://gist.github.com/fntlnz/cf14feb5a46b2eda428e000157447309">https://gist.github.com/fntlnz/cf14feb5a46b2eda428e000157447309</a> gefunden werden. Google Chrome hat spezifische Anforderungen an die Zertifikate, welche Probleme verursachen können. Ein Thread zu diesem Problem kann unter <a class="reference external" href="https://github.com/webpack/webpack-dev-server/issues/854">https://github.com/webpack/webpack-dev-server/issues/854</a> gefunden werden.</p>
 <p>Aktuell werden Admins via Email unverzüglich über Sicherheitsverstöße benachrichtigt, das Selbe gilt allerdings nicht für das Admin Dashboard. Eine hilfreiche Erweiterung wäre die Implementierung einer Threadlevel Anzeige auf dem Admin Dashboard. Diese sollte automatisch das Sicherheitslevel updaten. Realisiert werden könnte dies z.B. durch eine Socket-Verbindung zwischen der Web Applikation und den Clients. Eine Anleitung zum Implementieren einer Socket-Verbindung kann unter dem folgenden Link gefunden werden: <a class="reference external" href="https://www.includehelp.com/python/implementation-of-websocket-using-flask-socket-io-in-python.aspx">https://www.includehelp.com/python/implementation-of-websocket-using-flask-socket-io-in-python.aspx</a></p>
-</div>
 </div>
 </div>
 
@@ -336,10 +326,10 @@ hinzugefügt. Falls sich der Benutzer zum ersten Mal anmeldet, wird er nun weite
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="probleme.html" class="btn btn-neutral float-right" title="7. Probleme" accesskey="n" rel="next">Weiter <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="probleme.html" class="btn btn-neutral float-right" title="7. Probleme" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="seccom.html" class="btn btn-neutral float-left" title="5. Secure Communication" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Zurück</a>
+        <a href="seccom.html" class="btn btn-neutral float-left" title="5. Secure Communication" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -348,19 +338,11 @@ hinzugefügt. Falls sich der Benutzer zum ersten Mal anmeldet, wird er nun weite
 
   <div role="contentinfo">
     <p>
-        
         &copy; Copyright 2020, Muhammet Bilbey, Raphael Hausmanninger, Eric Hoffmann, Michael Janzer, Fabian Klemm, Athanasios Luludis, Janis Schickram
 
     </p>
   </div>
-    
-    
-    
-    Erstellt mit <a href="http://sphinx-doc.org/">Sphinx</a> mit einem
-    
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
-    
-    bereitgestellt von <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -371,6 +353,7 @@ hinzugefügt. Falls sich der Benutzer zum ersten Mal anmeldet, wird er nun weite
 
   </div>
   
+
 
   <script type="text/javascript">
       jQuery(function () {
